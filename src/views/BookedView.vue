@@ -117,7 +117,7 @@ const nextSteps = [
         <p id="team-heading" class="booked__team-label">Tu especialista</p>
         <div class="booked__team-card">
           <div class="booked__team-avatar" aria-hidden="true">
-            <i class="fa-solid fa-user-tie"></i>
+            <img src="@/assets/stock/zeonatec-agente.png" alt="Zeonatec Agronómico" class="booked__team-avatar-img" />
           </div>
           <div class="booked__team-info">
             <strong class="booked__team-name">Zeonatec</strong>
@@ -192,15 +192,19 @@ const nextSteps = [
 // ── Hero ─────────────────────────────────────────────────────────────────────
 .booked__hero {
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #eef4ff 0%, #f9fbff 100%);
-  border: 1px solid #e4edf7;
+  padding: 3.5rem 2rem;
+  background: 
+    linear-gradient(135deg, rgba(colors.$AB-FOREST, 0.85) 0%, rgba(colors.$BAKANO-PINK, 0.95) 100%),
+    url('@/assets/stock/zeonatec_success_bg.png') center/cover no-repeat;
+  border: none;
   border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(colors.$AB-FOREST, 0.2);
+  color: #ffffff;
 }
 
 .booked__hero-icon {
   font-size: 3.5rem;
-  color: colors.$OS-BLUE;
+  color: #ffffff;
   margin-bottom: 1rem;
   line-height: 1;
 }
@@ -209,9 +213,9 @@ const nextSteps = [
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(colors.$AB-SAGE, 0.14);
-  color: colors.$AB-SAGE;
-  border: 1px solid rgba(colors.$AB-SAGE, 0.3);
+  background: rgba(#ffffff, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(#ffffff, 0.3);
   border-radius: 999px;
   padding: 0.4rem 0.95rem;
   margin: 0 0 0.85rem;
@@ -229,14 +233,14 @@ const nextSteps = [
 .booked__hero-title {
   @include fonts.heading-font(800);
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  color: colors.$OS-DARK;
+  color: #ffffff;
   margin: 0 0 0.75rem;
   letter-spacing: -0.025em;
 }
 
 .booked__hero-subtitle {
   font-size: 0.95rem;
-  color: #4a5f7a;
+  color: rgba(#ffffff, 0.95);
   line-height: 1.65;
   margin: 0 auto;
   max-width: 460px;
@@ -250,7 +254,7 @@ const nextSteps = [
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: colors.$OS-NAVY;
+  color: colors.$AB-FOREST;
   margin: 0 0 1.25rem;
 }
 
@@ -278,7 +282,7 @@ const nextSteps = [
   right: 1rem;
   @include fonts.heading-font(800);
   font-size: 2rem;
-  color: rgba(colors.$OS-NAVY, 0.07);
+  color: rgba(colors.$BAKANO-PINK, 0.1);
   line-height: 1;
   user-select: none;
 }
@@ -287,7 +291,7 @@ const nextSteps = [
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: colors.$OS-NAVY;
+  background: colors.$BAKANO-PINK;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -317,8 +321,8 @@ const nextSteps = [
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
-  background: #f5f8ff;
-  border: 1px solid rgba(colors.$OS-NAVY, 0.1);
+  background: #f4f8f5;
+  border: 1px solid rgba(colors.$BAKANO-PINK, 0.15);
   border-radius: 16px;
   padding: 1.5rem;
   @media (max-width: 480px) {
@@ -332,17 +336,20 @@ const nextSteps = [
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: colors.$OS-NAVY;
+  background: colors.$BAKANO-PINK;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   border: 3px solid #ffffff;
-  box-shadow: 0 3px 12px rgba(0, 63, 125, 0.15);
-  i {
-    color: rgba(#ffffff, 0.85);
-    font-size: 2rem;
-  }
+  box-shadow: 0 3px 12px rgba(colors.$BAKANO-PINK, 0.2);
+  overflow: hidden;
+}
+
+.booked__team-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .booked__team-info {
