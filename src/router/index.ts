@@ -207,12 +207,13 @@ router.beforeEach((to, from, next) => {
   }
 
   // Si tiene booking fresco → redirigir todo a /cita-confirmada
-  if (bookedFresh) {
+  // (En localhost evitamos el bloqueo para permitir pruebas)
+  if (bookedFresh && !import.meta.env.DEV) {
     return next({ name: 'booked' })
   }
 
   // Si está descalificado dentro de 48h → no permitir booking ni booked
-  if (disqFresh && ['booking', 'booked'].includes(routeName)) {
+  if (disqFresh && ['booking', 'booked'].includes(routeName) && !import.meta.env.DEV) {
     return next({ name: 'no-space' })
   }
 
