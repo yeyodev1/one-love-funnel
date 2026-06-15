@@ -14,7 +14,13 @@ export async function trackStage(
     await fetch(GHL_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ etapa, event_id, ...data }),
+      body: JSON.stringify({
+        etapa,
+        event_id,
+        fb_pixel_id: import.meta.env.VITE_FB_PIXEL_ID,
+        fb_access_token: import.meta.env.VITE_FB_ACCESS_TOKEN,
+        ...data
+      }),
     })
   } catch {
     // silencioso — nunca bloquear la UX por un fallo de tracking
