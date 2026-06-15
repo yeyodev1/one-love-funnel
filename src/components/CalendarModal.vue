@@ -19,6 +19,7 @@ const form = ref({
   sector: '',
   embarcaciones: '',
   hp: '',
+  fecha: '',
   presupuesto: '',
   reto: '',
   consent: false,
@@ -30,12 +31,13 @@ const isValid = () =>
   !!form.value.sector &&
   !!form.value.embarcaciones &&
   !!form.value.hp &&
+  !!form.value.fecha &&
   !!form.value.presupuesto &&
   wordCount(form.value.reto) >= 10 &&
   form.value.consent
 
 const qualifies = () => {
-  return true // aprobacion automatica
+  return form.value.presupuesto !== 'low'
 }
 
 const handleSubmit = async () => {
@@ -62,10 +64,15 @@ const handleSubmit = async () => {
     resumen: 'Resumen dinámico para redes sociales',
     registro: 'Registro completo de todo el evento',
   }
-  const presupuestoLabel: Record<string, string> = {
+  const fechaLabel: Record<string, string> = {
     immediate: 'Menos de 3 meses',
     nextMonth: 'De 3 a 6 meses',
     justLooking: 'Más de 6 meses',
+  }
+  const presupuestoLabel: Record<string, string> = {
+    high: 'Más de $2,000 USD',
+    medium: 'Entre $1,000 y $2,000 USD',
+    low: 'Menos de $1,000 USD',
   }
 
   const etiquetas = [
@@ -75,6 +82,7 @@ const handleSubmit = async () => {
     `tipo-${form.value.sector}`,
     `espacio-${form.value.embarcaciones}`,
     `estilo-${form.value.hp}`,
+    `fecha-${form.value.fecha}`,
     `budget-${form.value.presupuesto}`,
   ]
 
@@ -89,7 +97,8 @@ const handleSubmit = async () => {
 💍 Tipo de Boda: ${sectorLabel[form.value.sector] ?? form.value.sector}
 📋 Wedding Planner: ${embarcacionesLabel[form.value.embarcaciones] ?? form.value.embarcaciones}
 🎥 Buscan en video: ${hpLabel[form.value.hp] ?? form.value.hp}
-🗓️ Cuándo es: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
+🗓️ Cuándo es: ${fechaLabel[form.value.fecha] ?? form.value.fecha}
+💰 Presupuesto: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
 💬 Idea/Reto: ${form.value.reto}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA'}
@@ -103,6 +112,7 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA'}
     sector: form.value.sector,
     embarcaciones: form.value.embarcaciones,
     hp: form.value.hp,
+    fecha: form.value.fecha,
     presupuesto: form.value.presupuesto,
     reto: form.value.reto,
     califica: String(califica),
@@ -155,6 +165,7 @@ watch(
         sector: '',
         embarcaciones: '',
         hp: '',
+        fecha: '',
         presupuesto: '',
         reto: '',
         consent: false,
@@ -183,13 +194,13 @@ watch(
 
           <div class="cal-header">
             <div class="cal-header-icon" aria-hidden="true">
-              <i class="fa-solid fa-leaf"></i>
+              <i class="fa-solid fa-film"></i>
             </div>
             <h2 id="cal-title" class="cal-title">
               Antes de agendar, cuéntanos sobre
-              <span class="cal-accent">tu proyecto</span>
+              <span class="cal-accent">su gran día</span>
             </h2>
-            <p class="cal-subtitle">5 preguntas rápidas para entender tu visión — 60 segundos.</p>
+            <p class="cal-subtitle">6 preguntas rápidas para entender tu visión — 60 segundos.</p>
           </div>
 
           <form class="cal-form" @submit.prevent="handleSubmit" novalidate>
@@ -270,8 +281,8 @@ watch(
               <span v-if="touched && !form.hp" class="cal-error">Selecciona una opción</span>
             </fieldset>
 
-            <!-- Q4 — Presupuesto -->
-            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.presupuesto }">
+            <!-- Q4 — Fecha -->
+            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.fecha }">
               <legend class="cal-legend">
                 <span class="cal-q-num">04</span>
                 ¿Cuándo es la boda?
@@ -282,6 +293,33 @@ watch(
                     { value: 'immediate', label: 'Menos de 3 meses' },
                     { value: 'nextMonth', label: 'De 3 a 6 meses' },
                     { value: 'justLooking', label: 'Más de 6 meses' },
+                  ]"
+                  :key="opt.value"
+                  class="cal-option"
+                  :class="{ selected: form.fecha === opt.value }"
+                >
+                  <input type="radio" :value="opt.value" v-model="form.fecha" hidden />
+                  <span class="cal-option__radio" aria-hidden="true" />
+                  <span class="cal-option__label">{{ opt.label }}</span>
+                </label>
+              </div>
+              <span v-if="touched && !form.fecha" class="cal-error"
+                >Selecciona una opción</span
+              >
+            </fieldset>
+
+            <!-- Q5 — Presupuesto -->
+            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.presupuesto }">
+              <legend class="cal-legend">
+                <span class="cal-q-num">05</span>
+                ¿Cuál es su presupuesto estimado para la cinematografía?
+              </legend>
+              <div class="cal-options">
+                <label
+                  v-for="opt in [
+                    { value: 'high', label: 'Más de $2,000 USD' },
+                    { value: 'medium', label: 'Entre $1,000 y $2,000 USD' },
+                    { value: 'low', label: 'Menos de $1,000 USD' },
                   ]"
                   :key="opt.value"
                   class="cal-option"
@@ -297,13 +335,13 @@ watch(
               >
             </fieldset>
 
-            <!-- Q5 — Idea/Reto -->
+            <!-- Q6 — Idea/Reto -->
             <fieldset
               class="cal-fieldset"
               :class="{ 'has-error': touched && wordCount(form.reto) < 10 }"
             >
               <legend class="cal-legend">
-                <span class="cal-q-num">05</span>
+                <span class="cal-q-num">06</span>
                 Cuéntanos cómo te imaginas tu boda y qué es lo más importante
               </legend>
               <textarea

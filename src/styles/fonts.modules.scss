@@ -1,31 +1,25 @@
 // Importación de fuentes modernas de Google
 @use 'sass:string';
 
-// Google Fonts - Selección moderna y atractiva
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Manrope:wght@200;300;400;500;600;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+// Google Fonts - Selección elegante y de confianza para Bodas
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-// Fuentes modernas y atractivas para web
-// Outfit: Perfecta para títulos y headings modernos
-// Space Grotesk: Excelente para elementos destacados y CTAs
-// Plus Jakarta Sans: Ideal para texto de cuerpo, muy legible
-// Manrope: Versátil para interfaces y contenido
-// Inter: Clásica y confiable para cualquier uso
+// Fuentes elegantes y atractivas para web
+// Playfair Display: Perfecta para títulos, evoca elegancia, exclusividad y cinematografía.
+// Montserrat: Excelente para texto de cuerpo y CTAs, limpia y muy legible.
 
 // Variables CSS modernas
 :root {
-  --font-outfit: 'Outfit', sans-serif;
-  --font-space-grotesk: 'Space Grotesk', sans-serif;
-  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-  --font-manrope: 'Manrope', sans-serif;
-  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
 }
 
 // Variables SCSS para uso en componentes
-$font-principal: 'Outfit', sans-serif; // Para títulos principales y headings
-$font-secondary: 'Plus Jakarta Sans', sans-serif; // Para texto de cuerpo y párrafos
-$font-accent: 'Space Grotesk', sans-serif; // Para elementos destacados y CTAs
-$font-interface: 'Manrope', sans-serif; // Para elementos de UI y navegación
-$font-fallback: 'Inter', sans-serif; // Fuente de respaldo confiable
+$font-principal: 'Playfair Display', serif; // Para títulos principales y headings
+$font-secondary: 'Montserrat', sans-serif; // Para texto de cuerpo y párrafos
+$font-accent: 'Montserrat', sans-serif; // Para elementos destacados y CTAs
+$font-interface: 'Montserrat', sans-serif; // Para elementos de UI y navegación
+$font-fallback: 'sans-serif'; // Fuente de respaldo confiable
 
 // Mixins para facilitar el uso
 @mixin heading-font($weight: 600) {
@@ -44,6 +38,8 @@ $font-fallback: 'Inter', sans-serif; // Fuente de respaldo confiable
   font-family: $font-accent;
   font-weight: $weight;
   line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 @mixin interface-font($weight: 400) {
