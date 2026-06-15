@@ -48,30 +48,28 @@ const handleSubmit = async () => {
   const scheduleEventId = generateEventId('schedule')
 
   const sectorLabel: Record<string, string> = {
-    productor: 'Productor Agrícola a gran escala',
-    distribuidor: 'Distribuidor Mayorista',
-    almacen: 'Almacén de Insumos',
+    eclesiastica: 'Eclesiástica',
+    civil: 'Civil',
+    destino: 'Destino',
     otro: 'Otro',
   }
   const embarcacionesLabel: Record<string, string> = {
-    rendimiento: 'Estancamiento de rendimiento',
-    costos: 'Costos altos de fertilización',
-    suelo: 'Suelo compactado / lavado de nutrientes',
-    plagas: 'Plagas recurrentes',
+    yes: 'Sí, contamos con Wedding Planner',
+    no: 'No, estamos planeando por nuestra cuenta',
   }
   const hpLabel: Record<string, string> = {
-    productividad: 'Aumentar productividad',
-    rentabilidad: 'Mejorar márgenes y rentabilidad',
-    exportacion: 'Mejorar calidad para exportación',
+    pelicula: 'Película cinematográfica y documental emotivo',
+    resumen: 'Resumen dinámico para redes sociales',
+    registro: 'Registro completo de todo el evento',
   }
   const presupuestoLabel: Record<string, string> = {
-    mas1000: 'Sí, más de 1000 sacos',
-    mas500: 'Sí, al menos 500 sacos',
-    menos500: 'No, por ahora menos de 500 sacos',
+    immediate: 'Menos de 3 meses',
+    nextMonth: 'De 3 a 6 meses',
+    justLooking: 'Más de 6 meses',
   }
 
   const etiquetas = [
-    'funnel-zeonatec',
+    'funnel-onelove',
     'step-2-cualificacion',
     califica ? 'califica-ab' : 'no-califica-ab',
     `tipo-${form.value.sector}`,
@@ -82,17 +80,17 @@ const handleSubmit = async () => {
 
   const notas = `
 ━━━━━━━━━━━━━━━━━━━━━━━━
-🪵 ZEONATEC — Cualificación
+🪵 ONE LOVE — Cualificación
 ━━━━━━━━━━━━━━━━━━━━━━━━
 👤 ${contact.nombre} ${contact.apellido}
 📧 ${contact.email}
 📱 ${contact.telefono}
 ━━━━━━━━━━━━━━━━━━━━━━━━
-🚜 Operación: ${sectorLabel[form.value.sector] ?? form.value.sector}
-⚠️ Problema Principal: ${embarcacionesLabel[form.value.embarcaciones] ?? form.value.embarcaciones}
-🎯 Objetivo: ${hpLabel[form.value.hp] ?? form.value.hp}
-📦 Volumen mensual: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
-💡 Idea/Reto: ${form.value.reto}
+💍 Tipo de Boda: ${sectorLabel[form.value.sector] ?? form.value.sector}
+📋 Wedding Planner: ${embarcacionesLabel[form.value.embarcaciones] ?? form.value.embarcaciones}
+🎥 Buscan en video: ${hpLabel[form.value.hp] ?? form.value.hp}
+🗓️ Cuándo es: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
+💬 Idea/Reto: ${form.value.reto}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA'}
   `.trim()
@@ -117,7 +115,6 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA'}
 
   trackStage('cualificacion_completada', payload)
 
-  // TODO: Actualizar webhook URL para Zeonatec
   await fetch(import.meta.env.VITE_WEBHOOK_CALIFICACION, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -200,14 +197,14 @@ watch(
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.sector }">
               <legend class="cal-legend">
                 <span class="cal-q-num">01</span>
-                ¿Qué tipo de operación agrícola manejas?
+                ¿Qué tipo de boda están planeando?
               </legend>
               <div class="cal-options">
                 <label
                   v-for="opt in [
-                    { value: 'productor', label: 'Productor Agrícola a gran escala' },
-                    { value: 'distribuidor', label: 'Distribuidor Mayorista' },
-                    { value: 'almacen', label: 'Almacén de Insumos' },
+                    { value: 'eclesiastica', label: 'Eclesiástica' },
+                    { value: 'civil', label: 'Civil' },
+                    { value: 'destino', label: 'Destino' },
                     { value: 'otro', label: 'Otro' },
                   ]"
                   :key="opt.value"
@@ -226,15 +223,13 @@ watch(
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.embarcaciones }">
               <legend class="cal-legend">
                 <span class="cal-q-num">02</span>
-                ¿Cuál es el principal problema en tu operación?
+                ¿Cuentan con un Wedding Planner?
               </legend>
               <div class="cal-options">
                 <label
                   v-for="opt in [
-                    { value: 'rendimiento', label: 'Estancamiento de rendimiento' },
-                    { value: 'costos', label: 'Costos altos de fertilización' },
-                    { value: 'suelo', label: 'Suelo compactado / lavado de nutrientes' },
-                    { value: 'plagas', label: 'Plagas recurrentes' },
+                    { value: 'yes', label: 'Sí, contamos con Wedding Planner' },
+                    { value: 'no', label: 'No, estamos planeando por nuestra cuenta' },
                   ]"
                   :key="opt.value"
                   class="cal-option"
@@ -254,14 +249,14 @@ watch(
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.hp }">
               <legend class="cal-legend">
                 <span class="cal-q-num">03</span>
-                ¿Cuál es tu objetivo principal?
+                ¿Qué buscan en su video de boda?
               </legend>
               <div class="cal-options">
                 <label
                   v-for="opt in [
-                    { value: 'productividad', label: 'Aumentar productividad' },
-                    { value: 'rentabilidad', label: 'Mejorar márgenes y rentabilidad' },
-                    { value: 'exportacion', label: 'Mejorar calidad para exportación' },
+                    { value: 'pelicula', label: 'Película cinematográfica y documental emotivo' },
+                    { value: 'resumen', label: 'Resumen dinámico para redes sociales' },
+                    { value: 'registro', label: 'Registro completo de todo el evento' },
                   ]"
                   :key="opt.value"
                   class="cal-option"
@@ -279,14 +274,14 @@ watch(
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.presupuesto }">
               <legend class="cal-legend">
                 <span class="cal-q-num">04</span>
-                ¿Manejas un volumen de 500 o más sacos al mes?
+                ¿Cuándo es la boda?
               </legend>
               <div class="cal-options">
                 <label
                   v-for="opt in [
-                    { value: 'mas1000', label: 'Sí, más de 1000 sacos' },
-                    { value: 'mas500', label: 'Sí, al menos 500 sacos' },
-                    { value: 'menos500', label: 'No, por ahora menos de 500 sacos' },
+                    { value: 'immediate', label: 'Menos de 3 meses' },
+                    { value: 'nextMonth', label: 'De 3 a 6 meses' },
+                    { value: 'justLooking', label: 'Más de 6 meses' },
                   ]"
                   :key="opt.value"
                   class="cal-option"
@@ -309,12 +304,12 @@ watch(
             >
               <legend class="cal-legend">
                 <span class="cal-q-num">05</span>
-                Cuéntanos un poco más sobre tu operación o necesidad
+                Cuéntanos cómo te imaginas tu boda y qué es lo más importante
               </legend>
               <textarea
                 v-model="form.reto"
                 class="cal-textarea"
-                placeholder="Ej: Tengo 200 hectáreas de banano y los costos de fertilizante químico se están comiendo el margen..."
+                placeholder="Ej: Nos encantaría una boda al aire libre y queremos que el video capte los momentos naturales sin tantas poses..."
                 rows="4"
                 aria-describedby="q4-hint"
               ></textarea>
@@ -331,7 +326,7 @@ watch(
               <input type="checkbox" v-model="form.consent" />
               <span class="cal-consent__box" aria-hidden="true" />
               <span class="cal-consent__text">
-                Acepto que Zeonatec me contacte para una sesión de diagnóstico agrícola B2B.
+                Acepto que One Love me contacte para una sesión de sesión.
               </span>
             </label>
             <span v-if="touched && !form.consent" class="cal-error"

@@ -89,19 +89,19 @@ const s2Valid = computed(
 
 // ── Mapas legibles para notas ─────────────────────────────────────────────────
 const URGENCY_LABEL: Record<string, string> = {
-  immediate: 'Necesita ayuda inmediata (menos de 24 h)',
-  'next-month': 'Lo necesita en el próximo mes',
-  'just-looking': 'Solo explorando, sin urgencia',
+  immediate: 'Menos de 3 meses',
+  'next-month': 'De 3 a 6 meses',
+  'just-looking': 'Más de 6 meses',
 }
 
 function buildNotes(): string {
   return [
-    `Proyecto: ${s2.value.projectType}`,
-    `Volumen +500 sacos: ${s2.value.budget === 'yes' ? 'Sí' : 'No'}`,
-    `Objetivo: ${s2.value.objective}`,
-    `Urgencia: ${URGENCY_LABEL[s2.value.urgency] ?? s2.value.urgency}`,
-    s2.value.message.trim() ? `Mensaje del lead: ${s2.value.message.trim()}` : null,
-    `Fuente: Formulario Zeonatec`,
+    `💍 Tipo de boda: ${s2.value.projectType}`,
+    `📋 Wedding Planner: ${s2.value.budget === 'yes' ? 'Sí' : 'No'}`,
+    `🎥 Visión principal: ${s2.value.objective}`,
+    `🗓️ Fecha de boda: ${URGENCY_LABEL[s2.value.urgency] ?? s2.value.urgency}`,
+    s2.value.message.trim() ? `💬 Mensaje del lead: ${s2.value.message.trim()}` : null,
+    `📲 Fuente: Formulario One Love`,
   ]
     .filter(Boolean)
     .join('\n')
@@ -109,8 +109,7 @@ function buildNotes(): string {
 
 // ── Lógica de tags ────────────────────────────────────────────────────────────
 function calcTags(): string[] {
-  // Aprobacion automatica: todos califican
-  return ['cualificado-zeonatec', s2.value.urgency === 'immediate' ? 'urgente' : 'no-urgente']
+  return ['cualificado-onelove', s2.value.urgency === 'immediate' ? 'urgente' : 'no-urgente']
 }
 
 // ── Envíos ────────────────────────────────────────────────────────────────────
@@ -130,8 +129,8 @@ async function submitS1() {
         email: s1.value.email.trim(),
         telefono: phone,
         empresa: s1.value.company.trim(),
-        source: 'zeonatec-web',
-        tags: ['zeonatec-web-lead'],
+        source: 'one-love-web',
+        tags: ['one-love-web-lead'],
         event_id: regEventId,
         ...getStoredFbParams(),
       }),
@@ -172,12 +171,12 @@ async function submitS2() {
           email: s1.value.email.trim(),
           telefono: phone,
           empresa: s1.value.company.trim(),
-          source: 'zeonatec-web',
+          source: 'one-love-web',
           ...getStoredFbParams(),
           // Datos de cualificación (Step 2)
-          '1. ¿Qué perfil de negocio tienes?': s2.value.projectType,
-          '2. ¿Mueven más de 500 sacos al mes?': s2.value.budget === 'yes' ? 'Sí' : 'No',
-          '3. ¿Cuál es tu objetivo principal?': s2.value.objective,
+          '1. ¿Qué tipo de boda estás planeando?': s2.value.projectType,
+          '2. ¿Cuentas con un Wedding Planner?': s2.value.budget === 'yes' ? 'Sí' : 'No',
+          '3. ¿Cuál es tu visión principal para el video?': s2.value.objective,
           urgency: s2.value.urgency,
           califica: s2.value.budget === 'yes',
           message: s2.value.message.trim(),
@@ -203,40 +202,27 @@ function goBack() {
 
 // ── Opciones step 2 ───────────────────────────────────────────────────────────
 const projectOpts = [
-  { value: 'Productor Agrícola a gran escala', label: 'Productor Agrícola a gran escala' },
-  { value: 'Distribuidor Mayorista', label: 'Distribuidor Mayorista' },
-  { value: 'Almacén de Insumos', label: 'Almacén de Insumos' },
+  { value: 'Eclesiástica', label: 'Eclesiástica' },
+  { value: 'Civil', label: 'Civil' },
+  { value: 'Destino', label: 'Destino' },
   { value: 'Otro', label: 'Otro' },
 ]
 
 const budgetOpts = [
-  { value: 'yes', label: 'Sí, movemos más de 500 sacos al mes' },
-  { value: 'no', label: 'No, nuestro volumen es menor a 500 sacos' },
+  { value: 'yes', label: 'Sí, contamos con Wedding Planner' },
+  { value: 'no', label: 'No, estamos planeando por nuestra cuenta' },
 ]
 
 const objectiveOpts = [
-  {
-    value: 'Elevar la productividad y rentabilidad de la operación.',
-    label: 'Elevar la productividad y rentabilidad de la operación.',
-  },
-  {
-    value: 'Solucionar problemas de compactación o lavado de nutrientes.',
-    label: 'Solucionar problemas de compactación o lavado de nutrientes.',
-  },
-  {
-    value: 'Comercializar y distribuir insumos de alta rotación a gran escala.',
-    label: 'Comercializar y distribuir insumos de alta rotación a gran escala.',
-  },
+  { value: 'Película cinematográfica y documental emotivo', label: 'Película cinematográfica y documental emotivo' },
+  { value: 'Resumen dinámico para redes sociales', label: 'Resumen dinámico para redes sociales' },
+  { value: 'Registro completo de todo el evento', label: 'Registro completo de todo el evento' },
 ]
 
 const urgencyOpts = [
-  { value: 'immediate', label: 'Necesito ayuda inmediata', sub: 'Contacto en menos de 24 h' },
-  { value: 'next-month', label: 'Lo necesito en el próximo mes', sub: 'Estoy evaluando opciones' },
-  {
-    value: 'just-looking',
-    label: 'Solo estoy explorando por ahora',
-    sub: 'Sin urgencia particular',
-  },
+  { value: 'immediate', label: 'Menos de 3 meses', sub: 'Urge apartar la fecha' },
+  { value: 'next-month', label: 'De 3 a 6 meses', sub: 'Planificando con tiempo' },
+  { value: 'just-looking', label: 'Más de 6 meses', sub: 'Solo explorando opciones' },
 ]
 </script>
 
@@ -371,7 +357,7 @@ const urgencyOpts = [
         <!-- Q1: Proyecto -->
         <div class="wf-question">
           <p class="wf-q-num">01</p>
-          <p class="wf-q-title">¿Qué tipo de operación agrícola manejas?</p>
+          <p class="wf-q-title">¿Qué tipo de boda estás planeando?</p>
           <label
             v-for="opt in projectOpts"
             :key="opt.value"
@@ -387,7 +373,7 @@ const urgencyOpts = [
         <!-- Q2: Presupuesto -->
         <div class="wf-question">
           <p class="wf-q-num">02</p>
-          <p class="wf-q-title">¿Manejas un volumen constante de 500 o más sacos al mes?</p>
+          <p class="wf-q-title">¿Cuentas con un Wedding Planner?</p>
           <label
             v-for="opt in budgetOpts"
             :key="opt.value"
@@ -419,7 +405,7 @@ const urgencyOpts = [
         <!-- Q4: Urgencia -->
         <div class="wf-question">
           <p class="wf-q-num">04</p>
-          <p class="wf-q-title">¿Con qué urgencia necesitas este suministro?</p>
+          <p class="wf-q-title">¿Cuándo es la fecha de tu boda?</p>
           <label
             v-for="opt in urgencyOpts"
             :key="opt.value"

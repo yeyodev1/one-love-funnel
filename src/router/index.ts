@@ -32,14 +32,14 @@ const router = createRouter({
       name: 'funnel',
       component: FunnelView,
       meta: {
-        title: 'Zeonatec | Expertos en Productividad — Diseño y Construcción de Alta Gama',
+        title: 'One Love | Cinematografía de Alto Impacto',
         description:
-          'Expertos en diseño y construcción mineral. Transformamos espacios con acabados premium y estructuras sostenibles. Agenda tu asesoría gratuita.',
-        canonical: 'https://zeonatec.com/',
-        ogTitle: 'Zeonatec | Expertos en Productividad',
+          'Expertos en cinematografía de bodas. Transformamos el recuerdo de tu boda en una obra de arte.',
+        canonical: 'https://onelove.com/',
+        ogTitle: 'One Love | Cinematografía de Alto Impacto',
         ogDescription:
-          'Diseño y construcción mineral de alta gama. Calidad artesanal para tus proyectos residenciales y comerciales.',
-        ogUrl: 'https://zeonatec.com/',
+          'Cinematografía de alto impacto. Calidad artística para el día de tu boda.',
+        ogUrl: 'https://onelove.com/',
       } satisfies RouteMeta,
     },
     {
@@ -47,13 +47,13 @@ const router = createRouter({
       name: 'video',
       component: VideoView,
       meta: {
-        title: 'Mira el video | Zeonatec — Paso 1 de 2',
+        title: 'Mira el video | One Love — Paso 1 de 2',
         description:
-          'Descubre cómo transformamos espacios con suelo de alta gama en nuestro video exclusivo.',
-        canonical: 'https://zeonatec.com/ver-video',
-        ogTitle: 'Mira el video | Zeonatec',
-        ogDescription: 'Ve el video y agenda tu Cita Estratégica gratuita con Zeonatec.',
-        ogUrl: 'https://zeonatec.com/ver-video',
+          'Descubre cómo transformamos el recuerdo de tu boda en una obra de arte en nuestro video exclusivo.',
+        canonical: 'https://onelove.com/ver-video',
+        ogTitle: 'Mira el video | One Love',
+        ogDescription: 'Ve el video exclusivo de One Love.',
+        ogUrl: 'https://onelove.com/ver-video',
       } satisfies RouteMeta,
     },
     {
@@ -61,12 +61,12 @@ const router = createRouter({
       name: 'booking',
       component: BookingView,
       meta: {
-        title: 'Agenda tu Cita | Zeonatec — Paso 2 de 2',
-        description: 'Selecciona el día y hora para tu Cita Estratégica gratuita con Zeonatec.',
-        canonical: 'https://zeonatec.com/agendar',
-        ogTitle: 'Agenda tu Cita | Zeonatec',
-        ogDescription: 'Elige tu horario y reserva tu Cita Estratégica gratuita.',
-        ogUrl: 'https://zeonatec.com/agendar',
+        title: 'Agenda tu Sesión | One Love — Paso 2 de 2',
+        description: 'Selecciona el día y hora para tu sesión con One Love.',
+        canonical: 'https://onelove.com/agendar',
+        ogTitle: 'Agenda tu Sesión | One Love',
+        ogDescription: 'Elige tu horario y reserva tu sesión.',
+        ogUrl: 'https://onelove.com/agendar',
       } satisfies RouteMeta,
     },
     {
@@ -74,13 +74,13 @@ const router = createRouter({
       name: 'booked',
       component: BookedView,
       meta: {
-        title: 'Cita Confirmada | Zeonatec',
+        title: 'Cita Confirmada | One Love',
         description:
-          'Tu cita estratégica con Zeonatec está confirmada. Revisa tu correo y prepárate.',
-        canonical: 'https://zeonatec.com/cita-confirmada',
-        ogTitle: 'Cita Confirmada | Zeonatec',
+          'Tu cita con One Love está confirmada. Revisa tu correo y prepárate.',
+        canonical: 'https://onelove.com/cita-confirmada',
+        ogTitle: 'Cita Confirmada | One Love',
         ogDescription: 'Tu cita está reservada. Te contactaremos pronto.',
-        ogUrl: 'https://zeonatec.com/cita-confirmada',
+        ogUrl: 'https://onelove.com/cita-confirmada',
       } satisfies RouteMeta,
     },
     {
@@ -88,14 +88,14 @@ const router = createRouter({
       name: 'no-space',
       component: NoSpaceView,
       meta: {
-        title: 'Sin Espacio Disponible | Zeonatec',
+        title: 'Sin Espacio Disponible | One Love',
         description:
-          'En este momento los cupos de asesoría de Zeonatec están completos. Te notificaremos cuando se libere un espacio.',
-        canonical: 'https://zeonatec.com/sin-espacio',
-        ogTitle: 'Sin Espacio Disponible | Zeonatec',
+          'En este momento los cupos de One Love están completos. Te notificaremos cuando se libere un espacio.',
+        canonical: 'https://onelove.com/sin-espacio',
+        ogTitle: 'Sin Espacio Disponible | One Love',
         ogDescription:
-          'Los cupos de asesoría están completos. Te avisaremos cuando haya disponibilidad.',
-        ogUrl: 'https://zeonatec.com/sin-espacio',
+          'Los cupos están completos. Te avisaremos cuando haya disponibilidad.',
+        ogUrl: 'https://onelove.com/sin-espacio',
       } satisfies RouteMeta,
     },
     {
@@ -103,13 +103,13 @@ const router = createRouter({
       name: 'privacy-policy',
       component: PrivacyPolicyView,
       meta: {
-        title: 'Política de Privacidad | Zeonatec',
+        title: 'Política de Privacidad | One Love',
         description:
-          'Política de privacidad de Zeonatec. Información sobre el tratamiento de datos personales.',
-        canonical: 'https://zeonatec.com/politicas-privacidad',
-        ogTitle: 'Política de Privacidad | Zeonatec',
-        ogDescription: 'Política de privacidad de Zeonatec.',
-        ogUrl: 'https://zeonatec.com/politicas-privacidad',
+          'Política de privacidad de One Love. Información sobre el tratamiento de datos personales.',
+        canonical: 'https://onelove.com/politicas-privacidad',
+        ogTitle: 'Política de Privacidad | One Love',
+        ogDescription: 'Política de privacidad de One Love.',
+        ogUrl: 'https://onelove.com/politicas-privacidad',
       } satisfies RouteMeta,
     },
     {
@@ -117,12 +117,12 @@ const router = createRouter({
       name: 'legal-notice',
       component: LegalNoticeView,
       meta: {
-        title: 'Aviso Legal | Zeonatec',
-        description: 'Aviso legal de Zeonatec. Términos y condiciones de uso del sitio web.',
-        canonical: 'https://zeonatec.com/aviso-legal',
-        ogTitle: 'Aviso Legal | Zeonatec',
-        ogDescription: 'Aviso legal de Zeonatec.',
-        ogUrl: 'https://zeonatec.com/aviso-legal',
+        title: 'Aviso Legal | One Love',
+        description: 'Aviso legal de One Love. Términos y condiciones de uso del sitio web.',
+        canonical: 'https://onelove.com/aviso-legal',
+        ogTitle: 'Aviso Legal | One Love',
+        ogDescription: 'Aviso legal de One Love.',
+        ogUrl: 'https://onelove.com/aviso-legal',
       } satisfies RouteMeta,
     },
   ],
@@ -161,7 +161,7 @@ const setCanonical = (href: string) => {
 
 router.afterEach((to) => {
   const meta = to.meta
-  document.title = meta.title ?? 'Zeonatec'
+  document.title = meta.title ?? 'One Love'
   setMeta('description', meta.description ?? '')
   setOgMeta('og:title', meta.ogTitle ?? meta.title ?? '')
   setOgMeta('og:description', meta.ogDescription ?? meta.description ?? '')

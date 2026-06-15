@@ -13,7 +13,7 @@ onMounted(() => {
       <header class="privacy-policy__header">
         <h1 class="privacy-policy__title">Política de Privacidad</h1>
         <p class="privacy-policy__intro">
-          Le damos la bienvenida a <strong>https://zeonatec.com.</strong> Su presencia aquí
+          Le damos la bienvenida a <strong>https://onelove.com.</strong> Su presencia aquí
           demuestra la importancia que le otorga a sus datos personales. Para nosotros, su
           privacidad es una prioridad y nos comprometemos a protegerla. En esta política explicamos
           de forma clara y transparente cómo recogemos, usamos y protegemos su información.
@@ -22,7 +22,7 @@ onMounted(() => {
           De conformidad con lo dispuesto en la Ley Orgánica de Protección de Datos Personales del
           Ecuador (LOPDP), al aceptar esta Política de Privacidad, usted otorga su consentimiento
           informado, expreso, libre e inequívoco para que los datos personales que proporcione a
-          través de nuestro sitio web <strong>https://zeonatec.com</strong> (en adelante, el "SITIO
+          través de nuestro sitio web <strong>https://onelove.com</strong> (en adelante, el "SITIO
           WEB") sean tratados por nuestra empresa.
         </p>
       </header>
@@ -32,11 +32,11 @@ onMounted(() => {
           1. ¿Quién es el Responsable del Tratamiento de sus Datos?
         </h2>
         <div class="privacy-policy__company-info">
-          <p><strong>Razón Social:</strong> Zeonatec Wood Design</p>
+          <p><strong>Razón Social:</strong> One Love</p>
           <p><strong>RUC:</strong> 0993028428001</p>
           <p><strong>Domicilio:</strong> Samborondón, Guayaquil, Ecuador</p>
-          <p><strong>Correo electrónico de contacto:</strong> info@zeonatec.com</p>
-          <p><strong>Actividad comercial:</strong> Diseño y construcción mineral de alta gama.</p>
+          <p><strong>Correo electrónico de contacto:</strong> info@onelove.com</p>
+          <p><strong>Actividad comercial:</strong> Cinematografía de bodas.</p>
         </div>
         <p>
           La presente Política de Privacidad es válida únicamente para los datos de carácter
@@ -89,7 +89,7 @@ onMounted(() => {
         </p>
 
         <p>
-          Únicamente el titular, Zeonatec Wood Design, tendrá acceso a sus datos. Le garantizamos
+          Únicamente el titular, One Love, tendrá acceso a sus datos. Le garantizamos
           que bajo ningún concepto estos datos serán cedidos, compartidos, transferidos ni vendidos
           a terceros, salvo por obligación legal expresa.
         </p>
@@ -113,7 +113,7 @@ onMounted(() => {
       <section class="privacy-policy__section">
         <h2 class="privacy-policy__section-title">4. Cumplimiento de la Normativa Ecuatoriana</h2>
         <p>
-          Zeonatec Wood Design cumple con las disposiciones de la Ley Orgánica de Protección de
+          One Love cumple con las disposiciones de la Ley Orgánica de Protección de
           Datos Personales (LOPDP) y su reglamento, así como con la demás normativa ecuatoriana
           aplicable a los servicios de la sociedad de la información y comercio electrónico.
         </p>
@@ -156,7 +156,7 @@ onMounted(() => {
         </ul>
         <p>
           Para ejercer cualquiera de estos derechos, puede enviar una comunicación escrita a
-          <strong>info@zeonatec.com</strong> con la referencia "Protección de Datos", especificando
+          <strong>info@onelove.com</strong> con la referencia "Protección de Datos", especificando
           su solicitud, acreditando su identidad y adjuntando los justificativos pertinentes.
         </p>
       </section>
@@ -174,7 +174,7 @@ onMounted(() => {
       <section class="privacy-policy__section">
         <h2 class="privacy-policy__section-title">8. Modificación de la Política de Privacidad</h2>
         <p>
-          Zeonatec Wood Design se reserva el derecho a modificar esta Política de Privacidad para
+          One Love se reserva el derecho a modificar esta Política de Privacidad para
           adaptarla a futuras novedades legislativas, jurisprudenciales o a nuevas prácticas del
           sector. Cualquier modificación será publicada en esta página con una antelación razonable
           a su efectiva aplicación. El uso continuado del SITIO WEB después de dichos cambios

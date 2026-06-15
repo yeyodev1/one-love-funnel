@@ -20,7 +20,7 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">1. AVISO LEGAL Y TÉRMINOS DE USO</h2>
         <p>
-          Zeonatec Wood Design es denominado en este documento como el PROVEEDOR y usted el CLIENTE
+          One Love es denominado en este documento como el PROVEEDOR y usted el CLIENTE
           quién recibe nuestros productos o servicios (gratuitos o de pago)
         </p>
         <p>
@@ -30,19 +30,19 @@ onMounted(() => {
         <h3 class="legal-notice__subsection-title">1.1. DATOS IDENTIFICATIVOS DEL RESPONSABLE</h3>
         <p>Tal y como recoge la normativa vigente, le informo que:</p>
         <ul>
-          <li>Mi denominación social es: Zeonatec Wood Design</li>
+          <li>Mi denominación social es: One Love</li>
           <li>Mi domicilio social se encuentra en Dirección: Samborondón, Guayaquil, Ecuador</li>
-          <li>Email: info@zeonatec.com</li>
-          <li>Mi Servicios profesionales es: Diseño y construcción mineral</li>
+          <li>Email: info@onelove.com</li>
+          <li>Mi Servicios profesionales es: Cinematografía de bodas</li>
         </ul>
 
         <h3 class="legal-notice__subsection-title">1.2. FINALIDAD DE LA PÁGINA WEB</h3>
         <p>Los servicios prestados por el responsable de la página web son los siguientes:</p>
         <ol>
-          <li>La asesoría técnica y diseño de proyectos mineral.</li>
-          <li>La venta de materiales y acabados de alta gama.</li>
+          <li>La cinematografía y narrativa de bodas.</li>
+          <li>La documentación audiovisual de eventos.</li>
           <li>Gestionar la lista de interesados y usuarios adscritos a la web.</li>
-          <li>Suministro de contenidos técnicos sobre suelo.</li>
+          <li>Suministro de contenidos técnicos sobre bodas y eventos.</li>
           <li>Dirigir su red de colaboradores así como la gestión de pagos de los mismos</li>
         </ol>
 
@@ -60,7 +60,7 @@ onMounted(() => {
         <h4 class="legal-notice__subsubsection-title">1.4.1 USO DEL SITIO WEB</h4>
         <p>
           La página web proporciona el acceso a artículos, informaciones, servicios y datos (en
-          adelante, "los contenidos") propiedad de Zeonatec Wood Design. El USUARIO asume la
+          adelante, "los contenidos") propiedad de One Love. El USUARIO asume la
           responsabilidad del uso de la web.
         </p>
 
@@ -90,7 +90,7 @@ onMounted(() => {
         </ul>
 
         <p>
-          Zeonatec Wood Design se reserva el derecho de retirar todos aquellos comentarios y
+          One Love se reserva el derecho de retirar todos aquellos comentarios y
           aportaciones que vulneren el respeto a la dignidad de la persona, que sean
           discriminatorios, xenófobos, racistas, pornográficos, que atenten contra la juventud o la
           infancia, el orden o la seguridad pública o que, a su juicio, no resultaran adecuados para
@@ -117,17 +117,17 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">2. PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
         <p>
-          Zeonatec Wood Design por sí o como cesionario, es titular de todos los derechos de
+          One Love por sí o como cesionario, es titular de todos los derechos de
           propiedad intelectual e industrial de su página web, así como de los elementos contenidos
           en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos;
           marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales
           usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.),
-          titularidad de Zeonatec Wood Design o bien de sus licenciantes. Todos los derechos
+          titularidad de One Love o bien de sus licenciantes. Todos los derechos
           reservados.
         </p>
 
         <p>
-          Cualquier uso no autorizado previamente por Zeonatec Wood Design será considerado un
+          Cualquier uso no autorizado previamente por One Love será considerado un
           incumplimiento grave de los derechos de propiedad intelectual o industrial del autor.
         </p>
 
@@ -142,7 +142,7 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">3. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD</h2>
         <p>
-          Zeonatec Wood Design no se hace responsable, en ningún caso, de los daños y perjuicios de
+          One Love no se hace responsable, en ningún caso, de los daños y perjuicios de
           cualquier naturaleza que pudieran ocasionar, a título enunciativo: por errores u omisiones
           en los contenidos, por falta de disponibilidad del sitio web, – el cual realizará paradas
           periódicas por mantenimientos técnicos – así como por la transmisión de virus o programas
@@ -162,7 +162,7 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">4. MODIFICACIONES</h2>
         <p>
-          Zeonatec Wood Design se reserva el derecho de efectuar sin previo aviso las modificaciones
+          One Love se reserva el derecho de efectuar sin previo aviso las modificaciones
           que considere oportunas en su web, pudiendo cambiar, suprimir o añadir tanto los
           contenidos y servicios que se presten a través de la misma como la forma en la que éstos
           aparezcan presentados o localizados en su web.
@@ -173,21 +173,21 @@ onMounted(() => {
         <h2 class="legal-notice__section-title">5. POLÍTICA DE ENLACES</h2>
         <p>
           Las personas o entidades que pretendan realizar o realicen un hiperenlace desde una página
-          web de otro portal de Internet a la web de Zeonatec Wood Design deberá someterse las
+          web de otro portal de Internet a la web de One Love deberá someterse las
           siguientes condiciones:
         </p>
         <ol>
           <li>
             No se permite la reproducción total o parcial de ninguno de los servicios ni contenidos
-            del sitio web sin la previa autorización expresa de Zeonatec Wood Design
+            del sitio web sin la previa autorización expresa de One Love
           </li>
           <li>
             No se establecerán deep-links ni enlaces IMG o de imagen, ni frames con la web de
-            Zeonatec Wood Design sin su previa autorización expresa.
+            One Love sin su previa autorización expresa.
           </li>
           <li>
             No se establecerá ninguna manifestación falsa, inexacta o incorrecta sobre la web de
-            Zeonatec Wood Design, ni sobre los servicios o contenidos de la misma.
+            One Love, ni sobre los servicios o contenidos de la misma.
           </li>
         </ol>
       </section>
@@ -195,7 +195,7 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">6. DERECHO DE EXCLUSIÓN</h2>
         <p>
-          Zeonatec Wood Design se reserva el derecho a denegar o retirar el acceso al portal y/o los
+          One Love se reserva el derecho a denegar o retirar el acceso al portal y/o los
           servicios ofrecidos sin necesidad de preaviso, a instancia propia o de un tercero, a
           aquellos usuarios que incumplan las presentes Condiciones Generales de Uso.
         </p>
@@ -206,7 +206,7 @@ onMounted(() => {
         <p>
           Las presentes condiciones generales tienen por objeto regular expresamente las condiciones
           aplicables a los procesos de contratación llevados a cabo por los usuarios "Cliente" de
-          los servicios de asesoría y construcción ofrecido por parte de Zeonatec Wood Design a
+          los servicios de asesoría y construcción ofrecido por parte de One Love a
           través de su sitio web.
         </p>
 
@@ -217,7 +217,7 @@ onMounted(() => {
         </p>
 
         <p>
-          Toda la información será tramitada a través de pasarelas de pagos externa a Zeonatec Wood
+          Toda la información será tramitada a través de pasarelas de pagos externa a One Love Wood
           Design como Stripe o similares.
         </p>
       </section>
@@ -225,7 +225,7 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">8. LEY APLICABLE Y JURISDICCIÓN</h2>
         <p>
-          La relación entre Zeonatec Wood Design y el CLIENTE se regirá por la normativa de Ecuador
+          La relación entre One Love y el CLIENTE se regirá por la normativa de Ecuador
           y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de
           Guayaquil, salvo que la Ley aplicable disponga otra cosa.
         </p>
@@ -235,7 +235,7 @@ onMounted(() => {
         <h2 class="legal-notice__section-title">9. CAUSAS DE DISOLUCIÓN DEL CONTRATO</h2>
         <ol>
           <li>
-            PUEDE CANCELAR ACUERDOS Y CONTRATOS FIRMADOS CON Zeonatec Wood Design EN CUALQUIER
+            PUEDE CANCELAR ACUERDOS Y CONTRATOS FIRMADOS CON One Love EN CUALQUIER
             MOMENTO ANTES DE LA MEDIANOCHE DEL TERCER DÍA DESPUÉS DE LA FECHA QUE HAGA EL PRIMER
             PAGO.
           </li>
@@ -250,8 +250,8 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">10. RECLAMACIONES Y DUDAS</h2>
         <p>
-          Zeonatec Wood Design informa que existen hojas de reclamación a disposición de usuarios y
-          clientes pudiendo remitir un correo a info@zeonatec.com indicando su nombre y apellidos,
+          One Love informa que existen hojas de reclamación a disposición de usuarios y
+          clientes pudiendo remitir un correo a info@onelove.com indicando su nombre y apellidos,
           el servicio o producto adquirido y exponiendo los motivos de su reclamación.
         </p>
       </section>

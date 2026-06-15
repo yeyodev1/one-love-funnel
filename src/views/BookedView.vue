@@ -40,12 +40,12 @@ const nextSteps = [
   {
     icon: 'fa-brands fa-whatsapp',
     title: 'Te contactamos por WhatsApp',
-    body: 'Zeonatec te escribirá para confirmar la cita y conocer un poco más sobre tu idea.',
+    body: 'One Love te escribirá para confirmar la cita y conocer un poco más sobre tu boda.',
   },
   {
     icon: 'fa-solid fa-leaf',
     title: 'Prepara tu inspiración',
-    body: 'Ten a mano información relevante sobre tu cultivo, área sembrada o problemas actuales.',
+    body: 'Ten a mano información relevante sobre tu boda, visión, fecha y otros detalles.',
   },
 ]
 </script>
@@ -54,7 +54,7 @@ const nextSteps = [
   <div class="booked">
     <!-- TOP BAR -->
     <header class="booked__topbar">
-      <h2 class="booked__logo-text">ZEONATEC</h2>
+      <h2 class="booked__logo-text">ONE LOVE</h2>
     </header>
 
     <main class="booked__main">
@@ -77,7 +77,7 @@ const nextSteps = [
             <template v-else> Ya tenemos tu cita reservada </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu Sesión de Diagnóstico B2B con Zeonatec está confirmada. Revisa tu correo o WhatsApp para
+            Tu Sesión con One Love está confirmada. Revisa tu correo o WhatsApp para
             todos los detalles. Si necesitas reagendar, escríbenos por WhatsApp.
           </p>
         </template>
@@ -89,7 +89,7 @@ const nextSteps = [
             <template v-else> ¡Tu consulta está confirmada! </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu Sesión de Diagnóstico con Zeonatec ha sido agendada correctamente. En breve recibirás
+            Tu sesión con One Love ha sido agendada correctamente. En breve recibirás
             todos los detalles.
           </p>
         </template>
@@ -112,18 +112,18 @@ const nextSteps = [
         </div>
       </section>
 
-      <!-- Team card — Zeonatec -->
+      <!-- Team card — One Love -->
       <section class="booked__team" aria-labelledby="team-heading">
         <p id="team-heading" class="booked__team-label">Tu especialista</p>
         <div class="booked__team-card">
           <div class="booked__team-avatar" aria-hidden="true">
-            <img src="@/assets/stock/zeonatec-agente.png" alt="Zeonatec Agronómico" class="booked__team-avatar-img" />
+            <img src="@/assets/team/one-love.png" alt="One Love" class="booked__team-avatar-img" />
           </div>
           <div class="booked__team-info">
-            <strong class="booked__team-name">Zeonatec</strong>
-            <span class="booked__team-role">Especialistas Agronómicos</span>
+            <strong class="booked__team-name">One Love</strong>
+            <span class="booked__team-role">Especialistas en Cinematografía de Bodas</span>
             <p class="booked__team-note">
-              "Maximizamos el rendimiento de tu cosecha a través de nutrición mineral de vanguardia."
+              "Transformamos el recuerdo de tu boda en una obra de arte cinematográfica."
             </p>
           </div>
         </div>
@@ -132,7 +132,7 @@ const nextSteps = [
       <!-- Disclaimer -->
       <p class="booked__disclaimer">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        Los resultados mencionados en el video corresponden a casos reales. Cada proyecto agrícola es único y los resultados dependen de las condiciones del suelo y cultivo.
+        Los resultados mencionados en el video corresponden a bodas reales. Cada proyecto es único y los resultados dependen de varios factores de la boda.
       </p>
     </main>
 
@@ -142,7 +142,7 @@ const nextSteps = [
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
       <p class="booked__footer-copy">
-        © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+        © {{ new Date().getFullYear() }} ONE LOVE. Todos los derechos reservados.
       </p>
     </footer>
   </div>

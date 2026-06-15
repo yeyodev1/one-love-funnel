@@ -31,7 +31,7 @@ const hProgress = ref(0) // 0–1 progreso del track horizontal
 // Estadísticas que rotan
 const stats = [
   { number: '500+', label: 'Sacos/Mes Mínimo' },
-  { number: '100%', label: 'Ingeniería Mineral' },
+  { number: '100%', label: 'Ingeniería Cinematográfica' },
   { number: '10X', label: 'Productividad' },
   { number: '24/7', label: 'Diagnóstico B2B' },
 ]
@@ -45,7 +45,7 @@ const benefits = [
   },
   {
     icon: 'fa-solid fa-shield-virus',
-    title: 'Blindaje Mineral',
+    title: 'Blindaje Cinematográfica',
     description: 'Engrosamiento de paredes celulares contra plagas mediante silicio asimilable.',
   },
   {
@@ -209,7 +209,7 @@ const { open: openContactModal } = useContactModal()
                 font-weight="900"
                 letter-spacing="2"
               >
-                ZEONATEC
+                ONE LOVE
               </text>
             </svg>
           </div>
@@ -235,10 +235,10 @@ const { open: openContactModal } = useContactModal()
           <div class="panel-intro__content">
             <h1 class="hero-huge__subtitle">
               Incrementa la fertilidad de tu suelo con la innovación y<br />
-              <strong>Poder de la Ingeniería Mineral Avanzada</strong>
+              <strong>Poder de la Ingeniería Cinematográfica Avanzada</strong>
             </h1>
             <p class="hero-huge__desc">
-              Ingeniería y nutrición mineral técnica para grandes productores.<br />
+              Ingeniería y nutrición cinematográfica técnica para grandes productores.<br />
               Calidades de exportación y rentabilidad garantizada.
             </p>
 

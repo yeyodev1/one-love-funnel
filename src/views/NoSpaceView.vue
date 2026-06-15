@@ -31,7 +31,7 @@ onMounted(() => {
   <div class="nospace">
     <!-- TOP BAR -->
     <header class="nospace__topbar">
-      <h2 class="nospace__logo-text">ZEONATEC</h2>
+      <h2 class="nospace__logo-text">ONE LOVE</h2>
     </header>
 
     <main class="nospace__main">
@@ -68,7 +68,7 @@ onMounted(() => {
             </div>
             <div>
               <strong>Revisa tu email</strong>
-              <p>Te notificaremos cuando se libere un espacio en la agenda de Zeonatec.</p>
+              <p>Te notificaremos cuando se libere un espacio en la agenda de One Love.</p>
             </div>
           </li>
           <li>
@@ -113,7 +113,7 @@ onMounted(() => {
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
       <p class="nospace__footer-copy">
-        © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+        © {{ new Date().getFullYear() }} ONE LOVE. Todos los derechos reservados.
       </p>
     </footer>
   </div>

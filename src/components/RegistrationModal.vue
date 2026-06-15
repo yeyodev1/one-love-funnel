@@ -107,52 +107,31 @@ const dropdownOpen = ref(false)
 const countrySearch = ref('')
 const submitting = ref(false)
 
-type Urgency = '' | 'immediate' | 'next-month' | 'just-looking'
+
 
 const form = ref({
   nombre: '',
   apellido: '',
   email: '',
-  phone: '',
-  empresa: '',
-  urgency: '' as Urgency,
+  phone: ''
 })
 
-const URGENCY_LABEL: Record<Exclude<Urgency, ''>, string> = {
-  immediate: 'Necesita iniciar de inmediato (este mes)',
-  'next-month': 'En 1–3 meses',
-  'just-looking': 'Solo explorando, sin urgencia',
-}
 
-const urgencyOpts: { value: Exclude<Urgency, ''>; label: string; sub: string; hot?: boolean }[] = [
-  {
-    value: 'immediate',
-    label: 'Necesito iniciar de inmediato',
-    sub: 'Contrato este mes',
-    hot: true,
-  },
-  { value: 'next-month', label: 'En los próximos 1–3 meses', sub: 'Planificación cercana' },
-  { value: 'just-looking', label: 'Solo estoy explorando', sub: 'Sin urgencia particular' },
-]
 
-function calcTags(urgency: Urgency): string[] {
-  const base = ['web-lead', 'funnel-registro']
-  if (urgency === 'immediate') return [...base, 'urgente', 'contrato-inmediato']
-  if (urgency === 'next-month') return [...base, 'urgencia-media']
-  if (urgency === 'just-looking') return [...base, 'no-urgente', 'explorando']
-  return base
-}
+
+
+
 
 function buildNote(f: typeof form.value, country: string): string {
   return [
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-    '🌱 ZEONATEC - NUEVO PROSPECTO (Paso 1: Registro Inicial)',
+    '💍 ONE LOVE - NUEVO LEAD (Paso 1: Registro Inicial)',
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-    'Este prospecto se ha registrado desde el Funnel VSL de Zeonatec y está interesado en soluciones de productividad mineral.',
+    'Este prospecto se ha registrado en el Funnel y está esperando ver el video.',
     '',
-    `🏢 Empresa / Finca: ${f.empresa}`,
+    `👤 Nombre: ${f.nombre} ${f.apellido}`,
+    `📧 Email: ${f.email}`,
     `🌍 País: ${country}`,
-    `⚡ Urgencia: ${f.urgency ? URGENCY_LABEL[f.urgency] : 'No especificada'}`,
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
   ].join('\n')
 }
@@ -183,10 +162,8 @@ const parsedPhoneE164 = computed(() => {
 const validators: Record<string, (v: string) => string | null> = {
   nombre: (v) => (v.trim().length < 2 ? 'Ingresa tu nombre' : null),
   apellido: (v) => (v.trim().length < 2 ? 'Ingresa tu apellido' : null),
-  email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? null : 'Email inválido'),
+  email: (v) => (/^[^\s@]+@[^s@]+\.[^\s@]+$/.test(v.trim()) ? null : 'Email inválido'),
   phone: () => (phoneValid.value ? null : 'Número inválido para el país seleccionado'),
-  empresa: (v) => (v.trim().length < 2 ? 'Ingresa el nombre de tu proyecto' : null),
-  urgency: (v) => (!v ? 'Selecciona cuándo necesitas iniciar' : null),
 }
 
 const validate = () => {
@@ -242,8 +219,6 @@ const handleSubmit = async () => {
     apellido: true,
     email: true,
     phone: true,
-    empresa: true,
-    urgency: true,
   }
   if (!validate()) return
 
@@ -258,25 +233,22 @@ const handleSubmit = async () => {
     email: form.value.email.trim().toLowerCase(),
     telefono: parsedPhoneE164.value,
     telefonoDisplay: selectedCountry.value.dial + ' ' + formattedPhone.value,
-    empresa: form.value.empresa.trim(),
     pais: selectedCountry.value.name,
-    urgency: form.value.urgency,
-    urgencyLabel: form.value.urgency ? URGENCY_LABEL[form.value.urgency] : '',
-    tags: calcTags(form.value.urgency),
+    tags: ['web-lead', 'one-love', 'paso-1'],
     note: buildNote(form.value, selectedCountry.value.name),
     timestamp: new Date().toISOString(),
     event_id: leadEventId,
     ...getStoredFbParams(),
   }
 
-  console.info('[Zeonatec Registro]', payload)
+  console.info('[One Love Registro]', payload)
 
   await fetch(import.meta.env.VITE_WEBHOOK_REGISTRO, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       ...payload,
-      source: 'zeonatec-web',
+      source: 'onelove-web',
     }),
   }).catch(() => {})
 
@@ -370,9 +342,9 @@ watch(dropdownOpen, (open) => {
 
           <!-- ── FORMULARIO ─────────────────────────────────── -->
           <!-- ── FORMULARIO ─────────────────────────────────── -->
-          <p class="rmodal__eyebrow">Diagnóstico B2B gratuito</p>
+          <p class="rmodal__eyebrow">Paso 1 de 2</p>
           <h2 id="rmodal-title" class="rmodal__title">
-            Agenda tu diagnóstico<br /><span class="rmodal__title-accent">sin costo</span>
+            Completa tus datos para<br /><span class="rmodal__title-accent">ver el video</span>
           </h2>
           <p class="rmodal__subtitle">
             Cupos limitados — completa tus datos y te daremos acceso al video.
@@ -549,70 +521,9 @@ watch(dropdownOpen, (open) => {
               </span>
             </div>
 
-            <!-- Empresa -->
-            <div class="rmodal__field" :class="{ 'has-error': touched.empresa && errors.empresa }">
-              <label for="r-empresa">Nombre de tu finca o empresa</label>
-              <input
-                id="r-empresa"
-                v-model="form.empresa"
-                type="text"
-                placeholder="Ej: Finca Los Álamos"
-                autocomplete="organization"
-                @blur="onBlur('empresa')"
-              />
-              <span v-if="touched.empresa && errors.empresa" class="rmodal__error">{{
-                errors.empresa
-              }}</span>
-            </div>
-
-            <!-- Urgencia -->
-            <div
-              class="rmodal__field rmodal__field--urgency"
-              :class="{ 'has-error': touched.urgency && errors.urgency }"
-            >
-              <label class="rmodal__urgency-label">
-                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                ¿Cuándo necesitas iniciar con el suministro?
-              </label>
-              <div class="rmodal__urgency-opts" role="radiogroup">
-                <label
-                  v-for="opt in urgencyOpts"
-                  :key="opt.value"
-                  class="rmodal__urgency-opt"
-                  :class="{
-                    'rmodal__urgency-opt--sel': form.urgency === opt.value,
-                    'rmodal__urgency-opt--hot': opt.hot,
-                    'rmodal__urgency-opt--hot-sel': opt.hot && form.urgency === opt.value,
-                  }"
-                >
-                  <input
-                    type="radio"
-                    v-model="form.urgency"
-                    :value="opt.value"
-                    class="rmodal__urgency-radio sr-only"
-                    @change="onBlur('urgency')"
-                  />
-                  <span class="rmodal__urgency-opt-dot" aria-hidden="true"></span>
-                  <span class="rmodal__urgency-opt-text">
-                    <strong>{{ opt.label }}</strong>
-                    <small>{{ opt.sub }}</small>
-                  </span>
-                  <i
-                    v-if="opt.hot"
-                    class="fa-solid fa-fire rmodal__urgency-opt-flame"
-                    aria-hidden="true"
-                  ></i>
-                </label>
-              </div>
-              <span v-if="touched.urgency && errors.urgency" class="rmodal__error">{{
-                errors.urgency
-              }}</span>
-            </div>
-
             <!-- Submit -->
             <button
               class="rmodal__submit"
-              :class="{ 'rmodal__submit--urgent': form.urgency === 'immediate' }"
               type="submit"
               :disabled="submitting"
             >
@@ -640,13 +551,7 @@ watch(dropdownOpen, (open) => {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </template>
-              {{
-                submitting
-                  ? 'Enviando...'
-                  : form.urgency === 'immediate'
-                    ? 'AGENDAR MI SESIÓN B2B'
-                    : 'AGENDAR MI SESIÓN B2B'
-              }}
+              {{ submitting ? 'Enviando...' : 'CONTINUAR AL VIDEO' }}
             </button>
 
             <p class="rmodal__legal">

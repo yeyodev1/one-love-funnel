@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import RegistrationModal from '@/components/RegistrationModal.vue'
 import { captureFbParams } from '@/utils/fbclid'
-import agentPhoto from '@/assets/stock/zeonatec-agente.png'
+import agentPhoto from '@/assets/team/one-love.png'
 
 const router = useRouter()
 const modalOpen = ref(false)
@@ -22,47 +22,47 @@ const openModal = () => {
 
 const stats = [
   {
-    icon: 'fa-solid fa-leaf',
-    number: '15+',
-    text: 'Años revolucionando la nutrición mineral agrícola',
+    icon: 'fa-solid fa-video',
+    number: '12+',
+    text: 'Años capturando momentos inolvidables en bodas',
   },
   {
-    icon: 'fa-solid fa-seedling',
-    number: '10,000+',
-    text: 'Hectáreas impactadas y revitalizadas con éxito',
+    icon: 'fa-solid fa-heart',
+    number: '500+',
+    text: 'Parejas felices con una pieza cinematográfica única',
   },
   {
-    icon: 'fa-solid fa-microscope',
+    icon: 'fa-solid fa-film',
     number: '100%',
-    text: 'Compromiso con la ciencia y la productividad sostenible',
+    text: 'Compromiso con la narrativa y la emoción pura',
   },
 ]
 
 const pillars = [
-  'Sin fertilizantes químicos sintéticos que degradan y compactan el suelo',
-  'Sin pérdida de nutrientes ni contaminación de mantos acuíferos',
-  'Sin estancamiento de rendimiento en tus cosechas temporada tras temporada',
-  'Con programas de nutrición mineral de alta asimilación a tu medida',
+  'Sin videos genéricos ni monótonos que acumulan polvo en un cajón',
+  'Sin perderte de las emociones reales ni momentos vulnerables',
+  'Con cinematografía aérea, audio perfecto y alta resolución',
+  'Con un equipo de dos videógrafos para perspectiva total',
 ]
 
 const methodology = [
   {
     num: '01',
-    icon: 'fa-solid fa-vial',
-    title: 'Diagnóstico Integral',
-    body: 'Analizamos a profundidad el estado actual de tus tierras para entender exactamente sus deficiencias y potencial oculto.',
+    icon: 'fa-solid fa-users',
+    title: 'Conexión y Visión',
+    body: 'Nos reunimos para entender la esencia de su relación y lo que hace única a su boda.',
   },
   {
     num: '02',
-    icon: 'fa-solid fa-flask',
-    title: 'Formulación Técnica',
-    body: 'Diseñamos una receta mineral específica (silicio, calcio, magnesio) adaptada a las demandas de tu cultivo.',
+    icon: 'fa-solid fa-video',
+    title: 'Documentación Cinematográfica',
+    body: 'Capturamos cada detalle, emoción y momento de forma discreta, pero con impacto visual.',
   },
   {
     num: '03',
-    icon: 'fa-solid fa-tractor',
-    title: 'Aplicación y Escalamiento',
-    body: 'Te acompañamos en la implementación para asegurar que cada saco aplicado se traduzca en mayor rentabilidad.',
+    icon: 'fa-solid fa-film',
+    title: 'Edición Narrativa',
+    body: 'Unimos las piezas con diseño sonoro y colorización profesional para entregar una obra de arte.',
   },
 ]
 
@@ -91,6 +91,21 @@ const tick = () => {
 }
 
 onMounted(() => {
+  const script1 = document.createElement('script');
+  script1.src = 'https://fast.wistia.com/player.js';
+  script1.async = true;
+  document.head.appendChild(script1);
+
+  const script2 = document.createElement('script');
+  script2.src = 'https://fast.wistia.com/embed/h5bs715nzv.js';
+  script2.async = true;
+  script2.type = 'module';
+  document.head.appendChild(script2);
+
+  const style = document.createElement('style');
+  style.innerHTML = `wistia-player[media-id='h5bs715nzv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/h5bs715nzv/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }`;
+  document.head.appendChild(style);
+
   captureFbParams()
   tick()
   interval = setInterval(tick, 1000)
@@ -162,7 +177,7 @@ const dismissProof = () => {
   <div class="funnel">
     <!-- TOP BAR -->
     <header class="funnel__topbar">
-      <h2 class="funnel__logo-text">ZEONATEC</h2>
+      <h2 class="funnel__logo-text">ONE LOVE</h2>
     </header>
 
     <!-- URGENCY BANNER (sticky) -->
@@ -171,7 +186,7 @@ const dismissProof = () => {
         <span class="funnel__urgency-dot" aria-hidden="true" />
         <i class="fa-solid fa-bolt funnel__urgency-icon" aria-hidden="true"></i>
         <span class="funnel__urgency-text"
-          >CUPOS PARA <strong>CONTRATO INMEDIATO</strong> — Cierran en:</span
+          >CUPOS PARA FECHAS <strong>2026/2027</strong> — Cierran en:</span
         >
         <div class="funnel__timer" aria-live="polite" aria-label="Tiempo restante">
           <span class="funnel__timer-block"
@@ -218,7 +233,7 @@ const dismissProof = () => {
             <span>{{ currentProof.where }}</span>
           </p>
           <p class="funnel__proof-text">
-            Acaba de contratar <strong>programas de nutrición mineral</strong>
+            Acaban de agendar su <strong>boda eclesiástica</strong>
           </p>
           <p class="funnel__proof-meta">
             <i class="fa-solid fa-clock" aria-hidden="true"></i>
@@ -241,13 +256,13 @@ const dismissProof = () => {
       <div class="funnel__container">
         <p class="funnel__eyebrow">
           <i class="fa-solid fa-leaf" aria-hidden="true"></i>
-          Expertos en Productividad y Nutrición Mineral
+          Metodología Narrativa Cinematográfica
         </p>
 
         <h1 id="funnel-headline" class="funnel__headline">
-          Revoluciona el rendimiento de tu cosecha con
-          <span class="funnel__headline-accent">nutrición e ingeniería mineral</span>
-          de alta tecnología
+          Revive el día más importante de tu vida con
+          <span class="funnel__headline-accent">cinematografía de alto impacto</span>
+          y una narrativa profesional
         </h1>
 
         <ul class="funnel__pillars" role="list">
@@ -260,40 +275,17 @@ const dismissProof = () => {
         <!-- Urgency callout (refuerzo en hero) -->
         <div class="funnel__urgency-callout" role="note">
           <i class="fa-solid fa-fire" aria-hidden="true"></i>
-          <span
-            >Para productores a gran escala que
-            <strong>necesitan asegurar la rentabilidad de su próxima cosecha</strong> — sin seguir perdiendo dinero.</span
-          >
+          <span>Para parejas que están planeando su boda eclesiástica o civil y <strong>entienden que el video es la única inversión que aumenta de valor con los años</strong>.</span>
         </div>
 
         <!-- VSL Gated Area -->
-        <div class="funnel__vsl-wrap">
-          <div
-            class="funnel__vsl"
-            @click="openModal()"
-            role="button"
-            aria-label="Ver video"
-            tabindex="0"
-          >
-            <div class="funnel__vsl-bg">
-              <img
-                src="https://fast.wistia.com/embed/medias/3ffgiuig80/swatch"
-                class="funnel__vsl-thumb"
-                alt="Vista previa video"
-              />
-              <div class="funnel__vsl-blur-overlay"></div>
-            </div>
-            <div class="funnel__vsl-overlay">
-              <div class="funnel__vsl-play">
-                <i class="fa-solid fa-play" aria-hidden="true"></i>
-              </div>
-              <p class="funnel__vsl-caption">
-                Mira el video exclusivo y descubre cómo maximizamos la productividad agrícola por hectárea
-              </p>
-            </div>
+        <div class="funnel__vsl-wrap" @click="openModal()" style="cursor: pointer; position: relative;">
+          <!-- Intercept click to open modal instead of playing video -->
+          <div style="position: absolute; inset: 0; z-index: 10;"></div>
+          <div class="funnel__vsl" style="background:transparent;">
+            <wistia-player media-id="h5bs715nzv" aspect="1.7777777777777777"></wistia-player>
           </div>
         </div>
-
         <!-- CTA -->
         <div class="funnel__cta-wrap">
           <button class="funnel__cta-btn" @click="openModal()">
@@ -312,7 +304,7 @@ const dismissProof = () => {
     <section class="funnel__stats" aria-label="Resultados comprobados">
       <div class="funnel__container">
         <p class="funnel__section-label funnel__section-label--light">
-          Resultados reales — clientes reales
+          Bodas inolvidables
         </p>
         <div class="funnel__stats-grid">
           <div v-for="stat in stats" :key="stat.number" class="funnel__stat">
@@ -337,30 +329,22 @@ const dismissProof = () => {
           <div class="funnel__problem-item">
             <i class="fa-solid fa-triangle-exclamation funnel__problem-icon" aria-hidden="true"></i>
             <div>
-              <strong>Siguen usando fertilizantes sintéticos</strong>
-              <p>
-                El uso de suelo "verde" o sin el secado adecuado provoca torceduras y grietas a los
-                pocos meses de instalación.
-              </p>
+              <strong>Logística Reactiva del Video</strong>
+              <p>Un videógrafo que solo reacciona a lo que pasa frente a él, sin intención, sin alma y sin narrativa cinematográfica.</p>
             </div>
           </div>
           <div class="funnel__problem-item">
             <i class="fa-solid fa-triangle-exclamation funnel__problem-icon" aria-hidden="true"></i>
             <div>
-              <strong>Sufren compactación y estrés hídrico</strong>
-              <p>
-                Los suelos cansados no retienen humedad ni nutrientes, lavando tu inversión y haciendo las plantas vulnerables a las sequías.
-              </p>
+              <strong>Agujero Negro de Edición</strong>
+              <p>Los videos tardan de 6 meses a un año en ser entregados, cuando la magia del día ya se enfrió y nadie quiere verlos.</p>
             </div>
           </div>
           <div class="funnel__problem-item">
             <i class="fa-solid fa-triangle-exclamation funnel__problem-icon" aria-hidden="true"></i>
             <div>
-              <strong>Bajos márgenes y estancamiento</strong>
-              <p>
-                Barnices y selladores que se pelan o pierden su brillo rápido, obligando a
-                mantenimientos costosos y frecuentes.
-              </p>
+              <strong>Perspectiva Limitada</strong>
+              <p>Con solo una cámara te pierdes momentos como la cara del novio y la sonrisa de la novia al mismo tiempo.</p>
             </div>
           </div>
         </div>
@@ -372,7 +356,7 @@ const dismissProof = () => {
       <div class="funnel__container">
         <p class="funnel__section-label">Nuestra metodología de asesoría</p>
         <h2 id="method-heading" class="funnel__section-title">
-          Tres pilares que protegen tu operación
+          Tres pilares del Sistema de Preservación Emocional
         </h2>
         <div class="funnel__method-grid">
           <div v-for="m in methodology" :key="m.num" class="funnel__method-card">
@@ -390,26 +374,26 @@ const dismissProof = () => {
     <!-- TESTIMONIAL -->
     <section class="funnel__testimonial" aria-labelledby="testimonial-heading">
       <div class="funnel__container">
-        <p class="funnel__section-label">Lo que dicen nuestros clientes</p>
+        <p class="funnel__section-label">Lo que dicen nuestras parejas</p>
         <div class="funnel__testimonial-card">
           <i class="fa-solid fa-quote-left funnel__testimonial-quote" aria-hidden="true"></i>
           <blockquote class="funnel__testimonial-text">
-            "Zeonatec logró exactamente lo que queríamos para nuestros cultivos. Recuperamos la estructura del suelo, las plantas están más fuertes y logramos aumentar nuestra productividad un 15% reduciendo costos químicos."
+            "Antes de conocer a Carlos del equipo de One Love, me aterraba que el video fuera el típico resumen monótono que terminas guardando en un cajón. Cada vez que vemos nuestra película lloramos de la emoción. Es pasar de la grabación casera al criterio artístico profesional."
           </blockquote>
           <footer class="funnel__testimonial-author">
             <div class="funnel__testimonial-avatar" aria-hidden="true">
               <i class="fa-solid fa-user"></i>
             </div>
             <div>
-              <strong>Ingeniero Agrónomo</strong>
-              <span>Productor de Banano de Exportación</span>
+              <strong>Novia One Love</strong>
+              <span>Boda Eclesiástica</span>
             </div>
           </footer>
         </div>
       </div>
     </section>
 
-    <!-- AUTHORITY — Zeonatec -->
+    <!-- AUTHORITY — One Love -->
     <section class="funnel__authority" aria-labelledby="authority-heading">
       <div class="funnel__container funnel__authority-inner">
         <div class="funnel__authority-photo-wrap">
@@ -419,24 +403,15 @@ const dismissProof = () => {
         </div>
         <div class="funnel__authority-content">
           <p class="funnel__authority-eyebrow">Tus aliados estratégicos</p>
-          <h2 id="authority-heading" class="funnel__authority-name">Zeonatec</h2>
-          <p class="funnel__authority-role">Expertos en Ingeniería y Nutrición Mineral</p>
+          <h2 id="authority-heading" class="funnel__authority-name">One Love</h2>
+          <p class="funnel__authority-role">Especialista en Cinematografía de Bodas</p>
           <p class="funnel__authority-bio">
-            Con años de experiencia en el agro ecuatoriano, nos especializamos en formular soluciones minerales que reavivan la vida microbiológica, descompactan los suelos e impulsan rendimientos de exportación con máxima rentabilidad.
+            Dejamos de improvisar y empezamos a planificar desde la preboda. Integramos tecnología como los drones para dar un contexto épico que solo el cine puede ofrecer. Te entrego una estructura narrativa que cumple con los más altos estándares artísticos.
           </p>
           <ul class="funnel__authority-creds" role="list">
-            <li>
-              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en suelos
-              nobles y tratadas
-            </li>
-            <li>
-              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Diseños exclusivos a
-              medida
-            </li>
-            <li>
-              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: del
-              plano a la instalación
-            </li>
+            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Enfoque narrativo multidimensional</li>
+            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Equipos de última tecnología y drones</li>
+            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Formatos versátiles para redes y archivo</li>
           </ul>
         </div>
       </div>
@@ -449,7 +424,7 @@ const dismissProof = () => {
           ¿Listo para iniciar tu proyecto?
         </h2>
         <p class="funnel__cta-final-sub">
-          Agenda una asesoría gratuita de 15 minutos. Conversaremos sobre tu operación agrícola y te daremos una primera visión técnica de cómo potenciar tus rendimientos.
+          Agenda una asesoría gratuita de 15 minutos. Conversaremos sobre el cronograma de tu boda y qué paquete se ajusta a tu visión para capturar cada emoción sin ser invasivos.
         </p>
         <button class="funnel__cta-btn" @click="openModal()">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
@@ -465,13 +440,13 @@ const dismissProof = () => {
     <!-- FOOTER -->
     <footer class="funnel__footer">
       <div class="funnel__container funnel__footer-inner">
-        <h2 class="funnel__footer-logo-text">ZEONATEC</h2>
+        <h2 class="funnel__footer-logo-text">ONE LOVE</h2>
         <nav class="funnel__footer-links" aria-label="Legal">
           <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
           <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
         </nav>
         <p class="funnel__footer-copy">
-          © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+          © {{ new Date().getFullYear() }} ONE LOVE. Todos los derechos reservados.
         </p>
       </div>
     </footer>

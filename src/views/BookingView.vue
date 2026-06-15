@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const iframeHeight = ref(1100)
 
-// GHL Zeonatec Calendar URL
+// GHL One Love Calendar URL
 const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/CdtegPrPidRa7IYlZRNc'
 
 const calendarUrl = computed(() => {
@@ -54,7 +54,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   <div class="booking">
     <!-- TOP BAR -->
     <header class="booking__topbar">
-      <h2 class="booking__logo-text">ZEONATEC</h2>
+      <h2 class="booking__logo-text">ONE LOVE</h2>
     </header>
 
     <main class="booking__main">
@@ -95,7 +95,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <iframe
           :src="calendarUrl"
           :style="{ height: iframeHeight + 'px' }"
-          title="Agenda tu asesoría con Zeonatec"
+          title="Agenda tu asesoría con One Love"
           class="calendar__iframe"
           frameborder="0"
           scrolling="no"
@@ -111,7 +111,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
       <p class="booking__footer-copy">
-        © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+        © {{ new Date().getFullYear() }} ONE LOVE. Todos los derechos reservados.
       </p>
     </footer>
   </div>
