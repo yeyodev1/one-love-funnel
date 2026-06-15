@@ -269,14 +269,14 @@ const handleSubmit = async () => {
     ...getStoredFbParams(),
   }
 
-  console.info('[AleBarreto Registro]', payload)
+  console.info('[Zeonatec Registro]', payload)
 
   await fetch(import.meta.env.VITE_WEBHOOK_REGISTRO, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       ...payload,
-      source: 'ale-barreto-web',
+      source: 'zeonatec-web',
     }),
   }).catch(() => {})
 
@@ -1287,7 +1287,7 @@ $accent: colors.$OS-RED;
   gap: 6px;
 
   i {
-    color: colors.$AB-URGENT;
+    color: colors.$BAKANO-PINK;
     font-size: 0.78rem;
   }
 }
@@ -1326,28 +1326,28 @@ $accent: colors.$OS-RED;
   }
 
   &--hot {
-    border-color: rgba(colors.$AB-URGENT, 0.35);
-    background: colors.$AB-URGENT-BG;
+    border-color: rgba(colors.$BAKANO-PINK, 0.35);
+    background: rgba(colors.$BAKANO-PINK, 0.05);
 
     &:hover {
-      border-color: colors.$AB-URGENT;
-      background: rgba(colors.$AB-URGENT, 0.08);
+      border-color: colors.$BAKANO-PINK;
+      background: rgba(colors.$BAKANO-PINK, 0.08);
     }
   }
 
   &--hot-sel {
-    border-color: colors.$AB-URGENT !important;
-    background: rgba(colors.$AB-URGENT, 0.12) !important;
-    box-shadow: 0 0 0 3px rgba(colors.$AB-URGENT, 0.18) !important;
+    border-color: colors.$BAKANO-PINK !important;
+    background: rgba(colors.$BAKANO-PINK, 0.12) !important;
+    box-shadow: 0 0 0 3px rgba(colors.$BAKANO-PINK, 0.18) !important;
 
     .rmodal__urgency-opt-dot {
-      border-color: colors.$AB-URGENT;
-      background: colors.$AB-URGENT;
+      border-color: colors.$BAKANO-PINK;
+      background: colors.$BAKANO-PINK;
       box-shadow: inset 0 0 0 3px #ffffff;
     }
 
     .rmodal__urgency-opt-text strong {
-      color: colors.$AB-URGENT-DARK;
+      color: colors.$OS-DARK;
     }
   }
 }
@@ -1394,7 +1394,7 @@ $accent: colors.$OS-RED;
 }
 
 .rmodal__urgency-opt-flame {
-  color: colors.$AB-URGENT;
+  color: colors.$BAKANO-PINK;
   font-size: 0.95rem;
   flex-shrink: 0;
   animation: flame-flicker 1.6s infinite;

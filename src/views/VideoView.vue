@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import CalendarModal from '@/components/CalendarModal.vue'
 import { trackStage, generateEventId } from '@/utils/ghl'
 import { useContactStore } from '@/stores/contact'
-import zeonatecPhoto from '@/assets/team/zeonatec.png'
+import agentPhoto from '@/assets/stock/zeonatec-agente.png'
 
 const contactStore = useContactStore()
 
@@ -178,7 +178,7 @@ onUnmounted(() => {
         <div class="vv-authority__inner">
           <div class="vv-authority__photo-wrap">
             <div class="vv-authority__avatar" aria-hidden="true">
-              <img :src="zeonatecPhoto" alt="Yurka Dominage" class="vv-authority__img" />
+              <img :src="agentPhoto" alt="Agente Especialista" class="vv-authority__img" />
             </div>
           </div>
           <div class="vv-authority__content">

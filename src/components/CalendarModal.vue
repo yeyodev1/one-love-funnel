@@ -71,7 +71,7 @@ const handleSubmit = async () => {
   }
 
   const etiquetas = [
-    'funnel-alebarreto',
+    'funnel-zeonatec',
     'step-2-cualificacion',
     califica ? 'califica-ab' : 'no-califica-ab',
     `tipo-${form.value.sector}`,

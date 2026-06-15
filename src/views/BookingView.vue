@@ -6,7 +6,7 @@ const router = useRouter()
 const iframeHeight = ref(1100)
 
 // GHL Zeonatec Calendar URL
-const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/nCzBqHMNFYGu4rYBREX3'
+const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/CdtegPrPidRa7IYlZRNc'
 
 const calendarUrl = computed(() => {
   try {
@@ -83,11 +83,10 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         </p>
         <h1 class="booking__title">
           Elige el horario de tu
-          <span class="booking__title-accent">asesoría de diseño</span>
+          <span class="booking__title-accent">Sesión de Diagnóstico</span>
         </h1>
         <p class="booking__subtitle">
-          Una sesión de 15 minutos con Zeonatec para conversar sobre tu proyecto y definir los
-          siguientes pasos.
+          Una sesión estratégica con nuestros especialistas agronómicos para evaluar el estado de tu cultivo y definir los siguientes pasos.
         </p>
       </section>
 
@@ -100,7 +99,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
           class="calendar__iframe"
           frameborder="0"
           scrolling="no"
-          id="nCzBqHMNFYGu4rYBREX3_1776870418706"
+          id="CdtegPrPidRa7IYlZRNc_1781555332810"
         ></iframe>
       </div>
     </main>

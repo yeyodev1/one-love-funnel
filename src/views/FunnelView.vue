@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import RegistrationModal from '@/components/RegistrationModal.vue'
 import { captureFbParams } from '@/utils/fbclid'
-import alePhoto from '@/assets/team/zeonatec.png'
+import agentPhoto from '@/assets/stock/zeonatec-agente.png'
 
 const router = useRouter()
 const modalOpen = ref(false)
@@ -261,8 +261,8 @@ const dismissProof = () => {
         <div class="funnel__urgency-callout" role="note">
           <i class="fa-solid fa-fire" aria-hidden="true"></i>
           <span
-            >Para personas decididas que
-            <strong>quieren ver el cambio en su espacio ahora</strong> — no dentro de 2 meses.</span
+            >Para productores a gran escala que
+            <strong>necesitan asegurar la rentabilidad de su próxima cosecha</strong> — sin seguir perdiendo dinero.</span
           >
         </div>
 
@@ -288,8 +288,7 @@ const dismissProof = () => {
                 <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
               <p class="funnel__vsl-caption">
-                Mira el video exclusivo y descubre cómo transformamos tus espacios con suelo de alta
-                gama
+                Mira el video exclusivo y descubre cómo maximizamos la productividad agrícola por hectárea
               </p>
             </div>
           </div>
@@ -350,8 +349,7 @@ const dismissProof = () => {
             <div>
               <strong>Sufren compactación y estrés hídrico</strong>
               <p>
-                Muebles que se ven bien pero no aprovechan el espacio o no resisten el uso diario en
-                el hogar u oficina.
+                Los suelos cansados no retienen humedad ni nutrientes, lavando tu inversión y haciendo las plantas vulnerables a las sequías.
               </p>
             </div>
           </div>
@@ -396,9 +394,7 @@ const dismissProof = () => {
         <div class="funnel__testimonial-card">
           <i class="fa-solid fa-quote-left funnel__testimonial-quote" aria-hidden="true"></i>
           <blockquote class="funnel__testimonial-text">
-            "Ale logró captar exactamente lo que queríamos para nuestra oficina. La calidez de la
-            suelo y la precisión de los acabados han transformado por completo el ambiente de
-            trabajo."
+            "Zeonatec logró exactamente lo que queríamos para nuestros cultivos. Recuperamos la estructura del suelo, las plantas están más fuertes y logramos aumentar nuestra productividad un 15% reduciendo costos químicos."
           </blockquote>
           <footer class="funnel__testimonial-author">
             <div class="funnel__testimonial-avatar" aria-hidden="true">
@@ -418,7 +414,7 @@ const dismissProof = () => {
       <div class="funnel__container funnel__authority-inner">
         <div class="funnel__authority-photo-wrap">
           <div class="funnel__authority-avatar" aria-hidden="true">
-            <img :src="alePhoto" alt="Zeonatec" class="funnel__authority-img" />
+            <img :src="agentPhoto" alt="Agente Especialista" class="funnel__authority-img" />
           </div>
         </div>
         <div class="funnel__authority-content">
@@ -426,9 +422,7 @@ const dismissProof = () => {
           <h2 id="authority-heading" class="funnel__authority-name">Zeonatec</h2>
           <p class="funnel__authority-role">Expertos en Ingeniería y Nutrición Mineral</p>
           <p class="funnel__authority-bio">
-            Con años de experiencia en el mercado ecuatoriano, me especializo en crear espacios que
-            combinan la nobleza de la suelo con produccións modernos y funcionales. Mi objetivo es
-            que cada proyecto sea una inversión que dure toda la vida.
+            Con años de experiencia en el agro ecuatoriano, nos especializamos en formular soluciones minerales que reavivan la vida microbiológica, descompactan los suelos e impulsan rendimientos de exportación con máxima rentabilidad.
           </p>
           <ul class="funnel__authority-creds" role="list">
             <li>
@@ -455,8 +449,7 @@ const dismissProof = () => {
           ¿Listo para iniciar tu proyecto?
         </h2>
         <p class="funnel__cta-final-sub">
-          Agenda una asesoría gratuita de 15 minutos. Conversaremos sobre tu idea, el espacio
-          disponible y te daremos una primera visión técnica y estética.
+          Agenda una asesoría gratuita de 15 minutos. Conversaremos sobre tu operación agrícola y te daremos una primera visión técnica de cómo potenciar tus rendimientos.
         </p>
         <button class="funnel__cta-btn" @click="openModal()">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
@@ -783,7 +776,7 @@ const dismissProof = () => {
 .funnel__urgency-text {
   strong {
     font-weight: 900;
-    color: #ffe4e4;
+    color: colors.$BAKANO-PINK;
     letter-spacing: 0.04em;
   }
 }
@@ -864,23 +857,23 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.65rem;
   background: colors.$AB-URGENT-BG;
-  border-left: 4px solid colors.$AB-URGENT;
+  border-left: 4px solid colors.$AB-URGENT-LIGHT;
   border-radius: 8px;
   padding: 0.85rem 1rem;
   margin: 1.25rem 0 1.5rem;
   font-family: fonts.$font-interface;
   font-size: 0.92rem;
-  color: colors.$AB-FOREST;
+  color: rgba(colors.$AB-WHITE, 0.95);
   font-weight: 600;
 
   i {
-    color: colors.$AB-URGENT;
+    color: colors.$AB-URGENT-LIGHT;
     font-size: 1.15rem;
     flex-shrink: 0;
   }
 
   strong {
-    color: colors.$AB-URGENT-DARK;
+    color: colors.$AB-URGENT-LIGHT;
     font-weight: 800;
   }
 

@@ -35,7 +35,7 @@ const nextSteps = [
   {
     icon: 'fa-solid fa-envelope',
     title: 'Revisa tu email',
-    body: 'Te enviamos la confirmación con todos los detalles de tu asesoría de diseño.',
+    body: 'Te enviamos la confirmación con todos los detalles de tu Sesión de Diagnóstico.',
   },
   {
     icon: 'fa-brands fa-whatsapp',
@@ -45,7 +45,7 @@ const nextSteps = [
   {
     icon: 'fa-solid fa-leaf',
     title: 'Prepara tu inspiración',
-    body: 'Ten a mano referencias o ideas de lo que te gustaría lograr en tu espacio.',
+    body: 'Ten a mano información relevante sobre tu cultivo, área sembrada o problemas actuales.',
   },
 ]
 </script>
@@ -77,7 +77,7 @@ const nextSteps = [
             <template v-else> Ya tenemos tu cita reservada </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu asesoría de diseño con Zeonatec está confirmada. Revisa tu correo o WhatsApp para
+            Tu Sesión de Diagnóstico B2B con Zeonatec está confirmada. Revisa tu correo o WhatsApp para
             todos los detalles. Si necesitas reagendar, escríbenos por WhatsApp.
           </p>
         </template>
@@ -89,7 +89,7 @@ const nextSteps = [
             <template v-else> ¡Tu consulta está confirmada! </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu asesoría de diseño con Zeonatec ha sido agendada correctamente. En breve recibirás
+            Tu Sesión de Diagnóstico con Zeonatec ha sido agendada correctamente. En breve recibirás
             todos los detalles.
           </p>
         </template>
@@ -121,9 +121,9 @@ const nextSteps = [
           </div>
           <div class="booked__team-info">
             <strong class="booked__team-name">Zeonatec</strong>
-            <span class="booked__team-role">Experta en Diseño y Construcción en Productividad</span>
+            <span class="booked__team-role">Especialistas Agronómicos</span>
             <p class="booked__team-note">
-              "La suelo no es solo un material — es el alma de un espacio que cuenta una historia."
+              "Maximizamos el rendimiento de tu cosecha a través de nutrición mineral de vanguardia."
             </p>
           </div>
         </div>
@@ -132,9 +132,7 @@ const nextSteps = [
       <!-- Disclaimer -->
       <p class="booked__disclaimer">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        Los resultados mencionados en el video corresponden a casos reales. Cada proyecto de diseño
-        y construcción es único y los resultados dependen de las especificaciones y materiales
-        seleccionados.
+        Los resultados mencionados en el video corresponden a casos reales. Cada proyecto agrícola es único y los resultados dependen de las condiciones del suelo y cultivo.
       </p>
     </main>
 
