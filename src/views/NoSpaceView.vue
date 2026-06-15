@@ -10,7 +10,9 @@ const contactName = computed(() => {
     const stored = localStorage.getItem('os_contact')
     if (!stored) return ''
     return JSON.parse(stored).nombre ?? ''
-  } catch { return '' }
+  } catch {
+    return ''
+  }
 })
 
 onMounted(() => {
@@ -27,14 +29,12 @@ onMounted(() => {
 
 <template>
   <div class="nospace">
-
     <!-- TOP BAR -->
     <header class="nospace__topbar">
-      <h2 class="nospace__logo-text">ALE BARRETO</h2>
+      <h2 class="nospace__logo-text">ZEONATEC</h2>
     </header>
 
     <main class="nospace__main">
-
       <!-- Cooldown notice -->
       <div v-if="hoursLeft > 0" class="nospace__cooldown" role="alert">
         <i class="fa-solid fa-clock" aria-hidden="true"></i>
@@ -53,8 +53,8 @@ onMounted(() => {
         </div>
         <h1 class="nospace__title">Sin cupos disponibles en este momento</h1>
         <p class="nospace__subtitle">
-          Trabajamos con un número limitado de proyectos para garantizar una asesoría de calidad.
-          En este momento nuestros cupos de asesoría de diseño están completos.
+          Trabajamos con un número limitado de proyectos para garantizar una asesoría de calidad. En
+          este momento nuestros cupos de asesoría de diseño están completos.
         </p>
       </div>
 
@@ -68,7 +68,7 @@ onMounted(() => {
             </div>
             <div>
               <strong>Revisa tu email</strong>
-              <p>Te notificaremos cuando se libere un espacio en la agenda de Ale Barreto.</p>
+              <p>Te notificaremos cuando se libere un espacio en la agenda de Zeonatec.</p>
             </div>
           </li>
           <li>
@@ -77,7 +77,10 @@ onMounted(() => {
             </div>
             <div>
               <strong>Proyecto urgente</strong>
-              <p>Si tu proyecto necesita atención inmediata, contáctanos por WhatsApp y evaluaremos tu caso.</p>
+              <p>
+                Si tu proyecto necesita atención inmediata, contáctanos por WhatsApp y evaluaremos
+                tu caso.
+              </p>
             </div>
           </li>
         </ul>
@@ -86,12 +89,12 @@ onMounted(() => {
       <!-- Teaser -->
       <div class="nospace__teaser">
         <div class="nospace__teaser-badge">
-          <i class="fa-solid fa-tree" aria-hidden="true"></i>
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
           Próximamente
         </div>
-        <h2 class="nospace__teaser-title">Guía de Diseño y Selección de Madera</h2>
+        <h2 class="nospace__teaser-title">Guía de Diseño y Selección de Productividad</h2>
         <p class="nospace__teaser-body">
-          Estamos preparando una guía completa para ayudarte a seleccionar el tipo de madera ideal
+          Estamos preparando una guía completa para ayudarte a seleccionar el tipo de suelo ideal
           según tu tipo de espacio y estilo — sin necesidad de llamar a un especialista.
         </p>
       </div>
@@ -102,7 +105,6 @@ onMounted(() => {
           Volver al inicio
         </RouterLink>
       </div>
-
     </main>
 
     <footer class="nospace__footer">
@@ -110,9 +112,10 @@ onMounted(() => {
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="nospace__footer-copy">© {{ new Date().getFullYear() }} ALE BARRETO. Todos los derechos reservados.</p>
+      <p class="nospace__footer-copy">
+        © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+      </p>
     </footer>
-
   </div>
 </template>
 
@@ -130,7 +133,7 @@ onMounted(() => {
 
 .nospace__topbar {
   background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  border-bottom: 1px solid #e8edf5;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -140,7 +143,11 @@ onMounted(() => {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.nospace__logo { height: 36px; width: auto; object-fit: contain; }
+.nospace__logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
 
 .nospace__main {
   flex: 1;
@@ -163,13 +170,18 @@ onMounted(() => {
   padding: 0.75rem 1rem;
   font-size: 0.84rem;
   color: colors.$OS-NAVY;
-  i { color: colors.$OS-BLUE; flex-shrink: 0; }
-  strong { font-weight: 700; }
+  i {
+    color: colors.$OS-BLUE;
+    flex-shrink: 0;
+  }
+  strong {
+    font-weight: 700;
+  }
 }
 
 .nospace__card {
-  background: #F9FBFF;
-  border: 1px solid #E4EDF7;
+  background: #f9fbff;
+  border: 1px solid #e4edf7;
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
@@ -203,15 +215,15 @@ onMounted(() => {
 
 .nospace__subtitle {
   font-size: 0.9rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.6;
   margin: 0 auto;
   max-width: 420px;
 }
 
 .nospace__steps {
-  background: #F5F8FF;
-  border: 1px solid #E4EDF7;
+  background: #f5f8ff;
+  border: 1px solid #e4edf7;
   border-radius: 16px;
   padding: 1.5rem 1.75rem;
 }
@@ -238,8 +250,18 @@ onMounted(() => {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    strong { display: block; font-size: 0.9rem; color: colors.$OS-DARK; margin-bottom: 0.2rem; }
-    p { font-size: 0.83rem; color: #4A5F7A; line-height: 1.5; margin: 0; }
+    strong {
+      display: block;
+      font-size: 0.9rem;
+      color: colors.$OS-DARK;
+      margin-bottom: 0.2rem;
+    }
+    p {
+      font-size: 0.83rem;
+      color: #4a5f7a;
+      line-height: 1.5;
+      margin: 0;
+    }
   }
 }
 
@@ -252,11 +274,14 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  i { color: #ffffff; font-size: 1rem; }
+  i {
+    color: #ffffff;
+    font-size: 1rem;
+  }
 }
 
 .nospace__teaser {
-  background: #F9FBFF;
+  background: #f9fbff;
   border: 1.5px solid rgba(colors.$OS-NAVY, 0.15);
   border-radius: 16px;
   padding: 1.75rem;
@@ -278,7 +303,9 @@ onMounted(() => {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 0.85rem;
-  i { font-size: 0.68rem; }
+  i {
+    font-size: 0.68rem;
+  }
 }
 
 .nospace__teaser-title {
@@ -290,12 +317,15 @@ onMounted(() => {
 
 .nospace__teaser-body {
   font-size: 0.85rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.6;
   margin: 0;
 }
 
-.nospace__back { display: flex; justify-content: center; }
+.nospace__back {
+  display: flex;
+  justify-content: center;
+}
 
 .nospace__back-link {
   display: inline-flex;
@@ -306,13 +336,17 @@ onMounted(() => {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
-  &:hover { color: colors.$OS-BLUE; }
-  i { font-size: 0.78rem; }
+  &:hover {
+    color: colors.$OS-BLUE;
+  }
+  i {
+    font-size: 0.78rem;
+  }
 }
 
 .nospace__footer {
   padding: 1.5rem;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #f0f4fb;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -322,8 +356,19 @@ onMounted(() => {
   &-links {
     display: flex;
     gap: 1.5rem;
-    a { font-size: 0.76rem; color: #B0C0D5; text-decoration: none; &:hover { color: colors.$OS-NAVY; } }
+    a {
+      font-size: 0.76rem;
+      color: #b0c0d5;
+      text-decoration: none;
+      &:hover {
+        color: colors.$OS-NAVY;
+      }
+    }
   }
-  &-copy { font-size: 0.72rem; color: #C8D8ED; margin: 0; }
+  &-copy {
+    font-size: 0.72rem;
+    color: #c8d8ed;
+    margin: 0;
+  }
 }
 </style>

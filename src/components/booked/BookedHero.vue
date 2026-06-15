@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import gsap from 'gsap';
+import { onMounted, ref } from 'vue'
+import gsap from 'gsap'
 
 /**
  * BookedHero.vue
@@ -13,29 +13,31 @@ const props = defineProps({
     required: false,
     default: '',
   },
-});
+})
 
-const heroContent = ref<HTMLElement | null>(null);
-const checkIcon = ref<HTMLElement | null>(null);
+const heroContent = ref<HTMLElement | null>(null)
+const checkIcon = ref<HTMLElement | null>(null)
 
 onMounted(() => {
   if (heroContent.value && checkIcon.value) {
-    const tl = gsap.timeline();
-    
+    const tl = gsap.timeline()
+
     // Animar el icono de check
-    tl.fromTo(checkIcon.value, 
-      { scale: 0, rotation: -45, opacity: 0 }, 
-      { scale: 1, rotation: 0, opacity: 1, duration: 0.8, ease: 'back.out(1.7)' }
-    );
+    tl.fromTo(
+      checkIcon.value,
+      { scale: 0, rotation: -45, opacity: 0 },
+      { scale: 1, rotation: 0, opacity: 1, duration: 0.8, ease: 'back.out(1.7)' },
+    )
 
     // Animar el texto con stagger
-    tl.fromTo(heroContent.value.querySelectorAll('.animate-up'), 
-      { y: 30, opacity: 0 }, 
+    tl.fromTo(
+      heroContent.value.querySelectorAll('.animate-up'),
+      { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
-      '-=0.4'
-    );
+      '-=0.4',
+    )
   }
-});
+})
 </script>
 
 <template>
@@ -48,10 +50,10 @@ onMounted(() => {
       <template v-if="props.contactName">¡Listo, {{ props.contactName }}!</template>
       <template v-else>¡Tu cita está confirmada!</template>
     </h1>
-    
+
     <p class="booked-hero__subtitle animate-up">
-      En breve recibirás un correo con todos los detalles. Un miembro del equipo de
-      Bakano te contactará para ayudarte a romperla en tu negocio.
+      En breve recibirás un correo con todos los detalles. Un miembro del equipo de Bakano te
+      contactará para ayudarte a romperla en tu negocio.
     </p>
   </section>
 </template>
@@ -108,7 +110,12 @@ onMounted(() => {
     font-size: clamp(1.85rem, 8vw, 3.5rem);
     line-height: 1.1;
     margin: 0;
-    background: linear-gradient(135deg, colors.$white 20%, colors.$BAKANO-PINK 70%, colors.$BAKANO-PURPLE);
+    background: linear-gradient(
+      135deg,
+      colors.$white 20%,
+      colors.$BAKANO-PINK 70%,
+      colors.$BAKANO-PURPLE
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

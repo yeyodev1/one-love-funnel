@@ -7,7 +7,9 @@ const contactName = computed(() => {
     const stored = localStorage.getItem('os_contact')
     if (!stored) return ''
     return JSON.parse(stored).nombre ?? ''
-  } catch { return '' }
+  } catch {
+    return ''
+  }
 })
 
 // ── ¿Visitante que regresa? (booking > 10 min) ───────────────────────────────
@@ -38,10 +40,10 @@ const nextSteps = [
   {
     icon: 'fa-brands fa-whatsapp',
     title: 'Te contactamos por WhatsApp',
-    body: 'Ale Barreto te escribirá para confirmar la cita y conocer un poco más sobre tu idea.',
+    body: 'Zeonatec te escribirá para confirmar la cita y conocer un poco más sobre tu idea.',
   },
   {
-    icon: 'fa-solid fa-tree',
+    icon: 'fa-solid fa-leaf',
     title: 'Prepara tu inspiración',
     body: 'Ten a mano referencias o ideas de lo que te gustaría lograr en tu espacio.',
   },
@@ -50,14 +52,12 @@ const nextSteps = [
 
 <template>
   <div class="booked">
-
     <!-- TOP BAR -->
     <header class="booked__topbar">
-      <h2 class="booked__logo-text">ALE BARRETO</h2>
+      <h2 class="booked__logo-text">ZEONATEC</h2>
     </header>
 
     <main class="booked__main">
-
       <!-- Success hero -->
       <section class="booked__hero">
         <div class="booked__hero-icon" aria-hidden="true">
@@ -74,29 +74,23 @@ const nextSteps = [
             <template v-if="contactName">
               {{ contactName }}, ya tenemos tu cita reservada
             </template>
-            <template v-else>
-              Ya tenemos tu cita reservada
-            </template>
+            <template v-else> Ya tenemos tu cita reservada </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu asesoría de diseño con Ale Barreto está confirmada. Revisa tu correo o
-            WhatsApp para todos los detalles. Si necesitas reagendar, escríbenos por WhatsApp.
+            Tu asesoría de diseño con Zeonatec está confirmada. Revisa tu correo o WhatsApp para
+            todos los detalles. Si necesitas reagendar, escríbenos por WhatsApp.
           </p>
         </template>
 
         <!-- Recién agendado -->
         <template v-else>
           <h1 class="booked__hero-title">
-            <template v-if="contactName">
-              ¡Listo, {{ contactName }}!
-            </template>
-            <template v-else>
-              ¡Tu consulta está confirmada!
-            </template>
+            <template v-if="contactName"> ¡Listo, {{ contactName }}! </template>
+            <template v-else> ¡Tu consulta está confirmada! </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu asesoría de diseño con Ale Barreto ha sido agendada correctamente.
-            En breve recibirás todos los detalles.
+            Tu asesoría de diseño con Zeonatec ha sido agendada correctamente. En breve recibirás
+            todos los detalles.
           </p>
         </template>
       </section>
@@ -106,7 +100,9 @@ const nextSteps = [
         <p id="steps-heading" class="booked__steps-label">Próximos pasos</p>
         <div class="booked__steps-grid">
           <div v-for="(step, i) in nextSteps" :key="i" class="booked__step">
-            <div class="booked__step-num" aria-hidden="true">{{ String(i + 1).padStart(2, '0') }}</div>
+            <div class="booked__step-num" aria-hidden="true">
+              {{ String(i + 1).padStart(2, '0') }}
+            </div>
             <div class="booked__step-icon" aria-hidden="true">
               <i :class="step.icon"></i>
             </div>
@@ -116,7 +112,7 @@ const nextSteps = [
         </div>
       </section>
 
-      <!-- Team card — Ale Barreto -->
+      <!-- Team card — Zeonatec -->
       <section class="booked__team" aria-labelledby="team-heading">
         <p id="team-heading" class="booked__team-label">Tu especialista</p>
         <div class="booked__team-card">
@@ -124,10 +120,10 @@ const nextSteps = [
             <i class="fa-solid fa-user-tie"></i>
           </div>
           <div class="booked__team-info">
-            <strong class="booked__team-name">Ale Barreto</strong>
-            <span class="booked__team-role">Experta en Diseño y Construcción en Madera</span>
+            <strong class="booked__team-name">Zeonatec</strong>
+            <span class="booked__team-role">Experta en Diseño y Construcción en Productividad</span>
             <p class="booked__team-note">
-              "La madera no es solo un material — es el alma de un espacio que cuenta una historia."
+              "La suelo no es solo un material — es el alma de un espacio que cuenta una historia."
             </p>
           </div>
         </div>
@@ -136,9 +132,10 @@ const nextSteps = [
       <!-- Disclaimer -->
       <p class="booked__disclaimer">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        Los resultados mencionados en el video corresponden a casos reales. Cada proyecto de diseño y construcción es único y los resultados dependen de las especificaciones y materiales seleccionados.
+        Los resultados mencionados en el video corresponden a casos reales. Cada proyecto de diseño
+        y construcción es único y los resultados dependen de las especificaciones y materiales
+        seleccionados.
       </p>
-
     </main>
 
     <footer class="booked__footer">
@@ -146,9 +143,10 @@ const nextSteps = [
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booked__footer-copy">© {{ new Date().getFullYear() }} ALE BARRETO. Todos los derechos reservados.</p>
+      <p class="booked__footer-copy">
+        © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+      </p>
     </footer>
-
   </div>
 </template>
 
@@ -166,7 +164,7 @@ const nextSteps = [
 
 .booked__topbar {
   background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  border-bottom: 1px solid #e8edf5;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -176,7 +174,11 @@ const nextSteps = [
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.booked__logo { height: 36px; width: auto; object-fit: contain; }
+.booked__logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
 
 .booked__main {
   flex: 1;
@@ -193,8 +195,8 @@ const nextSteps = [
 .booked__hero {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #EEF4FF 0%, #F9FBFF 100%);
-  border: 1px solid #E4EDF7;
+  background: linear-gradient(135deg, #eef4ff 0%, #f9fbff 100%);
+  border: 1px solid #e4edf7;
   border-radius: 20px;
 }
 
@@ -221,7 +223,9 @@ const nextSteps = [
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
-  i { font-size: 0.78rem; }
+  i {
+    font-size: 0.78rem;
+  }
 }
 
 .booked__hero-title {
@@ -234,7 +238,7 @@ const nextSteps = [
 
 .booked__hero-subtitle {
   font-size: 0.95rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.65;
   margin: 0 auto;
   max-width: 460px;
@@ -256,12 +260,14 @@ const nextSteps = [
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  @media (max-width: 620px) { grid-template-columns: 1fr; }
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .booked__step {
-  background: #F9FBFF;
-  border: 1px solid #E4EDF7;
+  background: #f9fbff;
+  border: 1px solid #e4edf7;
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
   position: relative;
@@ -288,7 +294,10 @@ const nextSteps = [
   align-items: center;
   justify-content: center;
   margin-bottom: 0.85rem;
-  i { color: #ffffff; font-size: 1rem; }
+  i {
+    color: #ffffff;
+    font-size: 1rem;
+  }
 }
 
 .booked__step-title {
@@ -300,7 +309,7 @@ const nextSteps = [
 
 .booked__step-body {
   font-size: 0.83rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.5;
   margin: 0;
 }
@@ -310,11 +319,15 @@ const nextSteps = [
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
-  background: #F5F8FF;
+  background: #f5f8ff;
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-radius: 16px;
   padding: 1.5rem;
-  @media (max-width: 480px) { flex-direction: column; align-items: center; text-align: center; }
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .booked__team-avatar {
@@ -328,7 +341,10 @@ const nextSteps = [
   flex-shrink: 0;
   border: 3px solid #ffffff;
   box-shadow: 0 3px 12px rgba(0, 63, 125, 0.15);
-  i { color: rgba(#ffffff, 0.85); font-size: 2rem; }
+  i {
+    color: rgba(#ffffff, 0.85);
+    font-size: 2rem;
+  }
 }
 
 .booked__team-info {
@@ -346,13 +362,13 @@ const nextSteps = [
 
 .booked__team-role {
   font-size: 0.8rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
 }
 
 .booked__team-note {
   margin: 0.5rem 0 0;
   font-size: 0.86rem;
-  color: #3A4F6A;
+  color: #3a4f6a;
   font-style: italic;
   line-height: 1.55;
 }
@@ -363,16 +379,21 @@ const nextSteps = [
   gap: 0.6rem;
   align-items: flex-start;
   font-size: 0.76rem;
-  color: #A0B0C5;
+  color: #a0b0c5;
   line-height: 1.55;
   margin: 0;
-  i { font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; color: #C0D0E0; }
+  i {
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: #c0d0e0;
+  }
 }
 
 // ── Footer ───────────────────────────────────────────────────────────────────
 .booked__footer {
   padding: 1.5rem;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #f0f4fb;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -382,8 +403,19 @@ const nextSteps = [
   &-links {
     display: flex;
     gap: 1.5rem;
-    a { font-size: 0.76rem; color: #B0C0D5; text-decoration: none; &:hover { color: colors.$OS-NAVY; } }
+    a {
+      font-size: 0.76rem;
+      color: #b0c0d5;
+      text-decoration: none;
+      &:hover {
+        color: colors.$OS-NAVY;
+      }
+    }
   }
-  &-copy { font-size: 0.72rem; color: #C8D8ED; margin: 0; }
+  &-copy {
+    font-size: 0.72rem;
+    color: #c8d8ed;
+    margin: 0;
+  }
 }
 </style>

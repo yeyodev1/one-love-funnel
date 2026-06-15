@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import RegistrationModal from '@/components/RegistrationModal.vue'
 import { captureFbParams } from '@/utils/fbclid'
-import alePhoto from '@/assets/team/ale-barreto.png'
+import alePhoto from '@/assets/team/zeonatec.png'
 
 const router = useRouter()
 const modalOpen = ref(false)
@@ -22,47 +22,47 @@ const openModal = () => {
 
 const stats = [
   {
-    icon: 'fa-solid fa-tree',
+    icon: 'fa-solid fa-leaf',
     number: '15+',
-    text: 'Años trabajando con maderas nobles y certificadas',
+    text: 'Años revolucionando la nutrición mineral agrícola',
   },
   {
-    icon: 'fa-solid fa-house-chimney',
-    number: '500+',
-    text: 'Proyectos residenciales y comerciales entregados',
+    icon: 'fa-solid fa-seedling',
+    number: '10,000+',
+    text: 'Hectáreas impactadas y revitalizadas con éxito',
   },
   {
-    icon: 'fa-solid fa-award',
+    icon: 'fa-solid fa-microscope',
     number: '100%',
-    text: 'Compromiso con la calidad artesanal y diseño premium',
+    text: 'Compromiso con la ciencia y la productividad sostenible',
   },
 ]
 
 const pillars = [
-  'Sin materiales de baja calidad que se deterioran rápido',
-  'Sin diseños genéricos que no aprovechan tu espacio',
-  'Sin retrasos en la entrega de tu proyecto',
-  'Con maderas seleccionadas y procesos de secado óptimos',
+  'Sin fertilizantes químicos sintéticos que degradan y compactan el suelo',
+  'Sin pérdida de nutrientes ni contaminación de mantos acuíferos',
+  'Sin estancamiento de rendimiento en tus cosechas temporada tras temporada',
+  'Con programas de nutrición mineral de alta asimilación a tu medida',
 ]
 
 const methodology = [
   {
     num: '01',
-    icon: 'fa-solid fa-pencil-ruler',
-    title: 'Diseño Conceptual y 3D',
-    body: 'Visualizamos tu proyecto antes de cortar la primera pieza. Planificación al detalle para resultados perfectos.',
+    icon: 'fa-solid fa-vial',
+    title: 'Diagnóstico Integral',
+    body: 'Analizamos a profundidad el estado actual de tus tierras para entender exactamente sus deficiencias y potencial oculto.',
   },
   {
     num: '02',
-    icon: 'fa-solid fa-hammer',
-    title: 'Fabricación Artesanal',
-    body: 'Cada pieza es tratada por manos expertas, utilizando técnicas tradicionales y tecnología de punta.',
+    icon: 'fa-solid fa-flask',
+    title: 'Formulación Técnica',
+    body: 'Diseñamos una receta mineral específica (silicio, calcio, magnesio) adaptada a las demandas de tu cultivo.',
   },
   {
     num: '03',
-    icon: 'fa-solid fa-truck-ramp-box',
-    title: 'Instalación y Acabado',
-    body: 'Nos encargamos de todo el proceso hasta que el último detalle esté en su lugar, con limpieza y precisión.',
+    icon: 'fa-solid fa-tractor',
+    title: 'Aplicación y Escalamiento',
+    body: 'Te acompañamos en la implementación para asegurar que cada saco aplicado se traduzca en mayor rentabilidad.',
   },
 ]
 
@@ -85,7 +85,7 @@ const computeRemaining = () => {
 
 const tick = () => {
   const total = computeRemaining()
-  hours.value   = String(Math.floor(total / 3600)).padStart(2, '0')
+  hours.value = String(Math.floor(total / 3600)).padStart(2, '0')
   minutes.value = String(Math.floor((total % 3600) / 60)).padStart(2, '0')
   seconds.value = String(total % 60).padStart(2, '0')
 }
@@ -106,16 +106,16 @@ onUnmounted(() => {
 type Proof = { who: string; where: string; minutesAgo: number }
 
 const PROOFS: Proof[] = [
-  { who: 'Constructora Valverde',     where: 'Quito',          minutesAgo: 3 },
-  { who: 'María José T.',             where: 'Cumbayá',        minutesAgo: 7 },
-  { who: 'Andrés Salazar',            where: 'Guayaquil',      minutesAgo: 12 },
-  { who: 'Inmobiliaria Andes',        where: 'Quito',          minutesAgo: 18 },
-  { who: 'Carolina M.',               where: 'Tumbaco',        minutesAgo: 22 },
-  { who: 'Estudio Arq. Vélez',        where: 'Samborondón',    minutesAgo: 27 },
-  { who: 'Familia Pareja',            where: 'Los Chillos',    minutesAgo: 34 },
-  { who: 'Hotel Boutique Sambo',      where: 'Manta',          minutesAgo: 41 },
-  { who: 'Roberto S.',                where: 'Cuenca',         minutesAgo: 48 },
-  { who: 'Patricia Andrade',          where: 'Quito',          minutesAgo: 55 },
+  { who: 'Constructora Valverde', where: 'Quito', minutesAgo: 3 },
+  { who: 'María José T.', where: 'Cumbayá', minutesAgo: 7 },
+  { who: 'Andrés Salazar', where: 'Guayaquil', minutesAgo: 12 },
+  { who: 'Inmobiliaria Andes', where: 'Quito', minutesAgo: 18 },
+  { who: 'Carolina M.', where: 'Tumbaco', minutesAgo: 22 },
+  { who: 'Estudio Arq. Vélez', where: 'Samborondón', minutesAgo: 27 },
+  { who: 'Familia Pareja', where: 'Los Chillos', minutesAgo: 34 },
+  { who: 'Hotel Boutique Sambo', where: 'Manta', minutesAgo: 41 },
+  { who: 'Roberto S.', where: 'Cuenca', minutesAgo: 48 },
+  { who: 'Patricia Andrade', where: 'Quito', minutesAgo: 55 },
 ]
 
 const proofVisible = ref(false)
@@ -125,9 +125,9 @@ let proofShowTimer: ReturnType<typeof setTimeout> | null = null
 let proofHideTimer: ReturnType<typeof setTimeout> | null = null
 let proofDismissed = false
 
-const SHOW_AFTER_MS = 3000      // primera aparición
-const VISIBLE_FOR_MS = 5000     // tiempo visible
-const GAP_BETWEEN_MS = 2000     // pausa entre toasts (ciclo total ≈ 7s)
+const SHOW_AFTER_MS = 3000 // primera aparición
+const VISIBLE_FOR_MS = 5000 // tiempo visible
+const GAP_BETWEEN_MS = 2000 // pausa entre toasts (ciclo total ≈ 7s)
 
 const showNextProof = () => {
   if (proofDismissed) return
@@ -160,10 +160,9 @@ const dismissProof = () => {
 
 <template>
   <div class="funnel">
-
     <!-- TOP BAR -->
     <header class="funnel__topbar">
-      <h2 class="funnel__logo-text">ALE BARRETO</h2>
+      <h2 class="funnel__logo-text">ZEONATEC</h2>
     </header>
 
     <!-- URGENCY BANNER (sticky) -->
@@ -171,13 +170,24 @@ const dismissProof = () => {
       <div class="funnel__urgency-info">
         <span class="funnel__urgency-dot" aria-hidden="true" />
         <i class="fa-solid fa-bolt funnel__urgency-icon" aria-hidden="true"></i>
-        <span class="funnel__urgency-text">CUPOS PARA <strong>CONTRATO INMEDIATO</strong> — Cierran en:</span>
+        <span class="funnel__urgency-text"
+          >CUPOS PARA <strong>CONTRATO INMEDIATO</strong> — Cierran en:</span
+        >
         <div class="funnel__timer" aria-live="polite" aria-label="Tiempo restante">
-          <span class="funnel__timer-block"><strong>{{ hours }}</strong><small>h</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ hours }}</strong
+            ><small>h</small></span
+          >
           <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"><strong>{{ minutes }}</strong><small>m</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ minutes }}</strong
+            ><small>m</small></span
+          >
           <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"><strong>{{ seconds }}</strong><small>s</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ seconds }}</strong
+            ><small>s</small></span
+          >
         </div>
       </div>
       <button
@@ -193,7 +203,12 @@ const dismissProof = () => {
 
     <!-- SOCIAL PROOF TOAST (bottom-left, FOMO) -->
     <Transition name="proof-fade">
-      <div v-if="proofVisible && currentProof" class="funnel__proof" role="status" aria-live="polite">
+      <div
+        v-if="proofVisible && currentProof"
+        class="funnel__proof"
+        role="status"
+        aria-live="polite"
+      >
         <div class="funnel__proof-icon" aria-hidden="true">
           <i class="fa-solid fa-circle-check"></i>
         </div>
@@ -203,7 +218,7 @@ const dismissProof = () => {
             <span>{{ currentProof.where }}</span>
           </p>
           <p class="funnel__proof-text">
-            Acaba de contratar <strong>servicios premium de maderas</strong>
+            Acaba de contratar <strong>programas de nutrición mineral</strong>
           </p>
           <p class="funnel__proof-meta">
             <i class="fa-solid fa-clock" aria-hidden="true"></i>
@@ -224,16 +239,15 @@ const dismissProof = () => {
     <!-- HERO -->
     <section class="funnel__hero" aria-labelledby="funnel-headline">
       <div class="funnel__container">
-
         <p class="funnel__eyebrow">
-          <i class="fa-solid fa-tree" aria-hidden="true"></i>
-          Expertos en Madera y Diseño de Interiores
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          Expertos en Productividad y Nutrición Mineral
         </p>
 
         <h1 id="funnel-headline" class="funnel__headline">
-          Transforma tu hogar con la
-          <span class="funnel__headline-accent">calidez y elegancia de la madera</span>
-          de alta gama
+          Revoluciona el rendimiento de tu cosecha con
+          <span class="funnel__headline-accent">nutrición e ingeniería mineral</span>
+          de alta tecnología
         </h1>
 
         <ul class="funnel__pillars" role="list">
@@ -246,21 +260,37 @@ const dismissProof = () => {
         <!-- Urgency callout (refuerzo en hero) -->
         <div class="funnel__urgency-callout" role="note">
           <i class="fa-solid fa-fire" aria-hidden="true"></i>
-          <span>Para personas decididas que <strong>quieren ver el cambio en su espacio ahora</strong> — no dentro de 2 meses.</span>
+          <span
+            >Para personas decididas que
+            <strong>quieren ver el cambio en su espacio ahora</strong> — no dentro de 2 meses.</span
+          >
         </div>
 
         <!-- VSL Gated Area -->
         <div class="funnel__vsl-wrap">
-          <div class="funnel__vsl" @click="openModal()" role="button" aria-label="Ver video" tabindex="0">
+          <div
+            class="funnel__vsl"
+            @click="openModal()"
+            role="button"
+            aria-label="Ver video"
+            tabindex="0"
+          >
             <div class="funnel__vsl-bg">
-              <img src="https://fast.wistia.com/embed/medias/5ql8l131me/swatch" class="funnel__vsl-thumb" alt="Vista previa video" />
+              <img
+                src="https://fast.wistia.com/embed/medias/3ffgiuig80/swatch"
+                class="funnel__vsl-thumb"
+                alt="Vista previa video"
+              />
               <div class="funnel__vsl-blur-overlay"></div>
             </div>
             <div class="funnel__vsl-overlay">
               <div class="funnel__vsl-play">
                 <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
-              <p class="funnel__vsl-caption">Mira el video exclusivo y descubre cómo transformamos tus espacios con madera de alta gama</p>
+              <p class="funnel__vsl-caption">
+                Mira el video exclusivo y descubre cómo transformamos tus espacios con suelo de alta
+                gama
+              </p>
             </div>
           </div>
         </div>
@@ -276,14 +306,15 @@ const dismissProof = () => {
             100% gratuito &nbsp;·&nbsp; Sin compromiso &nbsp;·&nbsp; Cupos limitados
           </p>
         </div>
-
       </div>
     </section>
 
     <!-- STATS -->
     <section class="funnel__stats" aria-label="Resultados comprobados">
       <div class="funnel__container">
-        <p class="funnel__section-label funnel__section-label--light">Resultados reales — clientes reales</p>
+        <p class="funnel__section-label funnel__section-label--light">
+          Resultados reales — clientes reales
+        </p>
         <div class="funnel__stats-grid">
           <div v-for="stat in stats" :key="stat.number" class="funnel__stat">
             <div class="funnel__stat-icon" aria-hidden="true">
@@ -307,22 +338,31 @@ const dismissProof = () => {
           <div class="funnel__problem-item">
             <i class="fa-solid fa-triangle-exclamation funnel__problem-icon" aria-hidden="true"></i>
             <div>
-              <strong>Usan maderas sin tratar</strong>
-              <p>El uso de madera "verde" o sin el secado adecuado provoca torceduras y grietas a los pocos meses de instalación.</p>
+              <strong>Siguen usando fertilizantes sintéticos</strong>
+              <p>
+                El uso de suelo "verde" o sin el secado adecuado provoca torceduras y grietas a los
+                pocos meses de instalación.
+              </p>
             </div>
           </div>
           <div class="funnel__problem-item">
             <i class="fa-solid fa-triangle-exclamation funnel__problem-icon" aria-hidden="true"></i>
             <div>
-              <strong>Diseños poco funcionales</strong>
-              <p>Muebles que se ven bien pero no aprovechan el espacio o no resisten el uso diario en el hogar u oficina.</p>
+              <strong>Sufren compactación y estrés hídrico</strong>
+              <p>
+                Muebles que se ven bien pero no aprovechan el espacio o no resisten el uso diario en
+                el hogar u oficina.
+              </p>
             </div>
           </div>
           <div class="funnel__problem-item">
             <i class="fa-solid fa-triangle-exclamation funnel__problem-icon" aria-hidden="true"></i>
             <div>
-              <strong>Acabados de baja calidad</strong>
-              <p>Barnices y selladores que se pelan o pierden su brillo rápido, obligando a mantenimientos costosos y frecuentes.</p>
+              <strong>Bajos márgenes y estancamiento</strong>
+              <p>
+                Barnices y selladores que se pelan o pierden su brillo rápido, obligando a
+                mantenimientos costosos y frecuentes.
+              </p>
             </div>
           </div>
         </div>
@@ -356,43 +396,53 @@ const dismissProof = () => {
         <div class="funnel__testimonial-card">
           <i class="fa-solid fa-quote-left funnel__testimonial-quote" aria-hidden="true"></i>
           <blockquote class="funnel__testimonial-text">
-            "Ale logró captar exactamente lo que queríamos para nuestra oficina. 
-            La calidez de la madera y la precisión de los acabados han transformado por completo el ambiente de trabajo."
+            "Ale logró captar exactamente lo que queríamos para nuestra oficina. La calidez de la
+            suelo y la precisión de los acabados han transformado por completo el ambiente de
+            trabajo."
           </blockquote>
           <footer class="funnel__testimonial-author">
             <div class="funnel__testimonial-avatar" aria-hidden="true">
               <i class="fa-solid fa-user"></i>
             </div>
             <div>
-              <strong>Directora de Diseño</strong>
-              <span>Estudio Arquitectónico Independiente</span>
+              <strong>Ingeniero Agrónomo</strong>
+              <span>Productor de Banano de Exportación</span>
             </div>
           </footer>
         </div>
       </div>
     </section>
 
-    <!-- AUTHORITY — Ale Barreto -->
+    <!-- AUTHORITY — Zeonatec -->
     <section class="funnel__authority" aria-labelledby="authority-heading">
       <div class="funnel__container funnel__authority-inner">
         <div class="funnel__authority-photo-wrap">
           <div class="funnel__authority-avatar" aria-hidden="true">
-            <img :src="alePhoto" alt="Ale Barreto" class="funnel__authority-img" />
+            <img :src="alePhoto" alt="Zeonatec" class="funnel__authority-img" />
           </div>
         </div>
         <div class="funnel__authority-content">
-          <p class="funnel__authority-eyebrow">Tu especialista asignada</p>
-          <h2 id="authority-heading" class="funnel__authority-name">Ale Barreto</h2>
-          <p class="funnel__authority-role">Experta en Diseño y Construcción en Madera</p>
+          <p class="funnel__authority-eyebrow">Tus aliados estratégicos</p>
+          <h2 id="authority-heading" class="funnel__authority-name">Zeonatec</h2>
+          <p class="funnel__authority-role">Expertos en Ingeniería y Nutrición Mineral</p>
           <p class="funnel__authority-bio">
-            Con años de experiencia en el mercado ecuatoriano, me especializo en crear
-            espacios que combinan la nobleza de la madera con diseños modernos y funcionales.
-            Mi objetivo es que cada proyecto sea una inversión que dure toda la vida.
+            Con años de experiencia en el mercado ecuatoriano, me especializo en crear espacios que
+            combinan la nobleza de la suelo con produccións modernos y funcionales. Mi objetivo es
+            que cada proyecto sea una inversión que dure toda la vida.
           </p>
           <ul class="funnel__authority-creds" role="list">
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en maderas nobles y tratadas</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Diseños exclusivos a medida</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: del plano a la instalación</li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en suelos
+              nobles y tratadas
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Diseños exclusivos a
+              medida
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: del
+              plano a la instalación
+            </li>
           </ul>
         </div>
       </div>
@@ -405,8 +455,8 @@ const dismissProof = () => {
           ¿Listo para iniciar tu proyecto?
         </h2>
         <p class="funnel__cta-final-sub">
-          Agenda una asesoría gratuita de 15 minutos. Conversaremos sobre tu idea,
-          el espacio disponible y te daremos una primera visión técnica y estética.
+          Agenda una asesoría gratuita de 15 minutos. Conversaremos sobre tu idea, el espacio
+          disponible y te daremos una primera visión técnica y estética.
         </p>
         <button class="funnel__cta-btn" @click="openModal()">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
@@ -422,17 +472,16 @@ const dismissProof = () => {
     <!-- FOOTER -->
     <footer class="funnel__footer">
       <div class="funnel__container funnel__footer-inner">
-        <h2 class="funnel__footer-logo-text">ALE BARRETO</h2>
+        <h2 class="funnel__footer-logo-text">ZEONATEC</h2>
         <nav class="funnel__footer-links" aria-label="Legal">
           <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
           <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
         </nav>
         <p class="funnel__footer-copy">
-          © {{ new Date().getFullYear() }} ALE BARRETO. Todos los derechos reservados.
+          © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
         </p>
       </div>
     </footer>
-
   </div>
 
   <RegistrationModal :open="modalOpen" @close="modalOpen = false" />
@@ -452,14 +501,16 @@ const dismissProof = () => {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    @media (min-width: 768px) { padding: 0 2rem; }
+    @media (min-width: 768px) {
+      padding: 0 2rem;
+    }
   }
 }
 
 // ── Top bar ──────────────────────────────────────────────────────────────────
 .funnel__topbar {
   background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  border-bottom: 1px solid #e8edf5;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -531,18 +582,28 @@ const dismissProof = () => {
   white-space: nowrap;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   animation: cta-bounce 2.4s ease-in-out infinite;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 
-  span { font-size: 0.95rem; transition: transform 0.18s ease; }
+  span {
+    font-size: 0.95rem;
+    transition: transform 0.18s ease;
+  }
 
   &:hover {
     background: colors.$AB-URGENT-BG;
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    span { transform: translateX(3px); }
+    span {
+      transform: translateX(3px);
+    }
   }
 
-  &:active { transform: translateY(0); }
+  &:active {
+    transform: translateY(0);
+  }
 
   @media (min-width: 768px) {
     padding: 0.55rem 1.2rem;
@@ -551,8 +612,15 @@ const dismissProof = () => {
 }
 
 @keyframes cta-bounce {
-  0%, 100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transform: scale(1); }
-  50%      { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); transform: scale(1.04); }
+  0%,
+  100% {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.04);
+  }
 }
 
 // ── Social proof toast (FOMO bottom-left) ────────────────────────────────────
@@ -614,8 +682,14 @@ const dismissProof = () => {
   line-height: 1.3;
   color: colors.$AB-FOREST;
 
-  strong { font-weight: 800; }
-  span { font-size: 0.74rem; color: rgba(colors.$AB-FOREST, 0.55); font-weight: 500; }
+  strong {
+    font-weight: 800;
+  }
+  span {
+    font-size: 0.74rem;
+    color: rgba(colors.$AB-FOREST, 0.55);
+    font-weight: 500;
+  }
 }
 
 .funnel__proof-text {
@@ -624,7 +698,10 @@ const dismissProof = () => {
   line-height: 1.35;
   color: rgba(colors.$AB-FOREST, 0.78);
 
-  strong { color: colors.$AB-EARTH; font-weight: 700; }
+  strong {
+    color: colors.$AB-EARTH;
+    font-weight: 700;
+  }
 }
 
 .funnel__proof-meta {
@@ -635,7 +712,9 @@ const dismissProof = () => {
   align-items: center;
   gap: 4px;
 
-  i { font-size: 0.66rem; }
+  i {
+    font-size: 0.66rem;
+  }
 }
 
 .funnel__proof-close {
@@ -653,16 +732,25 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   font-size: 0.78rem;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 
-  &:hover { background: rgba(colors.$AB-FOREST, 0.08); color: colors.$AB-FOREST; }
+  &:hover {
+    background: rgba(colors.$AB-FOREST, 0.08);
+    color: colors.$AB-FOREST;
+  }
 }
 
 .proof-fade-enter-active {
-  transition: opacity 0.32s ease, transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
+  transition:
+    opacity 0.32s ease,
+    transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 .proof-fade-leave-active {
-  transition: opacity 0.22s ease, transform 0.25s ease;
+  transition:
+    opacity 0.22s ease,
+    transform 0.25s ease;
 }
 .proof-fade-enter-from {
   opacity: 0;
@@ -681,12 +769,23 @@ const dismissProof = () => {
 }
 
 @keyframes bolt-flash {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(0.92); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
 }
 
 .funnel__urgency-text {
-  strong { font-weight: 900; color: #FFE4E4; letter-spacing: 0.04em; }
+  strong {
+    font-weight: 900;
+    color: #ffe4e4;
+    letter-spacing: 0.04em;
+  }
 }
 
 .funnel__urgency-dot {
@@ -700,9 +799,18 @@ const dismissProof = () => {
 }
 
 @keyframes dot-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(252, 165, 165, 0.7); transform: scale(1); }
-  70% { box-shadow: 0 0 0 8px rgba(252, 165, 165, 0); transform: scale(1.1); }
-  100% { box-shadow: 0 0 0 0 rgba(252, 165, 165, 0); transform: scale(1); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(252, 165, 165, 0.7);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(252, 165, 165, 0);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(252, 165, 165, 0);
+    transform: scale(1);
+  }
 }
 
 .funnel__timer {
@@ -785,7 +893,7 @@ const dismissProof = () => {
 // ── Hero ─────────────────────────────────────────────────────────────────────
 .funnel__hero {
   padding: 3.5rem 0 3rem;
-  background: linear-gradient(180deg, #EEF4FF 0%, #ffffff 70%);
+  background: linear-gradient(180deg, #eef4ff 0%, #ffffff 70%);
 }
 
 .funnel__eyebrow {
@@ -803,7 +911,9 @@ const dismissProof = () => {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0 0 1.4rem;
-  i { font-size: 0.8rem; }
+  i {
+    font-size: 0.8rem;
+  }
 }
 
 .funnel__headline {
@@ -814,7 +924,9 @@ const dismissProof = () => {
   margin: 0 0 1.5rem;
   letter-spacing: -0.025em;
 
-  &-accent { color: colors.$OS-RED; }
+  &-accent {
+    color: colors.$OS-RED;
+  }
 }
 
 .funnel__vsl-player-container {
@@ -822,7 +934,7 @@ const dismissProof = () => {
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(colors.$AB-WOOD, 0.2);
-  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.4);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.4);
   background: #000;
   line-height: 0;
 
@@ -845,7 +957,7 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.93rem;
-  color: #3A4F6A;
+  color: #3a4f6a;
 
   i {
     color: colors.$OS-BLUE;
@@ -855,7 +967,9 @@ const dismissProof = () => {
 }
 
 // ── VSL ──────────────────────────────────────────────────────────────────────
-.funnel__vsl-wrap { margin-bottom: 2rem; }
+.funnel__vsl-wrap {
+  margin-bottom: 2rem;
+}
 
 .funnel__vsl {
   position: relative;
@@ -864,9 +978,11 @@ const dismissProof = () => {
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid #D8E6F5;
+  border: 2px solid #d8e6f5;
   box-shadow: 0 8px 40px rgba(0, 63, 125, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -895,7 +1011,10 @@ const dismissProof = () => {
   object-fit: cover;
   filter: blur(8px) brightness(0.6);
   transform: scale(1.1); // Avoid white edges from blur
-  transition: filter 0.4s ease, transform 0.4s ease, brightness 0.4s ease;
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease,
+    brightness 0.4s ease;
 
   .funnel__vsl:hover & {
     filter: blur(4px) brightness(0.75);
@@ -906,7 +1025,11 @@ const dismissProof = () => {
 .funnel__vsl-blur-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(colors.$OS-NAVY, 0.2) 0%, rgba(colors.$OS-NAVY, 0.6) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(colors.$OS-NAVY, 0.2) 0%,
+    rgba(colors.$OS-NAVY, 0.6) 100%
+  );
   z-index: 1;
 }
 
@@ -940,7 +1063,9 @@ const dismissProof = () => {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease;
 
-  .funnel__vsl:hover & { transform: scale(1.1); }
+  .funnel__vsl:hover & {
+    transform: scale(1.1);
+  }
 
   i {
     color: colors.$OS-RED;
@@ -984,15 +1109,20 @@ const dismissProof = () => {
   cursor: pointer;
   width: 100%;
   max-width: 480px;
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
   box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
 
   &:hover {
-    background: #AA0000;
+    background: #aa0000;
     transform: translateY(-1px);
     box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
   }
-  &:active { transform: translateY(0); }
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .funnel__cta-sub {
@@ -1001,9 +1131,11 @@ const dismissProof = () => {
   justify-content: center;
   gap: 0.4rem;
   font-size: 0.78rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
   margin: 0;
-  i { font-size: 0.72rem; }
+  i {
+    font-size: 0.72rem;
+  }
 }
 
 // ── Stats ────────────────────────────────────────────────────────────────────
@@ -1021,7 +1153,9 @@ const dismissProof = () => {
   color: colors.$OS-NAVY;
   margin: 0 0 1rem;
 
-  &--light { color: rgba(#ffffff, 0.55); }
+  &--light {
+    color: rgba(#ffffff, 0.55);
+  }
 }
 
 .funnel__stats-grid {
@@ -1034,7 +1168,9 @@ const dismissProof = () => {
   }
 }
 
-.funnel__stat { text-align: center; }
+.funnel__stat {
+  text-align: center;
+}
 
 .funnel__stat-icon {
   font-size: 1.6rem;
@@ -1085,8 +1221,8 @@ const dismissProof = () => {
   gap: 1rem;
   align-items: flex-start;
   padding: 1.25rem;
-  background: #F9FBFF;
-  border: 1px solid #E4EDF7;
+  background: #f9fbff;
+  border: 1px solid #e4edf7;
   border-radius: 12px;
 
   strong {
@@ -1098,7 +1234,7 @@ const dismissProof = () => {
   }
   p {
     font-size: 0.86rem;
-    color: #4A5F7A;
+    color: #4a5f7a;
     line-height: 1.5;
     margin: 0;
   }
@@ -1114,19 +1250,21 @@ const dismissProof = () => {
 // ── Methodology ──────────────────────────────────────────────────────────────
 .funnel__method {
   padding: 4rem 0;
-  background: #F5F8FF;
+  background: #f5f8ff;
 }
 
 .funnel__method-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  @media (max-width: 700px) { grid-template-columns: 1fr; }
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .funnel__method-card {
   background: #ffffff;
-  border: 1px solid #E4EDF7;
+  border: 1px solid #e4edf7;
   border-radius: 16px;
   padding: 1.75rem 1.5rem;
   position: relative;
@@ -1153,7 +1291,10 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  i { color: #ffffff; font-size: 1.1rem; }
+  i {
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
 }
 
 .funnel__method-title {
@@ -1165,7 +1306,7 @@ const dismissProof = () => {
 
 .funnel__method-body {
   font-size: 0.86rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.55;
   margin: 0;
 }
@@ -1177,7 +1318,7 @@ const dismissProof = () => {
 }
 
 .funnel__testimonial-card {
-  background: #F5F8FF;
+  background: #f5f8ff;
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-left: 4px solid colors.$OS-NAVY;
   border-radius: 16px;
@@ -1208,8 +1349,16 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.75rem;
 
-  strong { display: block; color: colors.$OS-DARK; font-size: 0.88rem; font-weight: 700; }
-  span { font-size: 0.78rem; color: #8A9BB5; }
+  strong {
+    display: block;
+    color: colors.$OS-DARK;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+  span {
+    font-size: 0.78rem;
+    color: #8a9bb5;
+  }
 }
 
 .funnel__testimonial-avatar {
@@ -1221,25 +1370,33 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  i { color: #ffffff; font-size: 1.2rem; }
+  i {
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
 }
 
 // ── Authority ────────────────────────────────────────────────────────────────
 .funnel__authority {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #EEF4FF 0%, #F9FBFF 100%);
-  border-top: 1px solid #E4EDF7;
-  border-bottom: 1px solid #E4EDF7;
+  background: linear-gradient(135deg, #eef4ff 0%, #f9fbff 100%);
+  border-top: 1px solid #e4edf7;
+  border-bottom: 1px solid #e4edf7;
 }
 
 .funnel__authority-inner {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
-  @media (max-width: 640px) { flex-direction: column; align-items: center; }
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.funnel__authority-photo-wrap { flex-shrink: 0; }
+.funnel__authority-photo-wrap {
+  flex-shrink: 0;
+}
 
 .funnel__authority-avatar {
   width: 112px;
@@ -1260,7 +1417,9 @@ const dismissProof = () => {
   object-fit: cover;
 }
 
-.funnel__authority-content { flex: 1; }
+.funnel__authority-content {
+  flex: 1;
+}
 
 .funnel__authority-eyebrow {
   font-family: fonts.$font-interface;
@@ -1282,16 +1441,19 @@ const dismissProof = () => {
 
 .funnel__authority-role {
   font-size: 0.88rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
   margin: 0 0 1rem;
 }
 
 .funnel__authority-bio {
   font-size: 0.93rem;
-  color: #3A4F6A;
+  color: #3a4f6a;
   line-height: 1.65;
   margin: 0 0 1rem;
-  strong { color: colors.$OS-DARK; font-weight: 700; }
+  strong {
+    color: colors.$OS-DARK;
+    font-weight: 700;
+  }
 }
 
 .funnel__authority-creds {
@@ -1307,8 +1469,12 @@ const dismissProof = () => {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.86rem;
-    color: #3A4F6A;
-    i { color: colors.$OS-BLUE; font-size: 0.82rem; flex-shrink: 0; }
+    color: #3a4f6a;
+    i {
+      color: colors.$OS-BLUE;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -1318,16 +1484,22 @@ const dismissProof = () => {
   background: colors.$OS-NAVY;
   text-align: center;
 
-  .funnel__section-label { color: rgba(#ffffff, 0.5); }
+  .funnel__section-label {
+    color: rgba(#ffffff, 0.5);
+  }
 
   .funnel__cta-btn {
     margin: 0 auto 1rem;
     background: colors.$OS-RED;
     box-shadow: 0 4px 24px rgba(204, 0, 0, 0.4);
-    &:hover { background: #AA0000; }
+    &:hover {
+      background: #aa0000;
+    }
   }
 
-  .funnel__cta-sub { color: rgba(#ffffff, 0.5); }
+  .funnel__cta-sub {
+    color: rgba(#ffffff, 0.5);
+  }
 }
 
 .funnel__cta-final-title {
@@ -1377,7 +1549,9 @@ const dismissProof = () => {
     color: rgba(#ffffff, 0.45);
     text-decoration: none;
     transition: color 0.2s;
-    &:hover { color: rgba(#ffffff, 0.85); }
+    &:hover {
+      color: rgba(#ffffff, 0.85);
+    }
   }
 }
 

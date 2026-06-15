@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const iframeHeight = ref(1100)
 
-// GHL Ale Barreto Calendar URL
+// GHL Zeonatec Calendar URL
 const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/nCzBqHMNFYGu4rYBREX3'
 
 const calendarUrl = computed(() => {
@@ -36,7 +36,7 @@ const onMessage = (event: MessageEvent) => {
 
 onMounted(() => {
   window.addEventListener('message', onMessage)
-  
+
   // Inject GHL form embed script for better iframe handling
   if (!document.getElementById('ghl-form-embed-script')) {
     const script = document.createElement('script')
@@ -52,14 +52,12 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 
 <template>
   <div class="booking">
-
     <!-- TOP BAR -->
     <header class="booking__topbar">
-      <h2 class="booking__logo-text">ALE BARRETO</h2>
+      <h2 class="booking__logo-text">ZEONATEC</h2>
     </header>
 
     <main class="booking__main">
-
       <!-- Stepper -->
       <div class="stepper" aria-label="Paso 2 de 2">
         <div class="stepper__track">
@@ -80,7 +78,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
       <!-- Heading -->
       <section class="booking__heading">
         <p class="booking__eyebrow">
-          <i class="fa-solid fa-tree" aria-hidden="true"></i>
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
           Casi listo
         </p>
         <h1 class="booking__title">
@@ -88,7 +86,8 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
           <span class="booking__title-accent">asesoría de diseño</span>
         </h1>
         <p class="booking__subtitle">
-          Una sesión de 15 minutos con Ale Barreto para conversar sobre tu proyecto y definir los siguientes pasos.
+          Una sesión de 15 minutos con Zeonatec para conversar sobre tu proyecto y definir los
+          siguientes pasos.
         </p>
       </section>
 
@@ -97,14 +96,13 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <iframe
           :src="calendarUrl"
           :style="{ height: iframeHeight + 'px' }"
-          title="Agenda tu asesoría con Ale Barreto"
+          title="Agenda tu asesoría con Zeonatec"
           class="calendar__iframe"
           frameborder="0"
           scrolling="no"
           id="nCzBqHMNFYGu4rYBREX3_1776870418706"
         ></iframe>
       </div>
-
     </main>
 
     <!-- Footer -->
@@ -113,9 +111,10 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="booking__footer-copy">© {{ new Date().getFullYear() }} ALE BARRETO. Todos los derechos reservados.</p>
+      <p class="booking__footer-copy">
+        © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+      </p>
     </footer>
-
   </div>
 </template>
 
@@ -133,7 +132,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 
 .booking__topbar {
   background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  border-bottom: 1px solid #e8edf5;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -186,8 +185,8 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
     font-family: fonts.$font-interface;
     font-size: 0.85rem;
     font-weight: 800;
-    border: 2px solid #D0DBE8;
-    color: #D0DBE8;
+    border: 2px solid #d0dbe8;
+    color: #d0dbe8;
     transition: all 0.3s ease;
 
     .stepper__step--done & {
@@ -208,21 +207,27 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.04em;
-    color: #B0C0D5;
+    color: #b0c0d5;
 
-    .stepper__step--done & { color: colors.$OS-BLUE; }
-    .stepper__step--active & { color: colors.$OS-DARK; }
+    .stepper__step--done & {
+      color: colors.$OS-BLUE;
+    }
+    .stepper__step--active & {
+      color: colors.$OS-DARK;
+    }
   }
 
   &__line {
     width: 60px;
     height: 2px;
-    background: #E0EAF5;
+    background: #e0eaf5;
     border-radius: 2px;
     margin: 0 0.5rem;
     margin-bottom: 1.1rem;
 
-    &--done { background: colors.$OS-BLUE; }
+    &--done {
+      background: colors.$OS-BLUE;
+    }
   }
 }
 
@@ -238,10 +243,14 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   text-transform: uppercase;
   color: colors.$OS-NAVY;
   margin: 0 0 0.75rem;
-  i { font-size: 0.75rem; }
+  i {
+    font-size: 0.75rem;
+  }
 }
 
-.booking__heading { margin-bottom: 1.75rem; }
+.booking__heading {
+  margin-bottom: 1.75rem;
+}
 
 .booking__title {
   @include fonts.heading-font(800);
@@ -251,12 +260,14 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   letter-spacing: -0.025em;
   line-height: 1.2;
 
-  &-accent { color: colors.$OS-RED; }
+  &-accent {
+    color: colors.$OS-RED;
+  }
 }
 
 .booking__subtitle {
   font-size: 0.93rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.6;
   margin: 0;
 }
@@ -265,7 +276,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 .calendar__wrap {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #E4EDF7;
+  border: 1px solid #e4edf7;
   box-shadow: 0 4px 24px rgba(0, 63, 125, 0.07);
 }
 
@@ -278,7 +289,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 // ── Footer ───────────────────────────────────────────────────────────────────
 .booking__footer {
   padding: 1.5rem;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #f0f4fb;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,15 +301,17 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
     gap: 1.5rem;
     a {
       font-size: 0.76rem;
-      color: #B0C0D5;
+      color: #b0c0d5;
       text-decoration: none;
-      &:hover { color: colors.$OS-NAVY; }
+      &:hover {
+        color: colors.$OS-NAVY;
+      }
     }
   }
 
   &-copy {
     font-size: 0.72rem;
-    color: #C8D8ED;
+    color: #c8d8ed;
     margin: 0;
   }
 }

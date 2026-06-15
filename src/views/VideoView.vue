@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import CalendarModal from '@/components/CalendarModal.vue'
 import { trackStage, generateEventId } from '@/utils/ghl'
 import { useContactStore } from '@/stores/contact'
-import alePhoto from '@/assets/team/ale-barreto.png'
+import zeonatecPhoto from '@/assets/team/zeonatec.png'
 
 const contactStore = useContactStore()
 
@@ -29,7 +29,13 @@ const validateCapture = () => {
 }
 
 const submitCapture = async () => {
-  captureTouched.value = { nombre: true, apellido: true, empresa: true, email: true, telefono: true }
+  captureTouched.value = {
+    nombre: true,
+    apellido: true,
+    empresa: true,
+    email: true,
+    telefono: true,
+  }
   if (!validateCapture()) return
   captureSubmitting.value = true
 
@@ -52,7 +58,7 @@ const submitCapture = async () => {
     event_id: leadEventId,
   })
   ;(window as any).fbq?.('track', 'Lead', { content_name: 'video-gate' }, { eventID: leadEventId })
-  await new Promise(r => setTimeout(r, 600))
+  await new Promise((r) => setTimeout(r, 600))
   captureSubmitting.value = false
   captureOpen.value = false
   startTimer()
@@ -93,20 +99,20 @@ onMounted(() => {
   }
 })
 
-onUnmounted(() => { if (timer) clearInterval(timer) })
+onUnmounted(() => {
+  if (timer) clearInterval(timer)
+})
 </script>
 
 <template>
   <div class="vv-page">
-
     <!-- Top bar -->
     <header class="vv-topbar">
-      <h2 class="vv-topbar__logo-text">ALE BARRETO</h2>
+      <h2 class="vv-topbar__logo-text">ZEONATEC</h2>
     </header>
 
     <!-- Main content -->
     <main class="vv-main">
-
       <!-- Progress stepper -->
       <div class="vv-stepper" aria-label="Paso 1 de 2">
         <span class="vv-stepper__pill">
@@ -119,22 +125,23 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
       <!-- Headline -->
       <section class="vv-headline">
         <p class="vv-eyebrow">
-          <i class="fa-solid fa-tree" aria-hidden="true"></i>
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
           Antes de agendar
         </p>
         <h1 class="vv-h1">
-          Descubre por qué los proyectos de lujo
-          <span class="vv-accent">eligen a Ale Barreto</span>
+          Descubre cómo maximizar tu productividad por hectárea con la metodología Zeonatec
+          <span class="vv-accent">eligen a Yurka Dominage</span>
         </h1>
         <p class="vv-subtitle">
-          Ve el video completo. Ale Barreto te explica cómo transformamos espacios con la nobleza de la madera.
+          Ve el video completo. Yurka Dominage te explica cómo transformamos espacios con la nobleza
+          de la suelo.
         </p>
       </section>
 
       <!-- Wistia video embed -->
       <div class="vv-video-wrapper">
         <div class="vv-video-ratio">
-          <wistia-player media-id="5ql8l131me" aspect="1.7777777777777777"></wistia-player>
+          <wistia-player media-id="3ffgiuig80" aspect="1.7777777777777777"></wistia-player>
         </div>
       </div>
 
@@ -148,18 +155,16 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
           <div class="vv-cta-locked__bar-wrap" aria-hidden="true">
             <div
               class="vv-cta-locked__bar"
-              :style="{ width: ((COUNTDOWN_SECONDS - secondsLeft) / COUNTDOWN_SECONDS * 100) + '%' }"
+              :style="{
+                width: ((COUNTDOWN_SECONDS - secondsLeft) / COUNTDOWN_SECONDS) * 100 + '%',
+              }"
             />
           </div>
         </div>
 
-        <button
-          v-else
-          class="vv-cta-btn"
-          @click="calendarOpen = true"
-        >
+        <button v-else class="vv-cta-btn" @click="calendarOpen = true">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          AGENDAR MI ASESORÍA DE DISEÑO
+          AGENDAR MI SESIÓN DE DIAGNÓSTICO B2B
         </button>
 
         <p class="vv-cta-sub">
@@ -173,27 +178,37 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
         <div class="vv-authority__inner">
           <div class="vv-authority__photo-wrap">
             <div class="vv-authority__avatar" aria-hidden="true">
-              <img :src="alePhoto" alt="Ale Barreto" class="vv-authority__img" />
+              <img :src="zeonatecPhoto" alt="Yurka Dominage" class="vv-authority__img" />
             </div>
           </div>
           <div class="vv-authority__content">
-            <p class="vv-authority__eyebrow">Tu especialista asignada</p>
-            <h2 id="authority-heading" class="vv-authority__name">Ale Barreto</h2>
-            <p class="vv-authority__role">Experta en Diseño y Construcción en Madera</p>
+            <p class="vv-authority__eyebrow">Experta en Nutrición Mineral</p>
+            <h2 id="authority-heading" class="vv-authority__name">Yurka Dominage</h2>
+            <p class="vv-authority__role">
+              Especialista en Nutrición Mineral Técnica y Productividad Agrícola
+            </p>
             <p class="vv-authority__bio">
-              Con años de experiencia en el mercado ecuatoriano, me especializo en crear
-              espacios que combinan la nobleza de la madera con diseños modernos y funcionales.
-              Mi objetivo es que cada proyecto sea una inversión que dure toda la vida.
+              Con amplia experiencia en el sector agroexportador, me especializo en metodologías de
+              alta productividad mineral. Mi objetivo es que tu suelo trabaje para tu productividad
+              y optimices el aprovechamiento de tus hectáreas a gran escala.
             </p>
             <ul class="vv-authority__creds" role="list">
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en maderas nobles y tratadas</li>
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Diseños exclusivos a medida</li>
-              <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: del plano a la instalación</li>
+              <li>
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en
+                acondicionamiento e intercambio catiónico
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Mezclas físicas
+                personalizadas y granuladas
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Soluciones de nutrición
+                con criterio científico
+              </li>
             </ul>
           </div>
         </div>
       </section>
-
     </main>
 
     <!-- Footer -->
@@ -202,9 +217,10 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
         <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
         <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
       </nav>
-      <p class="vv-footer__copy">© {{ new Date().getFullYear() }} ALE BARRETO. Todos los derechos reservados.</p>
+      <p class="vv-footer__copy">
+        © {{ new Date().getFullYear() }} ZEONATEC. Todos los derechos reservados.
+      </p>
     </footer>
-
   </div>
 
   <!-- Calendar modal -->
@@ -213,42 +229,108 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   <!-- Contact capture overlay -->
   <Teleport to="body">
     <Transition name="capture-fade">
-      <div v-if="captureOpen" class="capture-overlay" role="dialog" aria-modal="true" aria-labelledby="capture-title">
+      <div
+        v-if="captureOpen"
+        class="capture-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="capture-title"
+      >
         <div class="capture-modal">
           <div class="capture-modal__header">
-            <h2 class="capture-modal__logo-text">ALE BARRETO</h2>
+            <h2 class="capture-modal__logo-text">ZEONATEC</h2>
             <h2 id="capture-title" class="capture-modal__title">
               Antes de ver el video, <span>confirma tus datos</span>
             </h2>
-            <p class="capture-modal__sub">Para personalizar tu asesoría de diseño</p>
+            <p class="capture-modal__sub">Para personalizar tu diagnóstico agrícola B2B</p>
           </div>
           <form class="capture-modal__form" @submit.prevent="submitCapture" novalidate>
             <div class="capture-row">
-              <div class="capture-field" :class="{ error: captureTouched.nombre && captureErrors.nombre }">
+              <div
+                class="capture-field"
+                :class="{ error: captureTouched.nombre && captureErrors.nombre }"
+              >
                 <label>Nombre</label>
-                <input v-model="captureForm.nombre" type="text" placeholder="Ej: Juan" @blur="captureTouched.nombre = true" />
-                <span v-if="captureTouched.nombre && captureErrors.nombre" class="capture-field__error">{{ captureErrors.nombre }}</span>
+                <input
+                  v-model="captureForm.nombre"
+                  type="text"
+                  placeholder="Ej: Juan"
+                  @blur="captureTouched.nombre = true"
+                />
+                <span
+                  v-if="captureTouched.nombre && captureErrors.nombre"
+                  class="capture-field__error"
+                  >{{ captureErrors.nombre }}</span
+                >
               </div>
-              <div class="capture-field" :class="{ error: captureTouched.apellido && captureErrors.apellido }">
+              <div
+                class="capture-field"
+                :class="{ error: captureTouched.apellido && captureErrors.apellido }"
+              >
                 <label>Apellido</label>
-                <input v-model="captureForm.apellido" type="text" placeholder="Ej: Pérez" @blur="captureTouched.apellido = true" />
-                <span v-if="captureTouched.apellido && captureErrors.apellido" class="capture-field__error">{{ captureErrors.apellido }}</span>
+                <input
+                  v-model="captureForm.apellido"
+                  type="text"
+                  placeholder="Ej: Pérez"
+                  @blur="captureTouched.apellido = true"
+                />
+                <span
+                  v-if="captureTouched.apellido && captureErrors.apellido"
+                  class="capture-field__error"
+                  >{{ captureErrors.apellido }}</span
+                >
               </div>
             </div>
-            <div class="capture-field" :class="{ error: captureTouched.empresa && captureErrors.empresa }">
+            <div
+              class="capture-field"
+              :class="{ error: captureTouched.empresa && captureErrors.empresa }"
+            >
               <label>Tu proyecto</label>
-              <input v-model="captureForm.empresa" type="text" placeholder="Ej: Remodelación Sala" @blur="captureTouched.empresa = true" />
-              <span v-if="captureTouched.empresa && captureErrors.empresa" class="capture-field__error">{{ captureErrors.empresa }}</span>
+              <input
+                v-model="captureForm.empresa"
+                type="text"
+                placeholder="Ej: Finca Los Álamos"
+                @blur="captureTouched.empresa = true"
+              />
+              <span
+                v-if="captureTouched.empresa && captureErrors.empresa"
+                class="capture-field__error"
+                >{{ captureErrors.empresa }}</span
+              >
             </div>
-            <div class="capture-field" :class="{ error: captureTouched.email && captureErrors.email }">
+            <div
+              class="capture-field"
+              :class="{ error: captureTouched.email && captureErrors.email }"
+            >
               <label>Email</label>
-              <input v-model="captureForm.email" type="email" placeholder="tu@email.com" @blur="captureTouched.email = true" />
-              <span v-if="captureTouched.email && captureErrors.email" class="capture-field__error">{{ captureErrors.email }}</span>
+              <input
+                v-model="captureForm.email"
+                type="email"
+                placeholder="tu@email.com"
+                @blur="captureTouched.email = true"
+              />
+              <span
+                v-if="captureTouched.email && captureErrors.email"
+                class="capture-field__error"
+                >{{ captureErrors.email }}</span
+              >
             </div>
-            <div class="capture-field" :class="{ error: captureTouched.telefono && captureErrors.telefono }">
+            <div
+              class="capture-field"
+              :class="{ error: captureTouched.telefono && captureErrors.telefono }"
+            >
               <label>Teléfono</label>
-              <input v-model="captureForm.telefono" type="tel" placeholder="+593 98 000 0000" @blur="captureTouched.telefono = true" />
-              <span v-if="captureTouched.telefono && captureErrors.telefono" class="capture-field__error">{{ captureErrors.telefono }}</span>
+              <input
+                v-model="captureForm.telefono"
+                type="tel"
+                placeholder="+593 98 000 0000"
+                @blur="captureTouched.telefono = true"
+              />
+              <span
+                v-if="captureTouched.telefono && captureErrors.telefono"
+                class="capture-field__error"
+                >{{ captureErrors.telefono }}</span
+              >
             </div>
             <button type="submit" class="capture-submit" :disabled="captureSubmitting">
               <span v-if="!captureSubmitting">
@@ -281,7 +363,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-topbar {
   background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  border-bottom: 1px solid #e8edf5;
   padding: 0.9rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -317,8 +399,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #F5F8FF;
-    border: 1px solid #E4EDF7;
+    background: #f5f8ff;
+    border: 1px solid #e4edf7;
     border-radius: 999px;
     padding: 0.4rem 1rem;
   }
@@ -327,17 +409,19 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #D0DBE8;
+    background: #d0dbe8;
     transition: background 0.2s;
 
-    &--active { background: colors.$OS-NAVY; }
+    &--active {
+      background: colors.$OS-NAVY;
+    }
   }
 
   &__label {
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
     font-weight: 600;
-    color: #7A8EA5;
+    color: #7a8ea5;
     letter-spacing: 0.03em;
   }
 }
@@ -353,10 +437,14 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   text-transform: uppercase;
   color: colors.$OS-NAVY;
   margin: 0 0 0.75rem;
-  i { font-size: 0.75rem; }
+  i {
+    font-size: 0.75rem;
+  }
 }
 
-.vv-headline { margin-bottom: 1.75rem; }
+.vv-headline {
+  margin-bottom: 1.75rem;
+}
 
 .vv-h1 {
   @include fonts.heading-font(800);
@@ -367,16 +455,20 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   letter-spacing: -0.025em;
 }
 
-.vv-accent { color: colors.$OS-RED; }
+.vv-accent {
+  color: colors.$OS-RED;
+}
 
 .vv-subtitle {
   font-size: 0.95rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.6;
   margin: 0;
 }
 
-.vv-video-wrapper { margin-bottom: 1.75rem; }
+.vv-video-wrapper {
+  margin-bottom: 1.75rem;
+}
 
 .vv-video-ratio {
   position: relative;
@@ -384,7 +476,7 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 63, 125, 0.12);
-  border: 1px solid #E4EDF7;
+  border: 1px solid #e4edf7;
   background: colors.$OS-NAVY;
 
   wistia-player {
@@ -393,7 +485,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     height: 100%;
 
     &:not(:defined) {
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/5ql8l131me/swatch');
+      background: center / contain no-repeat
+        url('https://fast.wistia.com/embed/medias/3ffgiuig80/swatch');
       display: block;
       filter: blur(5px);
       padding-top: 56.25%;
@@ -417,19 +510,24 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   width: 100%;
   max-width: 420px;
 
-  &__icon { font-size: 1.4rem; color: #B0C0D5; }
+  &__icon {
+    font-size: 1.4rem;
+    color: #b0c0d5;
+  }
 
   &__text {
     font-size: 0.88rem;
-    color: #8A9BB5;
+    color: #8a9bb5;
     margin: 0;
-    strong { color: colors.$OS-NAVY; }
+    strong {
+      color: colors.$OS-NAVY;
+    }
   }
 
   &__bar-wrap {
     width: 100%;
     height: 4px;
-    background: #E8EDF5;
+    background: #e8edf5;
     border-radius: 99px;
     overflow: hidden;
   }
@@ -459,11 +557,20 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   cursor: pointer;
   width: 100%;
   max-width: 420px;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
   box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
 
-  &:hover { background: #AA0000; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45); }
-  &:active { transform: translateY(0); }
+  &:hover {
+    background: #aa0000;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+  }
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .vv-cta-sub {
@@ -471,17 +578,19 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   align-items: center;
   gap: 0.4rem;
   font-size: 0.76rem;
-  color: #B0C0D5;
+  color: #b0c0d5;
   margin: 0;
-  i { font-size: 0.7rem; }
+  i {
+    font-size: 0.7rem;
+  }
 }
 
 // ── Authority ────────────────────────────────────────────────────────────────
 .vv-authority {
   margin-top: 3.5rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #F5F8FF 0%, #ffffff 100%);
-  border: 1px solid #E4EDF7;
+  background: linear-gradient(135deg, #f5f8ff 0%, #ffffff 100%);
+  border: 1px solid #e4edf7;
   border-radius: 20px;
 }
 
@@ -489,7 +598,11 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
-  @media (max-width: 580px) { flex-direction: column; align-items: center; text-align: center; }
+  @media (max-width: 580px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .vv-authority__avatar {
@@ -526,16 +639,18 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
 
 .vv-authority__role {
   font-size: 0.8rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
   margin: 0 0 1rem;
 }
 
 .vv-authority__bio {
   font-size: 0.88rem;
-  color: #3A4F6A;
+  color: #3a4f6a;
   line-height: 1.6;
   margin: 0 0 1.25rem;
-  strong { color: colors.$OS-DARK; }
+  strong {
+    color: colors.$OS-DARK;
+  }
 }
 
 .vv-authority__creds {
@@ -551,16 +666,21 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     align-items: center;
     gap: 0.5rem;
     font-size: 0.78rem;
-    color: #4A5F7A;
-    i { color: colors.$OS-BLUE; font-size: 0.75rem; }
-    @media (max-width: 580px) { justify-content: center; }
+    color: #4a5f7a;
+    i {
+      color: colors.$OS-BLUE;
+      font-size: 0.75rem;
+    }
+    @media (max-width: 580px) {
+      justify-content: center;
+    }
   }
 }
 
 // ── Footer ───────────────────────────────────────────────────────────────────
 .vv-footer {
   padding: 1.5rem;
-  border-top: 1px solid #F0F4FB;
+  border-top: 1px solid #f0f4fb;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -571,24 +691,30 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     gap: 1.5rem;
     a {
       font-size: 0.76rem;
-      color: #B0C0D5;
+      color: #b0c0d5;
       text-decoration: none;
-      &:hover { color: colors.$OS-NAVY; }
+      &:hover {
+        color: colors.$OS-NAVY;
+      }
     }
   }
 
   &__copy {
     font-size: 0.72rem;
-    color: #C8D8ED;
+    color: #c8d8ed;
     margin: 0;
   }
 }
 
 // ── Capture overlay ──────────────────────────────────────────────────────────
 .capture-fade-enter-active,
-.capture-fade-leave-active { transition: opacity 0.25s ease; }
+.capture-fade-leave-active {
+  transition: opacity 0.25s ease;
+}
 .capture-fade-enter-from,
-.capture-fade-leave-to { opacity: 0; }
+.capture-fade-leave-to {
+  opacity: 0;
+}
 
 .capture-overlay {
   position: fixed;
@@ -613,8 +739,8 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   &__header {
     padding: 2rem 2rem 1.25rem;
     text-align: center;
-    background: linear-gradient(135deg, #EEF4FF 0%, #F9FBFF 100%);
-    border-bottom: 1px solid #E8EDF5;
+    background: linear-gradient(135deg, #eef4ff 0%, #f9fbff 100%);
+    border-bottom: 1px solid #e8edf5;
   }
 
   &__logo-text {
@@ -632,12 +758,14 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     color: colors.$OS-DARK;
     margin: 0 0 0.4rem;
     letter-spacing: -0.02em;
-    span { color: colors.$OS-RED; }
+    span {
+      color: colors.$OS-RED;
+    }
   }
 
   &__sub {
     font-size: 0.82rem;
-    color: #8A9BB5;
+    color: #8a9bb5;
     margin: 0;
   }
 
@@ -653,7 +781,9 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  @media (max-width: 400px) { grid-template-columns: 1fr; }
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .capture-field {
@@ -665,25 +795,32 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #4A5F7A;
+    color: #4a5f7a;
     letter-spacing: 0.02em;
   }
 
   input {
-    border: 1.5px solid #E4EDF7;
+    border: 1.5px solid #e4edf7;
     border-radius: 9px;
     padding: 0.7rem 0.85rem;
     font-family: fonts.$font-secondary;
     font-size: 0.88rem;
     color: colors.$OS-DARK;
-    background: #FAFBFF;
+    background: #fafbff;
     outline: none;
     transition: border-color 0.18s;
-    &::placeholder { color: #B8CAE0; }
-    &:focus { border-color: colors.$OS-BLUE; background: #F5F9FF; }
+    &::placeholder {
+      color: #b8cae0;
+    }
+    &:focus {
+      border-color: colors.$OS-BLUE;
+      background: #f5f9ff;
+    }
   }
 
-  &.error input { border-color: colors.$OS-RED; }
+  &.error input {
+    border-color: colors.$OS-RED;
+  }
 
   &__error {
     font-size: 0.73rem;
@@ -708,10 +845,18 @@ onUnmounted(() => { if (timer) clearInterval(timer) })
   cursor: pointer;
   width: 100%;
   margin-top: 0.25rem;
-  transition: background 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    transform 0.15s;
   box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
 
-  &:hover:not(:disabled) { background: #AA0000; transform: translateY(-1px); }
-  &:disabled { opacity: 0.6; cursor: not-allowed; }
+  &:hover:not(:disabled) {
+    background: #aa0000;
+    transform: translateY(-1px);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }
 </style>

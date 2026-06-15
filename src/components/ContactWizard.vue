@@ -32,9 +32,15 @@ const COUNTRIES = [
 function detectDial(): string {
   const lang = navigator.language || ''
   const map: Record<string, string> = {
-    'es-EC': '+593', 'es-CO': '+57', 'es-PE': '+51',
-    'es-MX': '+52', 'es-AR': '+54', 'es-CL': '+56',
-    'es-ES': '+34', 'en-US': '+1', 'es-VE': '+58',
+    'es-EC': '+593',
+    'es-CO': '+57',
+    'es-PE': '+51',
+    'es-MX': '+52',
+    'es-AR': '+54',
+    'es-CL': '+56',
+    'es-ES': '+34',
+    'en-US': '+1',
+    'es-VE': '+58',
     'es-PA': '+507',
   }
   return map[lang] ?? '+593'
@@ -68,22 +74,22 @@ const s2 = ref({
 // ── Validación ───────────────────────────────────────────────────────────────
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-const s1Valid = computed(() =>
-  s1.value.firstName.trim().length >= 2 &&
-  s1.value.lastName.trim().length >= 2 &&
-  emailRegex.test(s1.value.email.trim()) &&
-  s1.value.phone.replace(/\D/g, '').length >= 7 &&
-  s1.value.company.trim().length >= 2
+const s1Valid = computed(
+  () =>
+    s1.value.firstName.trim().length >= 2 &&
+    s1.value.lastName.trim().length >= 2 &&
+    emailRegex.test(s1.value.email.trim()) &&
+    s1.value.phone.replace(/\D/g, '').length >= 7 &&
+    s1.value.company.trim().length >= 2,
 )
 
-const s2Valid = computed(() =>
-  !!s2.value.projectType && !!s2.value.budget &&
-  !!s2.value.objective && !!s2.value.urgency
+const s2Valid = computed(
+  () => !!s2.value.projectType && !!s2.value.budget && !!s2.value.objective && !!s2.value.urgency,
 )
 
 // ── Mapas legibles para notas ─────────────────────────────────────────────────
 const URGENCY_LABEL: Record<string, string> = {
-  'immediate': 'Necesita ayuda inmediata (menos de 24 h)',
+  immediate: 'Necesita ayuda inmediata (menos de 24 h)',
   'next-month': 'Lo necesita en el próximo mes',
   'just-looking': 'Solo explorando, sin urgencia',
 }
@@ -91,28 +97,20 @@ const URGENCY_LABEL: Record<string, string> = {
 function buildNotes(): string {
   return [
     `Proyecto: ${s2.value.projectType}`,
-    `Presupuesto +$1200: ${s2.value.budget === 'yes' ? 'Sí' : 'No'}`,
+    `Volumen +500 sacos: ${s2.value.budget === 'yes' ? 'Sí' : 'No'}`,
     `Objetivo: ${s2.value.objective}`,
     `Urgencia: ${URGENCY_LABEL[s2.value.urgency] ?? s2.value.urgency}`,
     s2.value.message.trim() ? `Mensaje del lead: ${s2.value.message.trim()}` : null,
-    `Fuente: Formulario Ale Barreto`,
-  ].filter(Boolean).join('\n')
+    `Fuente: Formulario Zeonatec`,
+  ]
+    .filter(Boolean)
+    .join('\n')
 }
 
 // ── Lógica de tags ────────────────────────────────────────────────────────────
 function calcTags(): string[] {
-  // "Solo estoy explorando" → descalifica y no es urgente
-  if (s2.value.urgency === 'just-looking') {
-    return ['no-cualificado-ab', 'no-urgente']
-  }
-
-  // El criterio clave es el presupuesto mayor a $1200
-  const qualifies = s2.value.budget === 'yes'
-
-  return [
-    qualifies ? 'cualificado-ab' : 'no-cualificado-ab',
-    s2.value.urgency === 'immediate' ? 'urgente' : 'no-urgente',
-  ]
+  // Aprobacion automatica: todos califican
+  return ['cualificado-zeonatec', s2.value.urgency === 'immediate' ? 'urgente' : 'no-urgente']
 }
 
 // ── Envíos ────────────────────────────────────────────────────────────────────
@@ -140,7 +138,9 @@ async function submitS1() {
     })
     // Meta Pixel — CompleteRegistration: señal de volumen para el algoritmo
     // Se dispara para TODO contacto que completa Step 1, sin importar calificación
-    ;(window as any).fbq?.('track', 'CompleteRegistration',
+    ;(window as any).fbq?.(
+      'track',
+      'CompleteRegistration',
       { content_name: 'contacto-web-bakano' },
       { eventID: regEventId },
     )
@@ -175,7 +175,8 @@ async function submitS2() {
           source: 'ale-barreto-web',
           // Datos de cualificación (Step 2)
           '1. ¿Qué tipo de proyecto buscas?': s2.value.projectType,
-          '2. ¿Dispones de más de $1200 para este proyecto?': s2.value.budget === 'yes' ? 'Sí' : 'No',
+          '2. ¿Dispones de más de $1200 para este proyecto?':
+            s2.value.budget === 'yes' ? 'Sí' : 'No',
           '3. ¿Cuál es tu objetivo principal?': s2.value.objective,
           urgency: s2.value.urgency,
           message: s2.value.message.trim(),
@@ -201,40 +202,59 @@ function goBack() {
 
 // ── Opciones step 2 ───────────────────────────────────────────────────────────
 const projectOpts = [
-  { value: 'Residencial (Casa / Departamento)', label: 'Residencial (Casa / Departamento)' },
-  { value: 'Oficina / Corporativo', label: 'Oficina / Corporativo' },
-  { value: 'Local Comercial / Restaurante', label: 'Local Comercial / Restaurante' },
+  { value: 'Productor Agrícola a gran escala', label: 'Productor Agrícola a gran escala' },
+  { value: 'Distribuidor Mayorista', label: 'Distribuidor Mayorista' },
+  { value: 'Almacén de Insumos', label: 'Almacén de Insumos' },
   { value: 'Otro', label: 'Otro' },
 ]
 
 const budgetOpts = [
-  { value: 'yes', label: 'Sí, dispongo de más de $1200' },
-  { value: 'no', label: 'No, mi presupuesto es menor' },
+  { value: 'yes', label: 'Sí, movemos más de 500 sacos al mes' },
+  { value: 'no', label: 'No, nuestro volumen es menor a 500 sacos' },
 ]
 
 const objectiveOpts = [
-  { value: 'Remodelación completa de espacios.', label: 'Remodelación completa de espacios.' },
-  { value: 'Diseño y fabricación de muebles a medida.', label: 'Diseño y fabricación de muebles a medida.' },
-  { value: 'Construcción de estructuras en madera (pérgolas, decks, etc.).', label: 'Construcción de estructuras en madera (pérgolas, decks, etc.).' },
+  {
+    value: 'Elevar la productividad y rentabilidad de la operación.',
+    label: 'Elevar la productividad y rentabilidad de la operación.',
+  },
+  {
+    value: 'Solucionar problemas de compactación o lavado de nutrientes.',
+    label: 'Solucionar problemas de compactación o lavado de nutrientes.',
+  },
+  {
+    value: 'Comercializar y distribuir insumos de alta rotación a gran escala.',
+    label: 'Comercializar y distribuir insumos de alta rotación a gran escala.',
+  },
 ]
 
 const urgencyOpts = [
   { value: 'immediate', label: 'Necesito ayuda inmediata', sub: 'Contacto en menos de 24 h' },
   { value: 'next-month', label: 'Lo necesito en el próximo mes', sub: 'Estoy evaluando opciones' },
-  { value: 'just-looking', label: 'Solo estoy explorando por ahora', sub: 'Sin urgencia particular' },
+  {
+    value: 'just-looking',
+    label: 'Solo estoy explorando por ahora',
+    sub: 'Sin urgencia particular',
+  },
 ]
 </script>
 
 <template>
   <div class="wiz">
-
     <!-- ── Indicador de paso ───────────────────────────────────────────────── -->
     <div class="wiz__stepper" v-if="step !== 'ok'">
       <div class="wiz__stepper-track">
         <div class="wiz__dot" :class="{ 'is-active': true, 'is-done': step === 2 }">
-          <svg v-if="step === 2" width="12" height="12" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="3">
-            <polyline points="20 6 9 17 4 12"/>
+          <svg
+            v-if="step === 2"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+          >
+            <polyline points="20 6 9 17 4 12" />
           </svg>
           <span v-else>1</span>
         </div>
@@ -254,7 +274,6 @@ const urgencyOpts = [
          ══════════════════════════════════════ -->
     <Transition :name="`wiz-${dir}`" mode="out-in">
       <div class="wiz__body" v-if="step === 1" key="s1">
-
         <div class="wf-row">
           <div class="wf-field">
             <label class="wf-label">Nombre *</label>
@@ -320,23 +339,26 @@ const urgencyOpts = [
 
         <p v-if="errMsg" class="wf-error" role="alert">{{ errMsg }}</p>
 
-        <button
-          class="wf-btn"
-          :disabled="!s1Valid || loading"
-          @click="submitS1"
-        >
+        <button class="wf-btn" :disabled="!s1Valid || loading" @click="submitS1">
           <span v-if="!loading">Continuar al paso 2</span>
           <span v-else class="wf-spinner" aria-label="Enviando…" />
-          <svg v-if="!loading" width="16" height="16" viewBox="0 0 24 24"
-               fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+          <svg
+            v-if="!loading"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </button>
 
         <p class="wf-privacy">
           Tu información es confidencial y nunca será compartida con terceros.
         </p>
-
       </div>
     </Transition>
 
@@ -345,11 +367,10 @@ const urgencyOpts = [
          ══════════════════════════════════════ -->
     <Transition :name="`wiz-${dir}`" mode="out-in">
       <div class="wiz__body" v-if="step === 2" key="s2">
-
         <!-- Q1: Proyecto -->
         <div class="wf-question">
           <p class="wf-q-num">01</p>
-          <p class="wf-q-title">¿Qué tipo de proyecto buscas realizar?</p>
+          <p class="wf-q-title">¿Qué tipo de operación agrícola manejas?</p>
           <label
             v-for="opt in projectOpts"
             :key="opt.value"
@@ -365,7 +386,7 @@ const urgencyOpts = [
         <!-- Q2: Presupuesto -->
         <div class="wf-question">
           <p class="wf-q-num">02</p>
-          <p class="wf-q-title">¿Dispones de un presupuesto de más de $1200 para este proyecto?</p>
+          <p class="wf-q-title">¿Manejas un volumen constante de 500 o más sacos al mes?</p>
           <label
             v-for="opt in budgetOpts"
             :key="opt.value"
@@ -381,7 +402,7 @@ const urgencyOpts = [
         <!-- Q3: Objetivo -->
         <div class="wf-question">
           <p class="wf-q-num">03</p>
-          <p class="wf-q-title">¿Cuál es tu objetivo principal con este proyecto?</p>
+          <p class="wf-q-title">¿Cuál es tu objetivo principal?</p>
           <label
             v-for="opt in objectiveOpts"
             :key="opt.value"
@@ -397,7 +418,7 @@ const urgencyOpts = [
         <!-- Q4: Urgencia -->
         <div class="wf-question">
           <p class="wf-q-num">04</p>
-          <p class="wf-q-title">¿Con qué urgencia necesitas este servicio?</p>
+          <p class="wf-q-title">¿Con qué urgencia necesitas este suministro?</p>
           <label
             v-for="opt in urgencyOpts"
             :key="opt.value"
@@ -415,7 +436,9 @@ const urgencyOpts = [
 
         <!-- Mensaje libre -->
         <div class="wf-field">
-          <label class="wf-label">Cuéntanos sobre tu caso <span class="wf-label--opt">(opcional)</span></label>
+          <label class="wf-label"
+            >Cuéntanos sobre tu caso <span class="wf-label--opt">(opcional)</span></label
+          >
           <textarea
             v-model="s2.message"
             class="wf-textarea"
@@ -428,26 +451,36 @@ const urgencyOpts = [
 
         <div class="wf-actions">
           <button class="wf-btn wf-btn--ghost" type="button" @click="goBack">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
             Volver
           </button>
-          <button
-            class="wf-btn"
-            :disabled="!s2Valid || loading"
-            @click="submitS2"
-          >
+          <button class="wf-btn" :disabled="!s2Valid || loading" @click="submitS2">
             <span v-if="!loading">Enviar consulta</span>
             <span v-else class="wf-spinner" aria-label="Enviando…" />
-            <svg v-if="!loading" width="16" height="16" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              v-if="!loading"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </button>
         </div>
-
       </div>
     </Transition>
 
@@ -457,19 +490,25 @@ const urgencyOpts = [
     <Transition name="wiz-fwd" mode="out-in">
       <div class="wiz__ok" v-if="step === 'ok'" key="ok">
         <div class="wiz__ok-circle">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <polyline points="20 6 9 17 4 12"/>
+          <svg
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
+            <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
         <h3 class="wiz__ok-title">¡Recibimos tu consulta!</h3>
         <p class="wiz__ok-body">
-          Nuestro equipo revisará tu información y se pondrá en contacto contigo
-          muy pronto. Revisa tu WhatsApp o correo.
+          Nuestro equipo revisará tu información y se pondrá en contacto contigo muy pronto. Revisa
+          tu WhatsApp o correo.
         </p>
       </div>
     </Transition>
-
   </div>
 </template>
 
@@ -604,7 +643,10 @@ const urgencyOpts = [
   border-radius: 10px;
   padding: 13px 16px;
   outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
   width: 100%;
 
   &::placeholder {
@@ -626,7 +668,9 @@ const urgencyOpts = [
   border-radius: 10px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.04);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 
   &:focus-within {
     border-color: rgba(colors.$BAKANO-PINK, 0.55);
@@ -798,7 +842,10 @@ const urgencyOpts = [
   width: 100%;
   font-family: inherit;
   line-height: 1.6;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.22);
@@ -853,7 +900,10 @@ const urgencyOpts = [
   letter-spacing: 0.5px;
   background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);
   color: colors.$white;
-  transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
   flex: 1;
 
   &:hover:not(:disabled) {
@@ -967,7 +1017,9 @@ const urgencyOpts = [
 .wiz-fwd-leave-active,
 .wiz-back-enter-active,
 .wiz-back-leave-active {
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
 }
 
 .wiz-fwd-enter-from {

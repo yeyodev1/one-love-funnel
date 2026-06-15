@@ -5,9 +5,9 @@
  */
 
 interface StepItem {
-  icon: string;
-  title: string;
-  body: string;
+  icon: string
+  title: string
+  body: string
 }
 
 const props = defineProps({
@@ -15,7 +15,7 @@ const props = defineProps({
     type: Array as () => StepItem[],
     required: true,
   },
-});
+})
 </script>
 
 <template>
@@ -26,14 +26,10 @@ const props = defineProps({
     </h2>
 
     <ol class="steps-list">
-      <li
-        v-for="(step, idx) in props.steps"
-        :key="idx"
-        class="steps-item"
-      >
+      <li v-for="(step, idx) in props.steps" :key="idx" class="steps-item">
         <!-- Contador de pasos -->
         <div class="steps-item__num">{{ idx + 1 }}</div>
-        
+
         <!-- Icono representativo -->
         <div class="steps-item__icon-wrap">
           <i :class="`fa-${idx === 1 ? 'brands' : 'solid'} fa-${step.icon}`"></i>
@@ -70,7 +66,9 @@ const props = defineProps({
     align-items: center;
     gap: 0.75rem;
 
-    i { color: colors.$BAKANO-PINK; }
+    i {
+      color: colors.$BAKANO-PINK;
+    }
 
     @media (min-width: 768px) {
       font-size: 1.25rem;
@@ -162,7 +160,9 @@ const props = defineProps({
     @media (min-width: 768px) {
       width: 48px;
       height: 48px;
-      i { font-size: 1.3rem; }
+      i {
+        font-size: 1.3rem;
+      }
     }
   }
 

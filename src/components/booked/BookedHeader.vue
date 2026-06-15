@@ -3,7 +3,8 @@
  * BookedHeader.vue
  * Dedicated top bar for the confirmation page.
  */
-const LOGO = 'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/bakano/logos/bakano-light.png';
+const LOGO =
+  'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/bakano/logos/bakano-light.png'
 </script>
 
 <template>

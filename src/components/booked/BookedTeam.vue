@@ -6,9 +6,9 @@
  */
 
 interface TeamMember {
-  name: string;
-  role: string;
-  photo: string;
+  name: string
+  role: string
+  photo: string
 }
 
 const props = defineProps({
@@ -16,7 +16,7 @@ const props = defineProps({
     type: Array as () => TeamMember[],
     required: true,
   },
-});
+})
 </script>
 
 <template>
@@ -27,11 +27,7 @@ const props = defineProps({
     </h2>
 
     <div class="team-grid">
-      <article
-        v-for="member in props.team"
-        :key="member.name"
-        class="team-card"
-      >
+      <article v-for="member in props.team" :key="member.name" class="team-card">
         <!-- Foto de perfil con decoraciones -->
         <div class="team-card__image-wrap">
           <img :src="member.photo" :alt="member.name" class="team-card__photo" />
@@ -71,7 +67,9 @@ const props = defineProps({
     align-items: center;
     gap: 0.75rem;
 
-    i { color: colors.$BAKANO-PINK; }
+    i {
+      color: colors.$BAKANO-PINK;
+    }
 
     @media (min-width: 768px) {
       font-size: 1.35rem;
@@ -107,7 +105,11 @@ const props = defineProps({
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, rgba(colors.$BAKANO-PINK, 0.1), transparent 70%);
+    background: radial-gradient(
+      circle at top right,
+      rgba(colors.$BAKANO-PINK, 0.1),
+      transparent 70%
+    );
     opacity: 0;
     transition: opacity 0.5s ease;
   }
@@ -118,7 +120,9 @@ const props = defineProps({
     transform: translateY(-8px);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 
-    &::before { opacity: 1; }
+    &::before {
+      opacity: 1;
+    }
 
     .team-card__image-wrap {
       transform: scale(1.08) rotate(-3deg);

@@ -1,23 +1,23 @@
-// Ale Barreto — Expert in Wood
-$BAKANO-PINK:   #D4A373;   // Wood Pastel (Primary)
-$BAKANO-DARK:   #283618;   // Dark Forest/Earth (Text)
-$BAKANO-LIGHT:  #FEFAE0;   // Cream/Soft Pastel (Backgrounds)
-$BAKANO-PURPLE: #BC6C25;   // Earthy Brown (Secondary)
-$BAKANO-GREEN:  #606C38;   // Sage Green (Accent)
+// Zeonatec — Mineral Productivity
+$BAKANO-PINK: #00E676; // Tech Green (Primary)
+$BAKANO-DARK: #0B1F15; // Dark Emerald (Text)
+$BAKANO-LIGHT: #F4F9F5; // Light Greenish Tint (Backgrounds)
+$BAKANO-PURPLE: #00B4D8; // Mineral Blue (Secondary)
+$BAKANO-GREEN: #0077B6; // Tech Blue (Accent)
 
 // Aliases semánticos
-$AB-WOOD:    #D4A373;
-$AB-EARTH:   #BC6C25;
-$AB-FOREST:  #283618;
-$AB-SAGE:    #606C38;
-$AB-CREAM:   #FEFAE0;
-$AB-WHITE:   #ffffff;
+$AB-WOOD: #00E676;
+$AB-EARTH: #00B4D8;
+$AB-FOREST: #0B1F15;
+$AB-SAGE: #0077B6;
+$AB-CREAM: #F4F9F5;
+$AB-WHITE: #ffffff;
 
 // Urgency / inmediatez (no es del brand pastel — alerta accionable)
-$AB-URGENT:        #B91C1C;
-$AB-URGENT-DARK:   #991B1B;
-$AB-URGENT-LIGHT:  #FCA5A5;
-$AB-URGENT-BG:     #FEF2F2;
+$AB-URGENT: #b91c1c;
+$AB-URGENT-DARK: #991b1b;
+$AB-URGENT-LIGHT: #fca5a5;
+$AB-URGENT-BG: #fef2f2;
 
 // Color primario
 $BAKANO-PRIMARY: $BAKANO-PINK;
@@ -39,7 +39,7 @@ $gray-800: #343a40;
 $gray-900: #212529;
 
 // Legacy Aliases (to prevent build errors)
-$OS-RED:   $BAKANO-PINK;
-$OS-NAVY:  $AB-FOREST;
-$OS-BLUE:  $AB-SAGE;
-$OS-DARK:  $AB-FOREST;
+$OS-RED: $BAKANO-PINK;
+$OS-NAVY: $AB-FOREST;
+$OS-BLUE: $AB-SAGE;
+$OS-DARK: $AB-FOREST;

@@ -13,14 +13,12 @@
         Política de Privacidad
       </router-link>
       <span class="booked-footer__separator" aria-hidden="true">·</span>
-      <router-link to="/aviso-legal" class="booked-footer__link">
-        Aviso Legal
-      </router-link>
+      <router-link to="/aviso-legal" class="booked-footer__link"> Aviso Legal </router-link>
     </nav>
 
     <!-- Información de Copyright -->
     <p class="booked-footer__copy">
-      © {{ new Date().getFullYear() }} NEGOCIOS DEL PACIFICO. 
+      © {{ new Date().getFullYear() }} NEGOCIOS DEL PACIFICO.
       <br class="mobile-break" />
       Todos los derechos reservados.
     </p>
