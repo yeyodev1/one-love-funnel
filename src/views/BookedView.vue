@@ -35,7 +35,7 @@ const nextSteps = [
   {
     icon: 'fa-solid fa-envelope',
     title: 'Revisa tu email',
-    body: 'Te enviamos la confirmación con todos los detalles de tu Sesión de Diagnóstico.',
+    body: 'Te enviamos la confirmación con todos los detalles de tu Cita Virtual.',
   },
   {
     icon: 'fa-brands fa-whatsapp',
@@ -194,8 +194,8 @@ const nextSteps = [
   text-align: center;
   padding: 3.5rem 2rem;
   background: 
-    linear-gradient(135deg, rgba(colors.$AB-FOREST, 0.85) 0%, rgba(colors.$BAKANO-PINK, 0.95) 100%),
-    url('@/assets/stock/zeonatec_success_bg.png') center/cover no-repeat;
+    linear-gradient(135deg, rgba(colors.$AB-FOREST, 0.75) 0%, rgba(colors.$BAKANO-PINK, 0.65) 100%),
+    url('@/assets/stock/one_love_success_bg.png') center/cover no-repeat;
   border: none;
   border-radius: 20px;
   box-shadow: 0 12px 36px rgba(colors.$AB-FOREST, 0.2);

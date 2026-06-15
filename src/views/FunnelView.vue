@@ -121,16 +121,16 @@ onUnmounted(() => {
 type Proof = { who: string; where: string; minutesAgo: number }
 
 const PROOFS: Proof[] = [
-  { who: 'Constructora Valverde', where: 'Quito', minutesAgo: 3 },
+  { who: 'Andrea y Luis', where: 'Quito', minutesAgo: 3 },
   { who: 'María José T.', where: 'Cumbayá', minutesAgo: 7 },
-  { who: 'Andrés Salazar', where: 'Guayaquil', minutesAgo: 12 },
-  { who: 'Inmobiliaria Andes', where: 'Quito', minutesAgo: 18 },
-  { who: 'Carolina M.', where: 'Tumbaco', minutesAgo: 22 },
-  { who: 'Estudio Arq. Vélez', where: 'Samborondón', minutesAgo: 27 },
-  { who: 'Familia Pareja', where: 'Los Chillos', minutesAgo: 34 },
-  { who: 'Hotel Boutique Sambo', where: 'Manta', minutesAgo: 41 },
-  { who: 'Roberto S.', where: 'Cuenca', minutesAgo: 48 },
-  { who: 'Patricia Andrade', where: 'Quito', minutesAgo: 55 },
+  { who: 'Daniela y Sebastián', where: 'Guayaquil', minutesAgo: 12 },
+  { who: 'Camila G.', where: 'Quito', minutesAgo: 18 },
+  { who: 'Valentina y Mateo', where: 'Tumbaco', minutesAgo: 22 },
+  { who: 'Sofía M.', where: 'Samborondón', minutesAgo: 27 },
+  { who: 'Paula y Diego', where: 'Los Chillos', minutesAgo: 34 },
+  { who: 'Martina C.', where: 'Manta', minutesAgo: 41 },
+  { who: 'Isabella y Juan', where: 'Cuenca', minutesAgo: 48 },
+  { who: 'Romina V.', where: 'Quito', minutesAgo: 55 },
 ]
 
 const proofVisible = ref(false)
