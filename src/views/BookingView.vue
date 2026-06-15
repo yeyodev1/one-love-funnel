@@ -6,7 +6,7 @@ const router = useRouter()
 const iframeHeight = ref(1100)
 
 // GHL One Love Calendar URL
-const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/CdtegPrPidRa7IYlZRNc'
+const BASE_URL = 'https://api.leadconnectorhq.com/widget/booking/HStRfsTDdiNFqEGU4ahD'
 
 const calendarUrl = computed(() => {
   try {
@@ -41,7 +41,7 @@ onMounted(() => {
   if (!document.getElementById('ghl-form-embed-script')) {
     const script = document.createElement('script')
     script.id = 'ghl-form-embed-script'
-    script.src = 'https://api.leadconnectorhq.com/js/form_embed.js'
+    script.src = 'https://link.msgsndr.com/js/form_embed.js'
     script.type = 'text/javascript'
     document.body.appendChild(script)
   }
@@ -78,15 +78,15 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
       <!-- Heading -->
       <section class="booking__heading">
         <p class="booking__eyebrow">
-          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <i class="fa-solid fa-film" aria-hidden="true"></i>
           Casi listo
         </p>
         <h1 class="booking__title">
           Elige el horario de tu
-          <span class="booking__title-accent">Sesión de Diagnóstico</span>
+          <span class="booking__title-accent">Cita Virtual</span>
         </h1>
         <p class="booking__subtitle">
-          Una sesión estratégica con nuestros especialistas agronómicos para evaluar el estado de tu cultivo y definir los siguientes pasos.
+          Una breve videollamada para conocernos, entender la visión que tienen para su boda y confirmar que somos el equipo ideal para ustedes.
         </p>
       </section>
 
@@ -95,11 +95,11 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
         <iframe
           :src="calendarUrl"
           :style="{ height: iframeHeight + 'px' }"
-          title="Agenda tu asesoría con One Love"
+          title="Agenda tu cita con One Love"
           class="calendar__iframe"
           frameborder="0"
           scrolling="no"
-          id="CdtegPrPidRa7IYlZRNc_1781555332810"
+          id="HStRfsTDdiNFqEGU4ahD_1781561318223"
         ></iframe>
       </div>
     </main>
