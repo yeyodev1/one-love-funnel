@@ -1,6 +1,25 @@
 @use './colorVariables.module.scss' as *;
 @use './fonts.modules.scss' as *;
 
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('/fonts/Avenir Next.ttc') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BIG JOHN';
+  src: url('/fonts/BIG JOHN.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-principal: 'BIG JOHN', sans-serif;
+  --font-secondary: 'Avenir Next', sans-serif;
+}
+
 html,
 body {
   background-color: $white;
