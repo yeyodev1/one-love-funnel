@@ -22,28 +22,20 @@ const openModal = () => {
 
 const stats = [
   {
-    icon: 'fa-solid fa-video',
-    number: '12+',
-    text: 'Años capturando momentos inolvidables en bodas',
+    number: '+12',
+    text: 'Años contando\nhistorias de amor',
   },
   {
-    icon: 'fa-solid fa-heart',
-    number: '500+',
-    text: 'Parejas felices con una pieza cinematográfica única',
+    number: '+500',
+    text: 'Historias convertidas\nen recuerdos para toda la vida.',
   },
   {
-    icon: 'fa-solid fa-film',
     number: '100%',
-    text: 'Compromiso con la narrativa y la emoción pura',
+    text: 'Capturando emociones reales',
   },
 ]
 
-const pillars = [
-  'Sin videos genéricos ni monótonos que acumulan polvo en un cajón',
-  'Sin perderte de las emociones reales ni momentos vulnerables',
-  'Con cinematografía aérea, audio perfecto y alta resolución',
-  'Con un equipo de dos videógrafos para perspectiva total',
-]
+
 
 const methodology = [
   {
@@ -66,30 +58,6 @@ const methodology = [
   },
 ]
 
-// Countdown urgency — bloque fijo de 6h anclado al reloj local (00, 06, 12, 18).
-// Mismo valor para todos los visitantes en un instante dado → sensación de continuidad real.
-const BLOCK_HOURS = 6
-const hours = ref('00')
-const minutes = ref('00')
-const seconds = ref('00')
-let interval: ReturnType<typeof setInterval>
-
-const computeRemaining = () => {
-  const now = new Date()
-  const blockStartHour = Math.floor(now.getHours() / BLOCK_HOURS) * BLOCK_HOURS
-  const blockStart = new Date(now)
-  blockStart.setHours(blockStartHour, 0, 0, 0)
-  const blockEndMs = blockStart.getTime() + BLOCK_HOURS * 3600 * 1000
-  return Math.max(0, Math.floor((blockEndMs - now.getTime()) / 1000))
-}
-
-const tick = () => {
-  const total = computeRemaining()
-  hours.value = String(Math.floor(total / 3600)).padStart(2, '0')
-  minutes.value = String(Math.floor((total % 3600) / 60)).padStart(2, '0')
-  seconds.value = String(total % 60).padStart(2, '0')
-}
-
 onMounted(() => {
   const script1 = document.createElement('script');
   script1.src = 'https://fast.wistia.com/player.js';
@@ -107,70 +75,7 @@ onMounted(() => {
   document.head.appendChild(style);
 
   captureFbParams()
-  tick()
-  interval = setInterval(tick, 1000)
-  startProofRotation()
 })
-
-onUnmounted(() => {
-  clearInterval(interval)
-  stopProofRotation()
-})
-
-// ── Social proof toast (FOMO) ──────────────────────────────────────────────
-type Proof = { who: string; where: string; minutesAgo: number }
-
-const PROOFS: Proof[] = [
-  { who: 'Andrea y Luis', where: 'Quito', minutesAgo: 3 },
-  { who: 'María José T.', where: 'Cumbayá', minutesAgo: 7 },
-  { who: 'Daniela y Sebastián', where: 'Guayaquil', minutesAgo: 12 },
-  { who: 'Camila G.', where: 'Quito', minutesAgo: 18 },
-  { who: 'Valentina y Mateo', where: 'Tumbaco', minutesAgo: 22 },
-  { who: 'Sofía M.', where: 'Samborondón', minutesAgo: 27 },
-  { who: 'Paula y Diego', where: 'Los Chillos', minutesAgo: 34 },
-  { who: 'Martina C.', where: 'Manta', minutesAgo: 41 },
-  { who: 'Isabella y Juan', where: 'Cuenca', minutesAgo: 48 },
-  { who: 'Romina V.', where: 'Quito', minutesAgo: 55 },
-]
-
-const proofVisible = ref(false)
-const proofIndex = ref(0)
-const currentProof = ref<Proof | null>(null)
-let proofShowTimer: ReturnType<typeof setTimeout> | null = null
-let proofHideTimer: ReturnType<typeof setTimeout> | null = null
-let proofDismissed = false
-
-const SHOW_AFTER_MS = 3000 // primera aparición
-const VISIBLE_FOR_MS = 5000 // tiempo visible
-const GAP_BETWEEN_MS = 2000 // pausa entre toasts (ciclo total ≈ 7s)
-
-const showNextProof = () => {
-  if (proofDismissed) return
-  currentProof.value = PROOFS[proofIndex.value % PROOFS.length]
-  proofIndex.value++
-  proofVisible.value = true
-  proofHideTimer = setTimeout(() => {
-    proofVisible.value = false
-    proofShowTimer = setTimeout(showNextProof, GAP_BETWEEN_MS)
-  }, VISIBLE_FOR_MS)
-}
-
-const startProofRotation = () => {
-  proofShowTimer = setTimeout(showNextProof, SHOW_AFTER_MS)
-}
-
-const stopProofRotation = () => {
-  if (proofShowTimer) clearTimeout(proofShowTimer)
-  if (proofHideTimer) clearTimeout(proofHideTimer)
-  proofShowTimer = null
-  proofHideTimer = null
-}
-
-const dismissProof = () => {
-  proofDismissed = true
-  proofVisible.value = false
-  stopProofRotation()
-}
 </script>
 
 <template>
@@ -180,102 +85,30 @@ const dismissProof = () => {
       <h2 class="funnel__logo-text">ONE LOVE</h2>
     </header>
 
-    <!-- URGENCY BANNER (sticky) -->
-    <div class="funnel__urgency" role="banner">
-      <div class="funnel__urgency-info">
-        <span class="funnel__urgency-dot" aria-hidden="true" />
-        <i class="fa-solid fa-bolt funnel__urgency-icon" aria-hidden="true"></i>
-        <span class="funnel__urgency-text"
-          >CUPOS PARA FECHAS <strong>2026/2027</strong> — Cierran en:</span
-        >
-        <div class="funnel__timer" aria-live="polite" aria-label="Tiempo restante">
-          <span class="funnel__timer-block"
-            ><strong>{{ hours }}</strong
-            ><small>h</small></span
-          >
-          <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"
-            ><strong>{{ minutes }}</strong
-            ><small>m</small></span
-          >
-          <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"
-            ><strong>{{ seconds }}</strong
-            ><small>s</small></span
-          >
-        </div>
-      </div>
-      <button
-        type="button"
-        class="funnel__urgency-cta"
-        aria-label="Reservar mi cupo inmediato"
-        @click="openModal()"
-      >
-        RESERVAR MI CUPO
-        <span aria-hidden="true">→</span>
-      </button>
-    </div>
-
-    <!-- SOCIAL PROOF TOAST (bottom-left, FOMO) -->
-    <Transition name="proof-fade">
-      <div
-        v-if="proofVisible && currentProof"
-        class="funnel__proof"
-        role="status"
-        aria-live="polite"
-      >
-        <div class="funnel__proof-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <div class="funnel__proof-body">
-          <p class="funnel__proof-title">
-            <strong>{{ currentProof.who }}</strong>
-            <span>{{ currentProof.where }}</span>
-          </p>
-          <p class="funnel__proof-text">
-            Acaban de agendar su <strong>boda eclesiástica</strong>
-          </p>
-          <p class="funnel__proof-meta">
-            <i class="fa-solid fa-clock" aria-hidden="true"></i>
-            Hace {{ currentProof.minutesAgo }} min
-          </p>
-        </div>
-        <button
-          type="button"
-          class="funnel__proof-close"
-          aria-label="Cerrar notificación"
-          @click="dismissProof"
-        >
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-      </div>
-    </Transition>
+    <!-- URGENCY BANNER REMOVED -->
 
     <!-- HERO -->
     <section class="funnel__hero" aria-labelledby="funnel-headline">
       <div class="funnel__container">
-        <p class="funnel__eyebrow">
-          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
-          Metodología Narrativa Cinematográfica
-        </p>
+        <div class="funnel__hero-header">
+          <h1 id="funnel-headline" class="funnel__headline">
+            Dos almas, una promesa y<br />
+            una historia que merece<br />
+            ser contada para siempre...
+          </h1>
+          <div class="funnel__hero-cta">
+            <button class="funnel__cta-btn" @click="openModal()">
+              AGENDA UNA REUNIÓN
+            </button>
+          </div>
+        </div>
 
-        <h1 id="funnel-headline" class="funnel__headline">
-          Revive el día más importante de tu vida con
-          <span class="funnel__headline-accent">cinematografía de alto impacto</span>
-          y una narrativa profesional
-        </h1>
-
-        <ul class="funnel__pillars" role="list">
-          <li v-for="p in pillars" :key="p" class="funnel__pillar">
-            <i class="fa-solid fa-check" aria-hidden="true"></i>
-            {{ p }}
-          </li>
-        </ul>
-
-        <!-- Urgency callout (refuerzo en hero) -->
-        <div class="funnel__urgency-callout" role="note">
-          <i class="fa-solid fa-fire" aria-hidden="true"></i>
-          <span>Para parejas que están planeando su boda eclesiástica o civil y <strong>entienden que el video es la única inversión que aumenta de valor con los años</strong>.</span>
+        <div class="funnel__hero-description">
+          <p>
+            Capturamos todo aquello que las palabras no alcanzan a explicar,<br />
+            para que cuando pasen los años, vuelvas a sentir exactamente lo mismo.
+          </p>
+          <p>Creamos historias de amor que no solo se ven, se sienten.</p>
         </div>
 
         <!-- VSL Gated Area -->
@@ -286,31 +119,14 @@ const dismissProof = () => {
             <wistia-player media-id="h5bs715nzv" aspect="1.7777777777777777"></wistia-player>
           </div>
         </div>
-        <!-- CTA -->
-        <div class="funnel__cta-wrap">
-          <button class="funnel__cta-btn" @click="openModal()">
-            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-            RESERVAR MI CUPO INMEDIATO
-          </button>
-          <p class="funnel__cta-sub">
-            <i class="fa-solid fa-lock" aria-hidden="true"></i>
-            100% gratuito &nbsp;·&nbsp; Sin compromiso &nbsp;·&nbsp; Cupos limitados
-          </p>
-        </div>
       </div>
     </section>
 
     <!-- STATS -->
     <section class="funnel__stats" aria-label="Resultados comprobados">
       <div class="funnel__container">
-        <p class="funnel__section-label funnel__section-label--light">
-          Bodas inolvidables
-        </p>
         <div class="funnel__stats-grid">
           <div v-for="stat in stats" :key="stat.number" class="funnel__stat">
-            <div class="funnel__stat-icon" aria-hidden="true">
-              <i :class="stat.icon"></i>
-            </div>
             <strong class="funnel__stat-number">{{ stat.number }}</strong>
             <p class="funnel__stat-text">{{ stat.text }}</p>
           </div>
@@ -402,9 +218,7 @@ const dismissProof = () => {
           </div>
         </div>
         <div class="funnel__authority-content">
-          <p class="funnel__authority-eyebrow">Tus aliados estratégicos</p>
           <h2 id="authority-heading" class="funnel__authority-name">One Love</h2>
-          <p class="funnel__authority-role">Especialista en Cinematografía de Bodas</p>
           <p class="funnel__authority-bio">
             Dejamos de improvisar y empezamos a planificar desde la preboda. Integramos tecnología como los drones para dar un contexto épico que solo el cine puede ofrecer. Te entrego una estructura narrativa que cumple con los más altos estándares artísticos.
           </p>
@@ -427,13 +241,8 @@ const dismissProof = () => {
           Agenda una asesoría gratuita de 15 minutos. Conversaremos sobre el cronograma de tu boda y qué paquete se ajusta a tu visión para capturar cada emoción sin ser invasivos.
         </p>
         <button class="funnel__cta-btn" @click="openModal()">
-          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          RESERVAR MI CUPO INMEDIATO
+          AGENDA UNA REUNIÓN
         </button>
-        <p class="funnel__cta-sub">
-          <i class="fa-solid fa-lock" aria-hidden="true"></i>
-          100% gratuito &nbsp;·&nbsp; Sin compromiso &nbsp;·&nbsp; Cupos limitados
-        </p>
       </div>
     </section>
 
@@ -860,77 +669,40 @@ const dismissProof = () => {
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
 .funnel__hero {
-  padding: 3.5rem 0 3rem;
-  background: linear-gradient(180deg, #eef4ff 0%, #ffffff 70%);
+  padding: 4.5rem 0 4rem;
+  background: #ffffff;
 }
 
-.funnel__eyebrow {
-  display: inline-flex;
+.funnel__hero-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(colors.$OS-NAVY, 0.06);
-  border: 1px solid rgba(colors.$OS-NAVY, 0.14);
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  color: colors.$OS-NAVY;
-  font-family: fonts.$font-interface;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin: 0 0 1.4rem;
-  i {
-    font-size: 0.8rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 }
 
 .funnel__headline {
-  @include fonts.heading-font(800);
-  font-size: clamp(2rem, 5vw, 3.1rem);
-  line-height: 1.15;
+  @include fonts.heading-font(400);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.35;
   color: colors.$OS-DARK;
-  margin: 0 0 1.5rem;
-  letter-spacing: -0.025em;
-
-  &-accent {
-    color: colors.$OS-RED;
-  }
+  margin: 0;
+  letter-spacing: 0.05em;
 }
 
-.funnel__vsl-player-container {
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(colors.$AB-WOOD, 0.2);
-  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.4);
-  background: #000;
-  line-height: 0;
-
-  @media (max-width: 768px) {
-    border-radius: 12px;
-  }
-}
-
-.funnel__pillars {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.funnel__pillar {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.93rem;
-  color: #3a4f6a;
-
-  i {
-    color: colors.$OS-BLUE;
-    font-size: 0.82rem;
-    flex-shrink: 0;
+.funnel__hero-description {
+  margin-bottom: 3rem;
+  p {
+    font-size: 1.25rem;
+    color: colors.$OS-DARK;
+    line-height: 1.6;
+    margin: 0 0 1.2rem;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -1065,10 +837,10 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: colors.$OS-RED;
+  background: colors.$OS-DARK;
   color: #ffffff;
   border: none;
-  border-radius: 12px;
+  border-radius: 999px;
   padding: 1.1rem 2.5rem;
   font-family: fonts.$font-accent;
   font-size: 1rem;
@@ -1081,12 +853,12 @@ const dismissProof = () => {
     background 0.2s ease,
     transform 0.15s ease,
     box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 
   &:hover {
-    background: #aa0000;
+    background: #111111;
     transform: translateY(-1px);
-    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
   }
   &:active {
     transform: translateY(0);
@@ -1108,8 +880,8 @@ const dismissProof = () => {
 
 // ── Stats ────────────────────────────────────────────────────────────────────
 .funnel__stats {
-  background: colors.$OS-NAVY;
-  padding: 3rem 0;
+  background: colors.$OS-DARK;
+  padding: 4.5rem 0;
 }
 
 .funnel__section-label {
@@ -1132,35 +904,32 @@ const dismissProof = () => {
   gap: 2rem;
   @media (max-width: 580px) {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 2.5rem;
   }
 }
 
 .funnel__stat {
-  text-align: center;
-}
-
-.funnel__stat-icon {
-  font-size: 1.6rem;
-  color: rgba(#ffffff, 0.35);
-  margin-bottom: 0.5rem;
+  text-align: left;
+  border-left: 1px solid rgba(#ffffff, 0.35);
+  padding-left: 1.5rem;
 }
 
 .funnel__stat-number {
   display: block;
-  @include fonts.heading-font(800);
-  font-size: 2.6rem;
+  @include fonts.heading-font(400);
+  font-size: 3.2rem;
   color: #ffffff;
   line-height: 1;
-  margin-bottom: 0.4rem;
-  letter-spacing: -0.03em;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
 }
 
 .funnel__stat-text {
-  font-size: 0.83rem;
-  color: rgba(#ffffff, 0.7);
-  line-height: 1.45;
+  font-size: 1rem;
+  color: rgba(#ffffff, 0.85);
+  line-height: 1.4;
   margin: 0;
+  white-space: pre-line;
 }
 
 // ── Problem ──────────────────────────────────────────────────────────────────
@@ -1458,11 +1227,6 @@ const dismissProof = () => {
 
   .funnel__cta-btn {
     margin: 0 auto 1rem;
-    background: colors.$OS-RED;
-    box-shadow: 0 4px 24px rgba(204, 0, 0, 0.4);
-    &:hover {
-      background: #aa0000;
-    }
   }
 
   .funnel__cta-sub {
