@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import CalendarModal from '@/components/CalendarModal.vue'
 import { trackStage, generateEventId } from '@/utils/ghl'
 import { useContactStore } from '@/stores/contact'
 import agentPhoto from '@/assets/team/one-love.png'
+import logoImg from '@/assets/logos/logo.png'
 
 const contactStore = useContactStore()
 
@@ -103,31 +104,6 @@ const submitCapture = async () => {
   await new Promise((r) => setTimeout(r, 600))
   captureSubmitting.value = false
   captureOpen.value = false
-  startTimer()
-}
-
-// ── 2-minute countdown (3s en localhost para testing) ────────────────────────
-const IS_DEV = window.location.hostname === 'localhost'
-const COUNTDOWN_SECONDS = IS_DEV ? 3 : 120
-const secondsLeft = ref(COUNTDOWN_SECONDS)
-const ctaUnlocked = ref(false)
-let timer: ReturnType<typeof setInterval> | null = null
-
-const formattedTime = () => {
-  const m = Math.floor(secondsLeft.value / 60)
-  const s = secondsLeft.value % 60
-  return `${m}:${s.toString().padStart(2, '0')}`
-}
-
-const startTimer = () => {
-  timer = setInterval(() => {
-    if (secondsLeft.value > 0) {
-      secondsLeft.value--
-    } else {
-      ctaUnlocked.value = true
-      if (timer) clearInterval(timer)
-    }
-  }, 1000)
 }
 
 onMounted(() => {
@@ -137,12 +113,7 @@ onMounted(() => {
     captureOpen.value = true
   } else {
     ;(window as any).fbq?.('track', 'ViewContent', { content_name: 'video-vsl' })
-    startTimer()
   }
-})
-
-onUnmounted(() => {
-  if (timer) clearInterval(timer)
 })
 </script>
 
@@ -150,7 +121,7 @@ onUnmounted(() => {
   <div class="vv-page">
     <!-- Top bar -->
     <header class="vv-topbar">
-      <h2 class="vv-topbar__logo-text">ONE LOVE</h2>
+      <img :src="logoImg" alt="ONE LOVE" class="vv-logo" />
     </header>
 
     <!-- Main content -->
@@ -189,22 +160,7 @@ onUnmounted(() => {
 
       <!-- CTA section -->
       <div class="vv-cta-section">
-        <div v-if="!ctaUnlocked" class="vv-cta-locked" aria-live="polite">
-          <i class="fa-solid fa-clock vv-cta-locked__icon" aria-hidden="true"></i>
-          <p class="vv-cta-locked__text">
-            El botón se habilitará en <strong>{{ formattedTime() }}</strong>
-          </p>
-          <div class="vv-cta-locked__bar-wrap" aria-hidden="true">
-            <div
-              class="vv-cta-locked__bar"
-              :style="{
-                width: ((COUNTDOWN_SECONDS - secondsLeft) / COUNTDOWN_SECONDS) * 100 + '%',
-              }"
-            />
-          </div>
-        </div>
-
-        <button v-else class="vv-cta-btn" @click="calendarOpen = true">
+        <button class="vv-cta-btn" @click="calendarOpen = true">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
           RESERVAR MI CUPO
         </button>
@@ -275,7 +231,7 @@ onUnmounted(() => {
       >
         <div class="capture-modal">
           <div class="capture-modal__header">
-            <h2 class="capture-modal__logo-text">ONE LOVE</h2>
+            <img :src="logoImg" alt="ONE LOVE" class="vv-logo vv-logo--modal" />
             <h2 id="capture-title" class="capture-modal__title">
               Paso 2: <span>Tu Visión</span>
             </h2>
@@ -361,18 +317,30 @@ onUnmounted(() => {
   color: colors.$OS-DARK;
   display: flex;
   flex-direction: column;
+  font-family: fonts.$font-secondary;
+}
+
+.vv-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+
+  &--modal {
+    margin-bottom: 1rem;
+    height: 34px;
+  }
 }
 
 .vv-topbar {
-  background: #ffffff;
-  border-bottom: 1px solid #e8edf5;
-  padding: 0.9rem 1.5rem;
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1.5rem;
   display: flex;
   justify-content: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 
   &__logo-text {
     font-family: fonts.$font-principal;
@@ -449,23 +417,24 @@ onUnmounted(() => {
 }
 
 .vv-h1 {
-  @include fonts.heading-font(800);
-  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  @include fonts.heading-font(400);
+  font-size: clamp(2rem, 4vw, 2.6rem);
   color: colors.$OS-DARK;
-  line-height: 1.2;
+  line-height: 1.35;
   margin: 0 0 0.75rem;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.05em;
 }
 
 .vv-accent {
-  color: colors.$OS-RED;
+  color: colors.$OS-DARK;
 }
 
 .vv-subtitle {
-  font-size: 0.95rem;
-  color: #4a5f7a;
+  font-size: 1.25rem;
+  color: colors.$OS-DARK;
   line-height: 1.6;
   margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .vv-video-wrapper {
@@ -504,53 +473,15 @@ onUnmounted(() => {
   gap: 0.75rem;
 }
 
-.vv-cta-locked {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  width: 100%;
-  max-width: 420px;
-
-  &__icon {
-    font-size: 1.4rem;
-    color: #b0c0d5;
-  }
-
-  &__text {
-    font-size: 0.88rem;
-    color: #8a9bb5;
-    margin: 0;
-    strong {
-      color: colors.$OS-NAVY;
-    }
-  }
-
-  &__bar-wrap {
-    width: 100%;
-    height: 4px;
-    background: #e8edf5;
-    border-radius: 99px;
-    overflow: hidden;
-  }
-
-  &__bar {
-    height: 100%;
-    background: colors.$OS-BLUE;
-    border-radius: 99px;
-    transition: width 0.8s linear;
-  }
-}
-
 .vv-cta-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: colors.$OS-RED;
+  background: colors.$OS-DARK;
   color: #ffffff;
   border: none;
-  border-radius: 12px;
+  border-radius: 999px;
   padding: 1.1rem 2.5rem;
   font-family: fonts.$font-accent;
   font-size: 1rem;
@@ -558,17 +489,17 @@ onUnmounted(() => {
   letter-spacing: 0.05em;
   cursor: pointer;
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   transition:
-    background 0.2s,
-    transform 0.15s,
-    box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 
   &:hover {
-    background: #aa0000;
+    background: #111111;
     transform: translateY(-1px);
-    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
   }
   &:active {
     transform: translateY(0);
@@ -741,8 +672,8 @@ onUnmounted(() => {
   &__header {
     padding: 2rem 2rem 1.25rem;
     text-align: center;
-    background: linear-gradient(135deg, #eef4ff 0%, #f9fbff 100%);
-    border-bottom: 1px solid #e8edf5;
+    background: colors.$OS-DARK;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   &__logo-text {
@@ -757,7 +688,7 @@ onUnmounted(() => {
   &__title {
     @include fonts.heading-font(800);
     font-size: 1.3rem;
-    color: colors.$OS-DARK;
+    color: #ffffff;
     margin: 0 0 0.4rem;
     letter-spacing: -0.02em;
     span {
@@ -767,7 +698,7 @@ onUnmounted(() => {
 
   &__sub {
     font-size: 0.82rem;
-    color: #8a9bb5;
+    color: #a0b0c5;
     margin: 0;
   }
 
