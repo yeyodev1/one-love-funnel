@@ -42,11 +42,11 @@ const methodology = [
     body: 'Queremos entender su esencia y crear una película que refleje quiénes son y cómo se sienten.',
   },
   {
-    title: 'V I V I E N D O\nC A D A  E M O C I Ó N',
+    title: 'V I V I E N D O\nC A D A\nE M O C I Ó N',
     body: 'Guardamos las emociones y los recuerdos que harán eterna su historia.',
   },
   {
-    title: 'R E V I V I E N D O\nS U  H I S T O R I A',
+    title: 'R E V I V I E N D O\nS U\nH I S T O R I A',
     body: 'Damos vida a su historia para que, años después, puedan volver a emocionarse como la primera vez.',
   },
 ]
@@ -58,13 +58,13 @@ onMounted(() => {
   document.head.appendChild(script1)
 
   const script2 = document.createElement('script')
-  script2.src = 'https://fast.wistia.com/embed/h5bs715nzv.js'
+  script2.src = 'https://fast.wistia.com/embed/t3i94brx2s.js'
   script2.async = true
   script2.type = 'module'
   document.head.appendChild(script2)
 
   const style = document.createElement('style')
-  style.innerHTML = `wistia-player[media-id='h5bs715nzv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/h5bs715nzv/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }`
+  style.innerHTML = `wistia-player[media-id='t3i94brx2s']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/t3i94brx2s/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }`
   document.head.appendChild(style)
 
   captureFbParams()
@@ -105,13 +105,13 @@ onMounted(() => {
         <!-- VSL Gated Area -->
         <div
           class="funnel__vsl-wrap"
-          @click="openModal()"
+          @click.stop.prevent="openModal()"
           style="cursor: pointer; position: relative"
         >
           <!-- Intercept click to open modal instead of playing video -->
-          <div style="position: absolute; inset: 0; z-index: 10"></div>
-          <div class="funnel__vsl" style="background: transparent">
-            <wistia-player media-id="h5bs715nzv" aspect="1.7777777777777777"></wistia-player>
+          <div style="position: absolute; inset: 0; z-index: 50"></div>
+          <div class="funnel__vsl" style="background: transparent; pointer-events: none">
+            <wistia-player media-id="t3i94brx2s" aspect="1.7777777777777777"></wistia-player>
           </div>
         </div>
 
@@ -202,12 +202,12 @@ onMounted(() => {
               class="funnel__method-title"
               style="
                 color: white;
-                letter-spacing: 0.15em;
+                letter-spacing: 0.08em;
                 font-weight: 400;
-                font-size: 1.1rem;
+                font-size: clamp(0.8rem, 2vw, 0.95rem);
                 margin-bottom: 1.25rem;
                 white-space: pre-line;
-                line-height: 1.4;
+                line-height: 1.5;
               "
             >
               {{ m.title }}
@@ -515,7 +515,6 @@ onMounted(() => {
 }
 
 @keyframes cta-bounce {
-
   0%,
   100% {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
@@ -678,7 +677,6 @@ onMounted(() => {
 }
 
 @keyframes bolt-flash {
-
   0%,
   100% {
     opacity: 1;
@@ -906,9 +904,11 @@ onMounted(() => {
 .funnel__vsl-blur-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center,
-      rgba(colors.$OS-NAVY, 0.2) 0%,
-      rgba(colors.$OS-NAVY, 0.6) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(colors.$OS-NAVY, 0.2) 0%,
+    rgba(colors.$OS-NAVY, 0.6) 100%
+  );
   z-index: 1;
 }
 
