@@ -111,6 +111,27 @@ const submitCapture = async () => {
   captureOpen.value = false
 }
 
+const WISTIA_MEDIA_ID = 't3i94brx2s'
+
+const injectScript = (src: string, attrs: Record<string, string> = {}) => {
+  const id = `wistia-script-${src.replace(/[^a-z0-9]/gi, '-')}`
+  if (document.getElementById(id)) return
+  const script = document.createElement('script')
+  script.id = id
+  script.src = src
+  script.async = true
+  Object.entries(attrs).forEach(([k, v]) => script.setAttribute(k, v))
+  document.head.appendChild(script)
+}
+
+const injectStyle = (css: string, id: string) => {
+  if (document.getElementById(id)) return
+  const style = document.createElement('style')
+  style.id = id
+  style.innerHTML = css
+  document.head.appendChild(style)
+}
+
 onMounted(() => {
   const c = contactStore.get()
   const hasContact = !!c.email && !!c.nombre
@@ -119,6 +140,15 @@ onMounted(() => {
   } else {
     ;(window as any).fbq?.('track', 'ViewContent', { content_name: 'video-vsl' })
   }
+
+  // Asegurar que el reproductor Wistia esté disponible incluso si el usuario
+  // llega directamente a /ver-video sin pasar por el landing.
+  injectScript('https://fast.wistia.com/player.js')
+  injectScript(`https://fast.wistia.com/embed/${WISTIA_MEDIA_ID}.js`, { type: 'module' })
+  injectStyle(
+    `wistia-player[media-id='${WISTIA_MEDIA_ID}']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/${WISTIA_MEDIA_ID}/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }`,
+    'wistia-style-t3i94brx2s',
+  )
 })
 </script>
 
@@ -160,7 +190,7 @@ onMounted(() => {
       <!-- Wistia video embed -->
       <div class="vv-video-wrapper">
         <div class="vv-video-ratio">
-          <wistia-player media-id="h5bs715nzv" aspect="1.7777777777777777"></wistia-player>
+          <wistia-player media-id="t3i94brx2s" aspect="1.7777777777777777"></wistia-player>
         </div>
       </div>
 
@@ -524,7 +554,7 @@ onMounted(() => {
 
     &:not(:defined) {
       background: center / contain no-repeat
-        url('https://fast.wistia.com/embed/medias/3ffgiuig80/swatch');
+        url('https://fast.wistia.com/embed/medias/t3i94brx2s/swatch');
       display: block;
       filter: blur(5px);
       padding-top: 56.25%;
