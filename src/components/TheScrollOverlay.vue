@@ -96,7 +96,7 @@
 
   &__text {
     .scroll-overlay__title {
-      @include fonts.heading-font(800);
+      @include fonts.heading-font(400);
       font-size: clamp(1.5rem, 4vw, 2rem);
       color: colors.$white;
       margin-bottom: 0.5rem;

@@ -214,7 +214,10 @@ const budgetOpts = [
 ]
 
 const objectiveOpts = [
-  { value: 'Película cinematográfica y documental emotivo', label: 'Película cinematográfica y documental emotivo' },
+  {
+    value: 'Película cinematográfica y documental emotivo',
+    label: 'Película cinematográfica y documental emotivo',
+  },
   { value: 'Resumen dinámico para redes sociales', label: 'Resumen dinámico para redes sociales' },
   { value: 'Registro completo de todo el evento', label: 'Registro completo de todo el evento' },
 ]
@@ -547,7 +550,7 @@ const urgencyOpts = [
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  @include fonts.interface-font(700);
+  @include fonts.interface-font(400);
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.35);
   transition: all 0.4s ease;
@@ -580,7 +583,7 @@ const urgencyOpts = [
 }
 
 .wiz__step-hint {
-  @include fonts.interface-font(500);
+  @include fonts.interface-font(400);
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.35);
   margin: 0;
@@ -614,7 +617,7 @@ const urgencyOpts = [
 }
 
 .wf-label {
-  @include fonts.interface-font(600);
+  @include fonts.interface-font(400);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -666,7 +669,7 @@ const urgencyOpts = [
 }
 
 .wf-phone__code {
-  @include fonts.interface-font(500);
+  @include fonts.interface-font(400);
   font-size: 0.82rem;
   color: rgba(colors.$white, 0.7);
   background: rgba(255, 255, 255, 0.05);
@@ -711,7 +714,7 @@ const urgencyOpts = [
 }
 
 .wf-q-num {
-  @include fonts.accent-font(700);
+  @include fonts.accent-font(400);
   font-size: 0.65rem;
   letter-spacing: 3px;
   color: colors.$BAKANO-PINK;
@@ -720,7 +723,7 @@ const urgencyOpts = [
 }
 
 .wf-q-title {
-  @include fonts.heading-font(600);
+  @include fonts.heading-font(400);
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.85);
   margin: 0 0 4px;
@@ -874,7 +877,7 @@ const urgencyOpts = [
 }
 
 .wf-btn {
-  @include fonts.accent-font(600);
+  @include fonts.accent-font(400);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -983,7 +986,7 @@ const urgencyOpts = [
 }
 
 .wiz__ok-title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 1.6rem;
   color: colors.$white;
   margin: 0;

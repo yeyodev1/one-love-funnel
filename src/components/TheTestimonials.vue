@@ -260,7 +260,7 @@ const openVideo = (url: string) => window.open(url, '_blank')
   }
 
   &__label {
-    @include fonts.accent-font(700);
+    @include fonts.accent-font(400);
     font-size: 0.78rem;
     color: colors.$BAKANO-PINK;
     text-transform: uppercase;
@@ -274,7 +274,7 @@ const openVideo = (url: string) => window.open(url, '_blank')
   }
 
   &__title {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(2.6rem, 5.5vw, 5rem);
     color: colors.$white;
     text-transform: uppercase;

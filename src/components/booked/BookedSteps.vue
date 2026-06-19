@@ -58,7 +58,7 @@ const props = defineProps({
   }
 
   &__section-title {
-    @include fonts.heading-font(700);
+    @include fonts.heading-font(400);
     font-size: 1.1rem;
     color: colors.$white;
     margin: 0 0 1.25rem;
@@ -129,7 +129,7 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
-    @include fonts.accent-font(700);
+    @include fonts.accent-font(400);
     font-size: 0.75rem;
 
     @media (min-width: 768px) {
@@ -173,7 +173,7 @@ const props = defineProps({
 
   &__title {
     display: block;
-    @include fonts.interface-font(700);
+    @include fonts.interface-font(400);
     font-size: 0.95rem;
     color: colors.$white;
     margin-bottom: 0.35rem;

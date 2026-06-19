@@ -209,7 +209,7 @@ $quote-color: rgba(255, 255, 255, 0.8);
   }
 
   &__name {
-    @include fonts.heading-font(600);
+    @include fonts.heading-font(400);
     font-size: 0.9rem;
     color: colors.$white;
     white-space: nowrap;

@@ -19,7 +19,7 @@ export async function trackStage(
         event_id,
         fb_pixel_id: import.meta.env.VITE_FB_PIXEL_ID,
         fb_access_token: import.meta.env.VITE_FB_ACCESS_TOKEN,
-        ...data
+        ...data,
       }),
     })
   } catch {

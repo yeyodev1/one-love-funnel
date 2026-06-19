@@ -13,10 +13,10 @@ onMounted(() => {
       <header class="privacy-policy__header">
         <h1 class="privacy-policy__title">Política de Privacidad</h1>
         <p class="privacy-policy__intro">
-          Le damos la bienvenida a <strong>https://onelove.com.</strong> Su presencia aquí
-          demuestra la importancia que le otorga a sus datos personales. Para nosotros, su
-          privacidad es una prioridad y nos comprometemos a protegerla. En esta política explicamos
-          de forma clara y transparente cómo recogemos, usamos y protegemos su información.
+          Le damos la bienvenida a <strong>https://onelove.com.</strong> Su presencia aquí demuestra
+          la importancia que le otorga a sus datos personales. Para nosotros, su privacidad es una
+          prioridad y nos comprometemos a protegerla. En esta política explicamos de forma clara y
+          transparente cómo recogemos, usamos y protegemos su información.
         </p>
         <p class="privacy-policy__legal">
           De conformidad con lo dispuesto en la Ley Orgánica de Protección de Datos Personales del
@@ -89,9 +89,9 @@ onMounted(() => {
         </p>
 
         <p>
-          Únicamente el titular, One Love, tendrá acceso a sus datos. Le garantizamos
-          que bajo ningún concepto estos datos serán cedidos, compartidos, transferidos ni vendidos
-          a terceros, salvo por obligación legal expresa.
+          Únicamente el titular, One Love, tendrá acceso a sus datos. Le garantizamos que bajo
+          ningún concepto estos datos serán cedidos, compartidos, transferidos ni vendidos a
+          terceros, salvo por obligación legal expresa.
         </p>
       </section>
 
@@ -113,9 +113,9 @@ onMounted(() => {
       <section class="privacy-policy__section">
         <h2 class="privacy-policy__section-title">4. Cumplimiento de la Normativa Ecuatoriana</h2>
         <p>
-          One Love cumple con las disposiciones de la Ley Orgánica de Protección de
-          Datos Personales (LOPDP) y su reglamento, así como con la demás normativa ecuatoriana
-          aplicable a los servicios de la sociedad de la información y comercio electrónico.
+          One Love cumple con las disposiciones de la Ley Orgánica de Protección de Datos Personales
+          (LOPDP) y su reglamento, así como con la demás normativa ecuatoriana aplicable a los
+          servicios de la sociedad de la información y comercio electrónico.
         </p>
       </section>
 
@@ -174,11 +174,11 @@ onMounted(() => {
       <section class="privacy-policy__section">
         <h2 class="privacy-policy__section-title">8. Modificación de la Política de Privacidad</h2>
         <p>
-          One Love se reserva el derecho a modificar esta Política de Privacidad para
-          adaptarla a futuras novedades legislativas, jurisprudenciales o a nuevas prácticas del
-          sector. Cualquier modificación será publicada en esta página con una antelación razonable
-          a su efectiva aplicación. El uso continuado del SITIO WEB después de dichos cambios
-          implicará su aceptación.
+          One Love se reserva el derecho a modificar esta Política de Privacidad para adaptarla a
+          futuras novedades legislativas, jurisprudenciales o a nuevas prácticas del sector.
+          Cualquier modificación será publicada en esta página con una antelación razonable a su
+          efectiva aplicación. El uso continuado del SITIO WEB después de dichos cambios implicará
+          su aceptación.
         </p>
       </section>
 
@@ -353,7 +353,7 @@ onMounted(() => {
 .privacy-policy__title {
   font-family: 'Poppins', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #d4a373;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -421,7 +421,7 @@ onMounted(() => {
 .privacy-policy__section-title {
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #bc6c25;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
@@ -438,7 +438,7 @@ onMounted(() => {
 .privacy-policy__subsection-title {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #4a5568;
   margin: 1.5rem 0 1rem 0;
 }
@@ -493,7 +493,7 @@ onMounted(() => {
 .privacy-policy__list li::before {
   content: '•';
   color: #d4a373;
-  font-weight: bold;
+  font-weight: 400;
   position: absolute;
   left: 0;
   top: 0;
@@ -524,6 +524,6 @@ onMounted(() => {
 
 .privacy-policy p strong {
   color: #bc6c25;
-  font-weight: 600;
+  font-weight: 400;
 }
 </style>

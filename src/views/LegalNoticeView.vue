@@ -20,8 +20,8 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">1. AVISO LEGAL Y TÉRMINOS DE USO</h2>
         <p>
-          One Love es denominado en este documento como el PROVEEDOR y usted el CLIENTE
-          quién recibe nuestros productos o servicios (gratuitos o de pago)
+          One Love es denominado en este documento como el PROVEEDOR y usted el CLIENTE quién recibe
+          nuestros productos o servicios (gratuitos o de pago)
         </p>
         <p>
           Puedo garantizarte que te encuentras en un espacio 100 % seguro, para ello debes saber:
@@ -60,8 +60,8 @@ onMounted(() => {
         <h4 class="legal-notice__subsubsection-title">1.4.1 USO DEL SITIO WEB</h4>
         <p>
           La página web proporciona el acceso a artículos, informaciones, servicios y datos (en
-          adelante, "los contenidos") propiedad de One Love. El USUARIO asume la
-          responsabilidad del uso de la web.
+          adelante, "los contenidos") propiedad de One Love. El USUARIO asume la responsabilidad del
+          uso de la web.
         </p>
 
         <p>
@@ -90,11 +90,10 @@ onMounted(() => {
         </ul>
 
         <p>
-          One Love se reserva el derecho de retirar todos aquellos comentarios y
-          aportaciones que vulneren el respeto a la dignidad de la persona, que sean
-          discriminatorios, xenófobos, racistas, pornográficos, que atenten contra la juventud o la
-          infancia, el orden o la seguridad pública o que, a su juicio, no resultaran adecuados para
-          su publicación.
+          One Love se reserva el derecho de retirar todos aquellos comentarios y aportaciones que
+          vulneren el respeto a la dignidad de la persona, que sean discriminatorios, xenófobos,
+          racistas, pornográficos, que atenten contra la juventud o la infancia, el orden o la
+          seguridad pública o que, a su juicio, no resultaran adecuados para su publicación.
         </p>
 
         <h4 class="legal-notice__subsubsection-title">1.4.2 CAPTURA DE INFORMACIÓN</h4>
@@ -117,18 +116,17 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">2. PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
         <p>
-          One Love por sí o como cesionario, es titular de todos los derechos de
-          propiedad intelectual e industrial de su página web, así como de los elementos contenidos
-          en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos;
-          marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales
-          usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.),
-          titularidad de One Love o bien de sus licenciantes. Todos los derechos
-          reservados.
+          One Love por sí o como cesionario, es titular de todos los derechos de propiedad
+          intelectual e industrial de su página web, así como de los elementos contenidos en la
+          misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o
+          logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados,
+          programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.), titularidad
+          de One Love o bien de sus licenciantes. Todos los derechos reservados.
         </p>
 
         <p>
-          Cualquier uso no autorizado previamente por One Love será considerado un
-          incumplimiento grave de los derechos de propiedad intelectual o industrial del autor.
+          Cualquier uso no autorizado previamente por One Love será considerado un incumplimiento
+          grave de los derechos de propiedad intelectual o industrial del autor.
         </p>
 
         <p>
@@ -142,9 +140,9 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">3. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD</h2>
         <p>
-          One Love no se hace responsable, en ningún caso, de los daños y perjuicios de
-          cualquier naturaleza que pudieran ocasionar, a título enunciativo: por errores u omisiones
-          en los contenidos, por falta de disponibilidad del sitio web, – el cual realizará paradas
+          One Love no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier
+          naturaleza que pudieran ocasionar, a título enunciativo: por errores u omisiones en los
+          contenidos, por falta de disponibilidad del sitio web, – el cual realizará paradas
           periódicas por mantenimientos técnicos – así como por la transmisión de virus o programas
           maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas
           tecnológicas necesarias para evitarlo.
@@ -162,10 +160,10 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">4. MODIFICACIONES</h2>
         <p>
-          One Love se reserva el derecho de efectuar sin previo aviso las modificaciones
-          que considere oportunas en su web, pudiendo cambiar, suprimir o añadir tanto los
-          contenidos y servicios que se presten a través de la misma como la forma en la que éstos
-          aparezcan presentados o localizados en su web.
+          One Love se reserva el derecho de efectuar sin previo aviso las modificaciones que
+          considere oportunas en su web, pudiendo cambiar, suprimir o añadir tanto los contenidos y
+          servicios que se presten a través de la misma como la forma en la que éstos aparezcan
+          presentados o localizados en su web.
         </p>
       </section>
 
@@ -173,8 +171,8 @@ onMounted(() => {
         <h2 class="legal-notice__section-title">5. POLÍTICA DE ENLACES</h2>
         <p>
           Las personas o entidades que pretendan realizar o realicen un hiperenlace desde una página
-          web de otro portal de Internet a la web de One Love deberá someterse las
-          siguientes condiciones:
+          web de otro portal de Internet a la web de One Love deberá someterse las siguientes
+          condiciones:
         </p>
         <ol>
           <li>
@@ -182,12 +180,12 @@ onMounted(() => {
             del sitio web sin la previa autorización expresa de One Love
           </li>
           <li>
-            No se establecerán deep-links ni enlaces IMG o de imagen, ni frames con la web de
-            One Love sin su previa autorización expresa.
+            No se establecerán deep-links ni enlaces IMG o de imagen, ni frames con la web de One
+            Love sin su previa autorización expresa.
           </li>
           <li>
-            No se establecerá ninguna manifestación falsa, inexacta o incorrecta sobre la web de
-            One Love, ni sobre los servicios o contenidos de la misma.
+            No se establecerá ninguna manifestación falsa, inexacta o incorrecta sobre la web de One
+            Love, ni sobre los servicios o contenidos de la misma.
           </li>
         </ol>
       </section>
@@ -195,9 +193,9 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">6. DERECHO DE EXCLUSIÓN</h2>
         <p>
-          One Love se reserva el derecho a denegar o retirar el acceso al portal y/o los
-          servicios ofrecidos sin necesidad de preaviso, a instancia propia o de un tercero, a
-          aquellos usuarios que incumplan las presentes Condiciones Generales de Uso.
+          One Love se reserva el derecho a denegar o retirar el acceso al portal y/o los servicios
+          ofrecidos sin necesidad de preaviso, a instancia propia o de un tercero, a aquellos
+          usuarios que incumplan las presentes Condiciones Generales de Uso.
         </p>
       </section>
 
@@ -206,8 +204,8 @@ onMounted(() => {
         <p>
           Las presentes condiciones generales tienen por objeto regular expresamente las condiciones
           aplicables a los procesos de contratación llevados a cabo por los usuarios "Cliente" de
-          los servicios de asesoría y construcción ofrecido por parte de One Love a
-          través de su sitio web.
+          los servicios de asesoría y construcción ofrecido por parte de One Love a través de su
+          sitio web.
         </p>
 
         <p>Para proceder al pago, el cliente tiene a su disposición los siguientes medios:</p>
@@ -225,9 +223,9 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">8. LEY APLICABLE Y JURISDICCIÓN</h2>
         <p>
-          La relación entre One Love y el CLIENTE se regirá por la normativa de Ecuador
-          y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de
-          Guayaquil, salvo que la Ley aplicable disponga otra cosa.
+          La relación entre One Love y el CLIENTE se regirá por la normativa de Ecuador y cualquier
+          controversia se someterá a los Juzgados y tribunales de la ciudad de Guayaquil, salvo que
+          la Ley aplicable disponga otra cosa.
         </p>
       </section>
 
@@ -235,9 +233,8 @@ onMounted(() => {
         <h2 class="legal-notice__section-title">9. CAUSAS DE DISOLUCIÓN DEL CONTRATO</h2>
         <ol>
           <li>
-            PUEDE CANCELAR ACUERDOS Y CONTRATOS FIRMADOS CON One Love EN CUALQUIER
-            MOMENTO ANTES DE LA MEDIANOCHE DEL TERCER DÍA DESPUÉS DE LA FECHA QUE HAGA EL PRIMER
-            PAGO.
+            PUEDE CANCELAR ACUERDOS Y CONTRATOS FIRMADOS CON One Love EN CUALQUIER MOMENTO ANTES DE
+            LA MEDIANOCHE DEL TERCER DÍA DESPUÉS DE LA FECHA QUE HAGA EL PRIMER PAGO.
           </li>
           <li>
             En el caso de una reclamación o disputa, primero hablará con nosotros de buena fe y
@@ -250,9 +247,9 @@ onMounted(() => {
       <section class="legal-notice__section">
         <h2 class="legal-notice__section-title">10. RECLAMACIONES Y DUDAS</h2>
         <p>
-          One Love informa que existen hojas de reclamación a disposición de usuarios y
-          clientes pudiendo remitir un correo a info@onelove.com indicando su nombre y apellidos,
-          el servicio o producto adquirido y exponiendo los motivos de su reclamación.
+          One Love informa que existen hojas de reclamación a disposición de usuarios y clientes
+          pudiendo remitir un correo a info@onelove.com indicando su nombre y apellidos, el servicio
+          o producto adquirido y exponiendo los motivos de su reclamación.
         </p>
       </section>
 
@@ -409,7 +406,7 @@ onMounted(() => {
   &__title {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 400;
     margin: 0 0 1rem 0;
     line-height: 1.2;
 
@@ -454,7 +451,7 @@ onMounted(() => {
   &__section-title {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #d4a373;
     margin: 0 0 1.5rem 0;
     padding-bottom: 0.5rem;
@@ -472,7 +469,7 @@ onMounted(() => {
   &__subsection-title {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #333;
     margin: 2rem 0 1rem 0;
 
@@ -485,7 +482,7 @@ onMounted(() => {
   &__subsubsection-title {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #555;
     margin: 1.5rem 0 1rem 0;
 
@@ -533,7 +530,7 @@ onMounted(() => {
 
   strong {
     color: #bc6c25;
-    font-weight: 600;
+    font-weight: 400;
   }
 }
 </style>

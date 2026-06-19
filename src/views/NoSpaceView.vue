@@ -175,7 +175,7 @@ onMounted(() => {
     flex-shrink: 0;
   }
   strong {
-    font-weight: 700;
+    font-weight: 400;
   }
 }
 
@@ -206,7 +206,7 @@ onMounted(() => {
 }
 
 .nospace__title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 1.5rem;
   color: colors.$OS-DARK;
   margin: 0 0 0.75rem;
@@ -231,7 +231,7 @@ onMounted(() => {
 .nospace__steps-title {
   font-family: fonts.$font-interface;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: colors.$OS-NAVY;
@@ -298,7 +298,7 @@ onMounted(() => {
   border: 1px solid rgba(colors.$OS-NAVY, 0.18);
   font-family: fonts.$font-interface;
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 400;
   color: colors.$OS-NAVY;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -309,7 +309,7 @@ onMounted(() => {
 }
 
 .nospace__teaser-title {
-  @include fonts.heading-font(700);
+  @include fonts.heading-font(400);
   font-size: 1.05rem;
   color: colors.$OS-DARK;
   margin: 0 0 0.5rem;
@@ -334,7 +334,7 @@ onMounted(() => {
   font-size: 0.86rem;
   color: colors.$OS-NAVY;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   transition: color 0.2s;
   &:hover {
     color: colors.$OS-BLUE;

@@ -168,7 +168,7 @@ import ContactWizard from './ContactWizard.vue'
 }
 
 .contact__label {
-  @include fonts.accent-font(700);
+  @include fonts.accent-font(400);
   font-size: 0.75rem;
   color: colors.$BAKANO-PINK;
   text-transform: uppercase;
@@ -177,7 +177,7 @@ import ContactWizard from './ContactWizard.vue'
 }
 
 .contact__title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: clamp(2.4rem, 4.5vw, 4rem);
   color: colors.$white;
   text-transform: uppercase;
@@ -220,7 +220,7 @@ import ContactWizard from './ContactWizard.vue'
 }
 
 .contact__trust-item {
-  @include fonts.body-font(500);
+  @include fonts.body-font(400);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -254,7 +254,7 @@ import ContactWizard from './ContactWizard.vue'
 }
 
 .contact__stat-num {
-  @include fonts.heading-font(900);
+  @include fonts.heading-font(400);
   font-size: 3rem;
   line-height: 1;
   background: linear-gradient(135deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);

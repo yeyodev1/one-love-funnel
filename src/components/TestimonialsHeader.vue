@@ -34,7 +34,7 @@ const props = defineProps({
   }
 
   &__label {
-    @include fonts.accent-font(600);
+    @include fonts.accent-font(400);
     font-size: 0.9rem;
     color: colors.$BAKANO-PINK;
     text-transform: uppercase;
@@ -48,7 +48,7 @@ const props = defineProps({
   }
 
   &__title {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(3rem, 7vw, 6rem);
     text-transform: uppercase;
     color: colors.$text-light;

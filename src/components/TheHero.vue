@@ -206,7 +206,7 @@ const { open: openContactModal } = useContactModal()
                 text-anchor="middle"
                 fill="#ffffff"
                 font-size="42"
-                font-weight="900"
+                font-weight="400"
                 letter-spacing="2"
               >
                 ONE LOVE
@@ -500,7 +500,7 @@ const { open: openContactModal } = useContactModal()
   }
 
   .hero-huge__subtitle {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 2rem;
@@ -527,7 +527,7 @@ const { open: openContactModal } = useContactModal()
 }
 
 .btn--primary {
-  @include fonts.body-font(700);
+  @include fonts.body-font(400);
   background: colors.$BAKANO-PRIMARY;
   color: colors.$white;
   padding: 1.5rem 3rem;
@@ -549,7 +549,7 @@ const { open: openContactModal } = useContactModal()
 }
 
 .hero-huge__note {
-  @include fonts.body-font(500);
+  @include fonts.body-font(400);
   font-size: 0.95rem;
   margin-top: 1.5rem;
   opacity: 0.7;
@@ -571,7 +571,7 @@ const { open: openContactModal } = useContactModal()
   width: 100%;
 
   .stat-number {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(4rem, 8vw, 7rem);
     color: colors.$white;
     line-height: 1;
@@ -580,7 +580,7 @@ const { open: openContactModal } = useContactModal()
   }
 
   .stat-label {
-    @include fonts.body-font(600);
+    @include fonts.body-font(400);
     font-size: 1.5rem;
     color: rgba(colors.$white, 0.8);
     text-transform: uppercase;
@@ -622,7 +622,7 @@ const { open: openContactModal } = useContactModal()
     }
 
     .benefit-title {
-      @include fonts.heading-font(800);
+      @include fonts.heading-font(400);
       font-size: 2.5rem;
       line-height: 1.1;
       margin-bottom: 1.5rem;
@@ -660,7 +660,7 @@ const { open: openContactModal } = useContactModal()
 }
 
 .scroll-hint__h-label {
-  @include fonts.interface-font(600);
+  @include fonts.interface-font(400);
   display: flex;
   align-items: center;
   gap: 10px;

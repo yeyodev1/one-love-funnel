@@ -303,9 +303,7 @@ watch(
                   <span class="cal-option__label">{{ opt.label }}</span>
                 </label>
               </div>
-              <span v-if="touched && !form.fecha" class="cal-error"
-                >Selecciona una opción</span
-              >
+              <span v-if="touched && !form.fecha" class="cal-error">Selecciona una opción</span>
             </fieldset>
 
             <!-- Q5 — Presupuesto -->
@@ -473,7 +471,7 @@ watch(
 }
 
 .cal-title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 1.45rem;
   color: colors.$OS-DARK;
   margin: 0 0 0.5rem;
@@ -515,7 +513,7 @@ watch(
   gap: 0.5rem;
   font-family: fonts.$font-interface;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 400;
   color: colors.$OS-DARK;
   margin-bottom: 0.75rem;
 }
@@ -530,7 +528,7 @@ watch(
   background: colors.$OS-NAVY;
   color: #ffffff;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 400;
   flex-shrink: 0;
 }
 
@@ -587,11 +585,11 @@ watch(
   &__label {
     font-size: 0.88rem;
     color: #3a4f6a;
-    font-weight: 500;
+    font-weight: 400;
 
     .cal-option.selected & {
       color: colors.$OS-DARK;
-      font-weight: 600;
+      font-weight: 400;
     }
   }
 }
@@ -663,7 +661,7 @@ watch(
         content: '✓';
         color: #ffffff;
         font-size: 0.7rem;
-        font-weight: 800;
+        font-weight: 400;
       }
     }
   }
@@ -687,7 +685,7 @@ watch(
   padding: 1rem 2rem;
   font-family: fonts.$font-accent;
   font-size: 0.97rem;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: 0.04em;
   cursor: pointer;
   width: 100%;

@@ -1,12 +1,12 @@
 // Fuentes locales cargadas en global.scss
-$font-principal: 'BIG JOHN', sans-serif; // Para títulos principales y headings
+$font-principal: 'Montserrat', sans-serif; // Para títulos principales y headings
 $font-secondary: 'Avenir Next', sans-serif; // Para texto de cuerpo y párrafos
 $font-accent: 'Avenir Next', sans-serif; // Para elementos destacados y CTAs
 $font-interface: 'Avenir Next', sans-serif; // Para elementos de UI y navegación
 $font-fallback: 'sans-serif'; // Fuente de respaldo confiable
 
 // Mixins para facilitar el uso
-@mixin heading-font($weight: normal) {
+@mixin heading-font($weight: 400) {
   font-family: $font-principal;
   font-weight: $weight;
   line-height: 1.2;
@@ -18,7 +18,7 @@ $font-fallback: 'sans-serif'; // Fuente de respaldo confiable
   line-height: 1.6;
 }
 
-@mixin accent-font($weight: 500) {
+@mixin accent-font($weight: 400) {
   font-family: $font-accent;
   font-weight: $weight;
   line-height: 1.4;

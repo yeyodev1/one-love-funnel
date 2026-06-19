@@ -112,7 +112,7 @@ onUnmounted(() => {
 
   &__bg-num {
     position: absolute;
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(10rem, 28vw, 38rem);
     color: rgba(255, 255, 255, 0.025);
     line-height: 1;
@@ -123,7 +123,7 @@ onUnmounted(() => {
 
   &__text {
     position: relative;
-    @include fonts.heading-font(700);
+    @include fonts.heading-font(400);
     font-size: clamp(1.8rem, 4vw, 3.2rem);
     color: colors.$white;
     margin: 0;

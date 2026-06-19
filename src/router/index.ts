@@ -37,8 +37,7 @@ const router = createRouter({
           'Expertos en cinematografía de bodas. Transformamos el recuerdo de tu boda en una obra de arte.',
         canonical: 'https://onelove.com/',
         ogTitle: 'One Love | Cinematografía de Alto Impacto',
-        ogDescription:
-          'Cinematografía de alto impacto. Calidad artística para el día de tu boda.',
+        ogDescription: 'Cinematografía de alto impacto. Calidad artística para el día de tu boda.',
         ogUrl: 'https://onelove.com/',
       } satisfies RouteMeta,
     },
@@ -75,8 +74,7 @@ const router = createRouter({
       component: BookedView,
       meta: {
         title: 'Cita Confirmada | One Love',
-        description:
-          'Tu cita con One Love está confirmada. Revisa tu correo y prepárate.',
+        description: 'Tu cita con One Love está confirmada. Revisa tu correo y prepárate.',
         canonical: 'https://onelove.com/cita-confirmada',
         ogTitle: 'Cita Confirmada | One Love',
         ogDescription: 'Tu cita está reservada. Te contactaremos pronto.',
@@ -93,8 +91,7 @@ const router = createRouter({
           'En este momento los cupos de One Love están completos. Te notificaremos cuando se libere un espacio.',
         canonical: 'https://onelove.com/sin-espacio',
         ogTitle: 'Sin Espacio Disponible | One Love',
-        ogDescription:
-          'Los cupos están completos. Te avisaremos cuando haya disponibilidad.',
+        ogDescription: 'Los cupos están completos. Te avisaremos cuando haya disponibilidad.',
         ogUrl: 'https://onelove.com/sin-espacio',
       } satisfies RouteMeta,
     },

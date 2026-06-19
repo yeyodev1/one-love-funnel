@@ -232,7 +232,7 @@ onUnmounted(() => {
   }
 
   &__subtitle {
-    @include fonts.body-font(600);
+    @include fonts.body-font(400);
     color: colors.$BAKANO-PINK;
     font-size: 1rem;
     letter-spacing: 0.2em;
@@ -241,7 +241,7 @@ onUnmounted(() => {
   }
 
   &__title {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(3rem, 6vw, 6.5rem);
     color: colors.$white;
     line-height: 1.05;
@@ -277,7 +277,7 @@ onUnmounted(() => {
   }
 
   .btn-header-contact {
-    @include fonts.body-font(700);
+    @include fonts.body-font(400);
     background: transparent;
     border: 2px solid colors.$BAKANO-PINK;
     color: colors.$white;
@@ -372,7 +372,7 @@ onUnmounted(() => {
     }
 
     &__number {
-      @include fonts.heading-font(800);
+      @include fonts.heading-font(400);
       font-size: clamp(4rem, 6vw, 6rem);
       line-height: 1;
       color: rgba(colors.$white, 0.1);
@@ -381,7 +381,7 @@ onUnmounted(() => {
     }
 
     &__title {
-      @include fonts.heading-font(700);
+      @include fonts.heading-font(400);
       font-size: clamp(1.8rem, 2.5vw, 2.5rem);
       color: colors.$white;
       line-height: 1.1;
@@ -406,7 +406,7 @@ onUnmounted(() => {
       gap: 1rem;
 
       li {
-        @include fonts.body-font(500);
+        @include fonts.body-font(400);
         font-size: 1rem;
         color: rgba(colors.$white, 0.9);
         display: flex;
@@ -470,7 +470,7 @@ onUnmounted(() => {
     }
 
     &__title {
-      @include fonts.heading-font(700);
+      @include fonts.heading-font(400);
       font-size: clamp(1.8rem, 2.5vw, 2.5rem);
       color: colors.$white;
       margin-bottom: 0.5rem;
@@ -497,7 +497,7 @@ onUnmounted(() => {
   }
 
   .btn-primary-massive {
-    @include fonts.body-font(700);
+    @include fonts.body-font(400);
     background: colors.$BAKANO-PRIMARY;
     color: colors.$white;
     border: none;

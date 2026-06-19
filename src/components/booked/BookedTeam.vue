@@ -59,7 +59,7 @@ const props = defineProps({
   }
 
   &__section-title {
-    @include fonts.heading-font(700);
+    @include fonts.heading-font(400);
     font-size: 1.15rem;
     color: colors.$white;
     margin: 0 0 1.5rem;
@@ -203,7 +203,7 @@ const props = defineProps({
   }
 
   &__name {
-    @include fonts.heading-font(700);
+    @include fonts.heading-font(400);
     font-size: 1.1rem;
     color: colors.$white;
     margin: 0;
@@ -215,7 +215,7 @@ const props = defineProps({
   }
 
   &__role {
-    @include fonts.interface-font(600);
+    @include fonts.interface-font(400);
     font-size: 0.75rem;
     color: rgba(colors.$white, 0.5);
     margin: 0;

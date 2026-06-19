@@ -183,7 +183,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 // ── Label tooltip (aparece al hover del item) ─────────────────────────────
 .scroll-guide__label {
-  @include fonts.interface-font(500);
+  @include fonts.interface-font(400);
   position: absolute;
   right: calc(100% + 14px);
   white-space: nowrap;

@@ -353,7 +353,7 @@ $text-body: rgba(255, 255, 255, 0.65);
   }
 
   &-label {
-    @include fonts.accent-font(700);
+    @include fonts.accent-font(400);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -362,7 +362,7 @@ $text-body: rgba(255, 255, 255, 0.65);
   }
 
   &-title {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(2.4rem, 5vw, 4.4rem);
     text-transform: uppercase;
     letter-spacing: -0.025em;
@@ -437,7 +437,7 @@ $text-body: rgba(255, 255, 255, 0.65);
     }
 
     &-text {
-      @include fonts.interface-font(600);
+      @include fonts.interface-font(400);
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -473,7 +473,7 @@ $text-body: rgba(255, 255, 255, 0.65);
   }
 
   &-btn {
-    @include fonts.interface-font(600);
+    @include fonts.interface-font(400);
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -565,7 +565,7 @@ $text-body: rgba(255, 255, 255, 0.65);
 }
 
 .footer__col-title {
-  @include fonts.interface-font(600);
+  @include fonts.interface-font(400);
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -733,7 +733,7 @@ $text-body: rgba(255, 255, 255, 0.65);
 }
 
 .footer__yeyo {
-  @include fonts.interface-font(600);
+  @include fonts.interface-font(400);
   color: $text-muted;
   text-decoration: none;
   background: linear-gradient(90deg, colors.$BAKANO-PINK, colors.$BAKANO-PURPLE);

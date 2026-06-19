@@ -271,7 +271,7 @@ $dark2: #11091f;
   }
 
   &__eyebrow {
-    @include fonts.accent-font(500);
+    @include fonts.accent-font(400);
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -292,7 +292,7 @@ $dark2: #11091f;
   }
 
   &__title {
-    @include fonts.heading-font(900);
+    @include fonts.heading-font(400);
     font-size: clamp(1.8rem, 9vw, 6.5rem);
     text-transform: uppercase;
     letter-spacing: -0.04em;
@@ -342,7 +342,7 @@ $dark2: #11091f;
     gap: 8px;
 
     span {
-      @include fonts.interface-font(500);
+      @include fonts.interface-font(400);
       font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 2.5px;
@@ -435,7 +435,7 @@ $dark2: #11091f;
   }
 
   &__num {
-    @include fonts.accent-font(700);
+    @include fonts.accent-font(400);
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -458,7 +458,7 @@ $dark2: #11091f;
   }
 
   &__tagline {
-    @include fonts.accent-font(500);
+    @include fonts.accent-font(400);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -467,7 +467,7 @@ $dark2: #11091f;
   }
 
   &__name {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -493,7 +493,7 @@ $dark2: #11091f;
   }
 
   &__tag {
-    @include fonts.interface-font(500);
+    @include fonts.interface-font(400);
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -524,7 +524,7 @@ $dark2: #11091f;
   }
 
   &__cta {
-    @include fonts.interface-font(600);
+    @include fonts.interface-font(400);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -589,7 +589,7 @@ $dark2: #11091f;
   }
 
   &__soon-label {
-    @include fonts.heading-font(700);
+    @include fonts.heading-font(400);
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;

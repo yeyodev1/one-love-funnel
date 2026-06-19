@@ -31,7 +31,10 @@ const budgetOpts = [
 ]
 
 const objectiveOpts = [
-  { value: 'Película cinematográfica y documental emotivo', label: 'Película cinematográfica y documental emotivo' },
+  {
+    value: 'Película cinematográfica y documental emotivo',
+    label: 'Película cinematográfica y documental emotivo',
+  },
   { value: 'Resumen dinámico para redes sociales', label: 'Resumen dinámico para redes sociales' },
   { value: 'Registro completo de todo el evento', label: 'Registro completo de todo el evento' },
 ]
@@ -63,7 +66,7 @@ const submitCapture = async () => {
   captureSubmitting.value = true
 
   const c = contactStore.get()
-  
+
   const notes = [
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
     '💍 ONE LOVE - CALIFICACIÓN (Paso 2)',
@@ -71,11 +74,13 @@ const submitCapture = async () => {
     `💍 Tipo de boda: ${captureForm.value.project}`,
     `📋 Wedding Planner: ${captureForm.value.budget === 'yes' ? 'Sí' : 'No'}`,
     `🎥 Visión principal: ${captureForm.value.objective}`,
-    `🗓️ Fecha de boda: ${urgencyOpts.find(u => u.value === captureForm.value.urgency)?.label || captureForm.value.urgency}`,
+    `🗓️ Fecha de boda: ${urgencyOpts.find((u) => u.value === captureForm.value.urgency)?.label || captureForm.value.urgency}`,
     captureForm.value.message ? `💬 Mensaje del lead: ${captureForm.value.message}` : '',
     `📲 Fuente: Formulario One Love`,
-    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━'
-  ].filter(Boolean).join('\n')
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+  ]
+    .filter(Boolean)
+    .join('\n')
 
   const payload = {
     nombre: c.nombre,
@@ -83,13 +88,13 @@ const submitCapture = async () => {
     telefono: c.telefono,
     note: notes,
     tags: ['one-love', 'calificado'],
-    source: 'one-love-video-gate'
+    source: 'one-love-video-gate',
   }
 
   await fetch(import.meta.env.VITE_WEBHOOK_CALIFICACION, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload),
   }).catch(() => {})
 
   const leadEventId = generateEventId('lead_calificado')
@@ -147,7 +152,8 @@ onMounted(() => {
           y una narrativa profesional
         </h1>
         <p class="vv-subtitle">
-          Ve el video completo y descubre cómo podemos transformar el recuerdo de tu boda en una obra de arte.
+          Ve el video completo y descubre cómo podemos transformar el recuerdo de tu boda en una
+          obra de arte.
         </p>
       </section>
 
@@ -182,21 +188,24 @@ onMounted(() => {
           <div class="vv-authority__content">
             <p class="vv-authority__eyebrow">Expertos en Cinematografía Nupcial</p>
             <h2 id="authority-heading" class="vv-authority__name">One Love</h2>
-            <p class="vv-authority__role">
-              Expertos en Narrativa y Cinematografía de Bodas
-            </p>
+            <p class="vv-authority__role">Expertos en Narrativa y Cinematografía de Bodas</p>
             <p class="vv-authority__bio">
-              Con una amplia trayectoria documentando bodas, nos especializamos en una metodología narrativa que transforma el día más importante de tu vida en una pieza cinematográfica. Nuestro objetivo es que revivas cada emoción al máximo.
+              Con una amplia trayectoria documentando bodas, nos especializamos en una metodología
+              narrativa que transforma el día más importante de tu vida en una pieza
+              cinematográfica. Nuestro objetivo es que revivas cada emoción al máximo.
             </p>
             <ul class="vv-authority__creds" role="list">
               <li>
-                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Cinematografía de alto impacto
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Cinematografía de alto
+                impacto
               </li>
               <li>
-                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Metodología narrativa comprobada
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Metodología narrativa
+                comprobada
               </li>
               <li>
-                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Edición profesional y emotiva
+                <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Edición profesional y
+                emotiva
               </li>
             </ul>
           </div>
@@ -232,62 +241,120 @@ onMounted(() => {
         <div class="capture-modal">
           <div class="capture-modal__header">
             <img :src="logoImg" alt="ONE LOVE" class="vv-logo vv-logo--modal" />
-            <h2 id="capture-title" class="capture-modal__title">
-              Paso 2: <span>Tu Visión</span>
-            </h2>
-            <p class="capture-modal__sub">Para personalizar tu experiencia y mostrarte el video correcto</p>
+            <h2 id="capture-title" class="capture-modal__title">Paso 2: <span>Tu Visión</span></h2>
+            <p class="capture-modal__sub">
+              Para personalizar tu experiencia y mostrarte el video correcto
+            </p>
           </div>
           <form class="capture-modal__form" @submit.prevent="submitCapture" novalidate>
             <!-- Tipo de boda -->
             <div class="wf-question">
               <p class="wf-q-title">¿Qué tipo de boda estás planeando?</p>
-              <div style="display:flex; flex-direction:column; gap:8px;">
-                <label v-for="opt in projectOpts" :key="opt.value" class="wf-opt" :class="{ 'wf-opt--sel': captureForm.project === opt.value }">
-                  <input type="radio" v-model="captureForm.project" :value="opt.value" class="sr-only" />
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label
+                  v-for="opt in projectOpts"
+                  :key="opt.value"
+                  class="wf-opt"
+                  :class="{ 'wf-opt--sel': captureForm.project === opt.value }"
+                >
+                  <input
+                    type="radio"
+                    v-model="captureForm.project"
+                    :value="opt.value"
+                    class="sr-only"
+                  />
                   <span class="wf-opt__radio" />
                   <span class="wf-opt__text">{{ opt.label }}</span>
                 </label>
               </div>
-              <span v-if="captureTouched.project && captureErrors.project" class="capture-field__error">{{ captureErrors.project }}</span>
+              <span
+                v-if="captureTouched.project && captureErrors.project"
+                class="capture-field__error"
+                >{{ captureErrors.project }}</span
+              >
             </div>
 
             <!-- Wedding Planner -->
             <div class="wf-question">
               <p class="wf-q-title">¿Cuentan con un Wedding Planner?</p>
-              <div style="display:flex; flex-direction:column; gap:8px;">
-                <label v-for="opt in budgetOpts" :key="opt.value" class="wf-opt" :class="{ 'wf-opt--sel': captureForm.budget === opt.value }">
-                  <input type="radio" v-model="captureForm.budget" :value="opt.value" class="sr-only" />
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label
+                  v-for="opt in budgetOpts"
+                  :key="opt.value"
+                  class="wf-opt"
+                  :class="{ 'wf-opt--sel': captureForm.budget === opt.value }"
+                >
+                  <input
+                    type="radio"
+                    v-model="captureForm.budget"
+                    :value="opt.value"
+                    class="sr-only"
+                  />
                   <span class="wf-opt__radio" />
                   <span class="wf-opt__text">{{ opt.label }}</span>
                 </label>
               </div>
-              <span v-if="captureTouched.budget && captureErrors.budget" class="capture-field__error">{{ captureErrors.budget }}</span>
+              <span
+                v-if="captureTouched.budget && captureErrors.budget"
+                class="capture-field__error"
+                >{{ captureErrors.budget }}</span
+              >
             </div>
 
             <!-- Vision -->
             <div class="wf-question">
               <p class="wf-q-title">¿Cuál es tu objetivo principal?</p>
-              <div style="display:flex; flex-direction:column; gap:8px;">
-                <label v-for="opt in objectiveOpts" :key="opt.value" class="wf-opt" :class="{ 'wf-opt--sel': captureForm.objective === opt.value }">
-                  <input type="radio" v-model="captureForm.objective" :value="opt.value" class="sr-only" />
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label
+                  v-for="opt in objectiveOpts"
+                  :key="opt.value"
+                  class="wf-opt"
+                  :class="{ 'wf-opt--sel': captureForm.objective === opt.value }"
+                >
+                  <input
+                    type="radio"
+                    v-model="captureForm.objective"
+                    :value="opt.value"
+                    class="sr-only"
+                  />
                   <span class="wf-opt__radio" />
                   <span class="wf-opt__text">{{ opt.label }}</span>
                 </label>
               </div>
-              <span v-if="captureTouched.objective && captureErrors.objective" class="capture-field__error">{{ captureErrors.objective }}</span>
+              <span
+                v-if="captureTouched.objective && captureErrors.objective"
+                class="capture-field__error"
+                >{{ captureErrors.objective }}</span
+              >
             </div>
 
             <!-- Fecha -->
             <div class="wf-question">
               <p class="wf-q-title">¿Cuándo es la fecha de tu boda?</p>
-              <div style="display:flex; flex-direction:column; gap:8px;">
-                <label v-for="opt in urgencyOpts" :key="opt.value" class="wf-opt" :class="{ 'wf-opt--sel': captureForm.urgency === opt.value }">
-                  <input type="radio" v-model="captureForm.urgency" :value="opt.value" class="sr-only" />
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label
+                  v-for="opt in urgencyOpts"
+                  :key="opt.value"
+                  class="wf-opt"
+                  :class="{ 'wf-opt--sel': captureForm.urgency === opt.value }"
+                >
+                  <input
+                    type="radio"
+                    v-model="captureForm.urgency"
+                    :value="opt.value"
+                    class="sr-only"
+                  />
                   <span class="wf-opt__radio" />
-                  <span class="wf-opt__text">{{ opt.label }} - <small>{{opt.sub}}</small></span>
+                  <span class="wf-opt__text"
+                    >{{ opt.label }} - <small>{{ opt.sub }}</small></span
+                  >
                 </label>
               </div>
-              <span v-if="captureTouched.urgency && captureErrors.urgency" class="capture-field__error">{{ captureErrors.urgency }}</span>
+              <span
+                v-if="captureTouched.urgency && captureErrors.urgency"
+                class="capture-field__error"
+                >{{ captureErrors.urgency }}</span
+              >
             </div>
 
             <button type="submit" class="capture-submit" :disabled="captureSubmitting">
@@ -344,7 +411,7 @@ onMounted(() => {
 
   &__logo-text {
     font-family: fonts.$font-principal;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 1.25rem;
     letter-spacing: 0.05em;
     color: colors.$OS-NAVY;
@@ -390,7 +457,7 @@ onMounted(() => {
   &__label {
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #7a8ea5;
     letter-spacing: 0.03em;
   }
@@ -402,7 +469,7 @@ onMounted(() => {
   gap: 0.4rem;
   font-family: fonts.$font-interface;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: colors.$OS-NAVY;
@@ -485,7 +552,7 @@ onMounted(() => {
   padding: 1.1rem 2.5rem;
   font-family: fonts.$font-accent;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: 0.05em;
   cursor: pointer;
   width: 100%;
@@ -556,7 +623,7 @@ onMounted(() => {
 
 .vv-authority__eyebrow {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   color: colors.$OS-BLUE;
   letter-spacing: 0.05em;
@@ -564,7 +631,7 @@ onMounted(() => {
 }
 
 .vv-authority__name {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 1.5rem;
   color: colors.$OS-DARK;
   margin: 0 0 0.1rem;
@@ -678,7 +745,7 @@ onMounted(() => {
 
   &__logo-text {
     font-family: fonts.$font-principal;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 1.25rem;
     letter-spacing: 0.05em;
     color: colors.$OS-NAVY;
@@ -686,7 +753,7 @@ onMounted(() => {
   }
 
   &__title {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: 1.3rem;
     color: #ffffff;
     margin: 0 0 0.4rem;
@@ -727,7 +794,7 @@ onMounted(() => {
   label {
     font-family: fonts.$font-interface;
     font-size: 0.78rem;
-    font-weight: 700;
+    font-weight: 400;
     color: #4a5f7a;
     letter-spacing: 0.02em;
   }
@@ -773,7 +840,7 @@ onMounted(() => {
   border: none;
   border-radius: 12px;
   padding: 1.1rem;
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   cursor: pointer;
@@ -801,7 +868,7 @@ onMounted(() => {
   margin-bottom: 15px;
 }
 .wf-q-title {
-  font-weight: bold;
+  font-weight: 400;
   margin-bottom: 8px;
   font-size: 0.9rem;
 }
@@ -821,7 +888,7 @@ onMounted(() => {
   background: #ffffff;
 }
 .wf-opt--sel {
-  border-color: #CC0000;
+  border-color: #cc0000;
   background: #fffafa;
 }
 .wf-opt__radio {
@@ -832,7 +899,7 @@ onMounted(() => {
   position: relative;
 }
 .wf-opt--sel .wf-opt__radio {
-  border-color: #CC0000;
+  border-color: #cc0000;
 }
 .wf-opt--sel .wf-opt__radio::after {
   content: '';
@@ -843,14 +910,14 @@ onMounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #CC0000;
+  background: #cc0000;
 }
 .wf-opt__text {
   font-size: 0.85rem;
   color: #3a4f6a;
 }
 .wf-opt--sel .wf-opt__text {
-  color: #CC0000;
-  font-weight: bold;
+  color: #cc0000;
+  font-weight: 400;
 }
 </style>

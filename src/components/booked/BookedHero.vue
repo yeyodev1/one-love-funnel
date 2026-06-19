@@ -106,7 +106,7 @@ onMounted(() => {
   }
 
   &__title {
-    @include fonts.heading-font(800);
+    @include fonts.heading-font(400);
     font-size: clamp(1.85rem, 8vw, 3.5rem);
     line-height: 1.1;
     margin: 0;

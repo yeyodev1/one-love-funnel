@@ -107,20 +107,12 @@ const dropdownOpen = ref(false)
 const countrySearch = ref('')
 const submitting = ref(false)
 
-
-
 const form = ref({
   nombre: '',
   apellido: '',
   email: '',
-  phone: ''
+  phone: '',
 })
-
-
-
-
-
-
 
 function buildNote(f: typeof form.value, country: string): string {
   return [
@@ -522,11 +514,7 @@ watch(dropdownOpen, (open) => {
             </div>
 
             <!-- Submit -->
-            <button
-              class="rmodal__submit"
-              type="submit"
-              :disabled="submitting"
-            >
+            <button class="rmodal__submit" type="submit" :disabled="submitting">
               <svg
                 v-if="submitting"
                 class="rmodal__spinner"
@@ -653,7 +641,7 @@ $accent: colors.$OS-RED;
 .rmodal__eyebrow {
   font-family: fonts.$font-accent;
   font-size: 0.68rem;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 4px;
   color: $accent;
@@ -663,7 +651,7 @@ $accent: colors.$OS-RED;
 .rmodal__title {
   font-family: fonts.$font-principal;
   font-size: clamp(1.7rem, 4vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.18;
   color: colors.$OS-DARK;
@@ -706,7 +694,7 @@ $accent: colors.$OS-RED;
   label {
     font-family: fonts.$font-interface;
     font-size: 0.74rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #4a5f7a;
     letter-spacing: 0.5px;
   }
@@ -801,7 +789,7 @@ $accent: colors.$OS-RED;
 .rmodal__dial {
   font-family: fonts.$font-accent;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #4a5f7a;
 }
 
@@ -981,7 +969,7 @@ $accent: colors.$OS-RED;
   padding: 15px 24px;
   font-family: fonts.$font-interface;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #ffffff;
@@ -1056,7 +1044,7 @@ $accent: colors.$OS-RED;
   border: 1px solid rgba(colors.$BAKANO-GREEN, 0.25);
   font-family: fonts.$font-interface;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 400;
   color: colors.$BAKANO-GREEN;
   letter-spacing: 0.5px;
 }
@@ -1064,7 +1052,7 @@ $accent: colors.$OS-RED;
 .rmodal__ty-title {
   font-family: fonts.$font-principal;
   font-size: clamp(1.6rem, 4vw, 2rem);
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: colors.$white;
@@ -1143,7 +1131,7 @@ $accent: colors.$OS-RED;
   strong {
     font-family: fonts.$font-interface;
     font-size: 0.82rem;
-    font-weight: 700;
+    font-weight: 400;
     color: colors.$white;
   }
 
@@ -1286,7 +1274,7 @@ $accent: colors.$OS-RED;
   strong {
     font-family: fonts.$font-interface;
     font-size: 0.88rem;
-    font-weight: 700;
+    font-weight: 400;
     color: colors.$OS-DARK;
     line-height: 1.25;
   }

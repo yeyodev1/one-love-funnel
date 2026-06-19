@@ -187,7 +187,7 @@ const stylesToAdd = `
   margin-bottom: 15px;
 }
 .wf-q-title {
-  font-weight: bold;
+  font-weight: 400;
   margin-bottom: 8px;
   font-size: 0.9rem;
 }
@@ -237,7 +237,7 @@ const stylesToAdd = `
 }
 .wf-opt--sel .wf-opt__text {
   color: #CC0000;
-  font-weight: bold;
+  font-weight: 400;
 }`;
 
 content = content.replace(/<\/style>/, `\n${stylesToAdd}\n</style>`);

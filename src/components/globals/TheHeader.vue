@@ -363,7 +363,7 @@ $dark-bg: #0b0815;
   }
 
   &__link {
-    @include fonts.interface-font(500);
+    @include fonts.interface-font(400);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 2.5px;
@@ -417,7 +417,7 @@ $dark-bg: #0b0815;
 
   // ── CTA desktop ───────────────────────────────────────────────────────────
   &__cta {
-    @include fonts.interface-font(600);
+    @include fonts.interface-font(400);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -644,7 +644,7 @@ $dark-bg: #0b0815;
   }
 
   &__overlay-badge {
-    @include fonts.interface-font(700);
+    @include fonts.interface-font(400);
     font-size: 0.55rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -657,7 +657,7 @@ $dark-bg: #0b0815;
   }
 
   &__overlay-num {
-    @include fonts.accent-font(600);
+    @include fonts.accent-font(400);
     font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -668,7 +668,7 @@ $dark-bg: #0b0815;
   }
 
   &__overlay-label {
-    @include fonts.heading-font(700);
+    @include fonts.heading-font(400);
     font-size: clamp(2rem, 8vw, 2.8rem);
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -679,7 +679,7 @@ $dark-bg: #0b0815;
 
   // CTA WhatsApp del overlay
   &__overlay-cta {
-    @include fonts.interface-font(600);
+    @include fonts.interface-font(400);
     display: flex;
     align-items: center;
     justify-content: center;

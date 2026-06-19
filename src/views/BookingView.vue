@@ -86,7 +86,8 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
           <span class="booking__title-accent">Cita Virtual</span>
         </h1>
         <p class="booking__subtitle">
-          Una breve videollamada para conocernos, entender la visión que tienen para su boda y confirmar que somos el equipo ideal para ustedes.
+          Una breve videollamada para conocernos, entender la visión que tienen para su boda y
+          confirmar que somos el equipo ideal para ustedes.
         </p>
       </section>
 
@@ -183,7 +184,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
     justify-content: center;
     font-family: fonts.$font-interface;
     font-size: 0.85rem;
-    font-weight: 800;
+    font-weight: 400;
     border: 2px solid #d0dbe8;
     color: #d0dbe8;
     transition: all 0.3s ease;
@@ -204,7 +205,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   &__label {
     font-family: fonts.$font-interface;
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 0.04em;
     color: #b0c0d5;
 
@@ -237,7 +238,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   gap: 0.4rem;
   font-family: fonts.$font-interface;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: colors.$OS-NAVY;
@@ -252,7 +253,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 }
 
 .booking__title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: clamp(1.7rem, 4vw, 2.4rem);
   color: colors.$OS-DARK;
   margin: 0 0 0.6rem;

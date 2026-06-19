@@ -77,8 +77,8 @@ const nextSteps = [
             <template v-else> Ya tenemos tu cita reservada </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu Sesión con One Love está confirmada. Revisa tu correo o WhatsApp para
-            todos los detalles. Si necesitas reagendar, escríbenos por WhatsApp.
+            Tu Sesión con One Love está confirmada. Revisa tu correo o WhatsApp para todos los
+            detalles. Si necesitas reagendar, escríbenos por WhatsApp.
           </p>
         </template>
 
@@ -89,8 +89,8 @@ const nextSteps = [
             <template v-else> ¡Tu consulta está confirmada! </template>
           </h1>
           <p class="booked__hero-subtitle">
-            Tu sesión con One Love ha sido agendada correctamente. En breve recibirás
-            todos los detalles.
+            Tu sesión con One Love ha sido agendada correctamente. En breve recibirás todos los
+            detalles.
           </p>
         </template>
       </section>
@@ -132,7 +132,8 @@ const nextSteps = [
       <!-- Disclaimer -->
       <p class="booked__disclaimer">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        Los resultados mencionados en el video corresponden a bodas reales. Cada proyecto es único y los resultados dependen de varios factores de la boda.
+        Los resultados mencionados en el video corresponden a bodas reales. Cada proyecto es único y
+        los resultados dependen de varios factores de la boda.
       </p>
     </main>
 
@@ -193,7 +194,7 @@ const nextSteps = [
 .booked__hero {
   text-align: center;
   padding: 3.5rem 2rem;
-  background: 
+  background:
     linear-gradient(135deg, rgba(colors.$AB-FOREST, 0.75) 0%, rgba(colors.$BAKANO-PINK, 0.65) 100%),
     url('@/assets/stock/one_love_success_bg.png') center/cover no-repeat;
   border: none;
@@ -221,7 +222,7 @@ const nextSteps = [
   margin: 0 0 0.85rem;
   font-family: fonts.$font-interface;
   font-size: 0.74rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
@@ -231,7 +232,7 @@ const nextSteps = [
 }
 
 .booked__hero-title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: #ffffff;
   margin: 0 0 0.75rem;
@@ -251,7 +252,7 @@ const nextSteps = [
 .booked__team-label {
   font-family: fonts.$font-interface;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: colors.$AB-FOREST;
@@ -280,7 +281,7 @@ const nextSteps = [
   position: absolute;
   top: 0.9rem;
   right: 1rem;
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 2rem;
   color: rgba(colors.$BAKANO-PINK, 0.1);
   line-height: 1;
@@ -303,7 +304,7 @@ const nextSteps = [
 }
 
 .booked__step-title {
-  @include fonts.heading-font(700);
+  @include fonts.heading-font(400);
   font-size: 0.93rem;
   color: colors.$OS-DARK;
   margin: 0 0 0.4rem;
@@ -360,7 +361,7 @@ const nextSteps = [
 }
 
 .booked__team-name {
-  @include fonts.heading-font(700);
+  @include fonts.heading-font(400);
   font-size: 1.05rem;
   color: colors.$OS-DARK;
 }

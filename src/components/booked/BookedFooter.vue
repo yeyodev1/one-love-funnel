@@ -55,7 +55,7 @@
   }
 
   &__link {
-    @include fonts.interface-font(500);
+    @include fonts.interface-font(400);
     font-size: 0.72rem;
     color: rgba(colors.$white, 0.35);
     text-decoration: none;
@@ -79,7 +79,7 @@
   }
 
   &__copy {
-    @include fonts.interface-font(500);
+    @include fonts.interface-font(400);
     font-size: 0.65rem;
     color: rgba(colors.$white, 0.18);
     margin: 0;

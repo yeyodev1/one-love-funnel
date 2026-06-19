@@ -36,8 +36,6 @@ const stats = [
   },
 ]
 
-
-
 const methodology = [
   {
     title: 'C O N E X I Ó N',
@@ -54,20 +52,20 @@ const methodology = [
 ]
 
 onMounted(() => {
-  const script1 = document.createElement('script');
-  script1.src = 'https://fast.wistia.com/player.js';
-  script1.async = true;
-  document.head.appendChild(script1);
+  const script1 = document.createElement('script')
+  script1.src = 'https://fast.wistia.com/player.js'
+  script1.async = true
+  document.head.appendChild(script1)
 
-  const script2 = document.createElement('script');
-  script2.src = 'https://fast.wistia.com/embed/h5bs715nzv.js';
-  script2.async = true;
-  script2.type = 'module';
-  document.head.appendChild(script2);
+  const script2 = document.createElement('script')
+  script2.src = 'https://fast.wistia.com/embed/h5bs715nzv.js'
+  script2.async = true
+  script2.type = 'module'
+  document.head.appendChild(script2)
 
-  const style = document.createElement('style');
-  style.innerHTML = `wistia-player[media-id='h5bs715nzv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/h5bs715nzv/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }`;
-  document.head.appendChild(style);
+  const style = document.createElement('style')
+  style.innerHTML = `wistia-player[media-id='h5bs715nzv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/h5bs715nzv/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }`
+  document.head.appendChild(style)
 
   captureFbParams()
 })
@@ -92,9 +90,7 @@ onMounted(() => {
             ser contada para siempre...
           </h1>
           <div class="funnel__hero-cta">
-            <button class="funnel__cta-btn" @click="openModal()">
-              AGENDA UNA REUNIÓN
-            </button>
+            <button class="funnel__cta-btn" @click="openModal()">AGENDA UNA REUNIÓN</button>
           </div>
         </div>
 
@@ -107,18 +103,20 @@ onMounted(() => {
         </div>
 
         <!-- VSL Gated Area -->
-        <div class="funnel__vsl-wrap" @click="openModal()" style="cursor: pointer; position: relative;">
+        <div
+          class="funnel__vsl-wrap"
+          @click="openModal()"
+          style="cursor: pointer; position: relative"
+        >
           <!-- Intercept click to open modal instead of playing video -->
-          <div style="position: absolute; inset: 0; z-index: 10;"></div>
-          <div class="funnel__vsl" style="background:transparent;">
+          <div style="position: absolute; inset: 0; z-index: 10"></div>
+          <div class="funnel__vsl" style="background: transparent">
             <wistia-player media-id="h5bs715nzv" aspect="1.7777777777777777"></wistia-player>
           </div>
         </div>
 
-        <div class="funnel__cta-wrap" style="margin-top: 3rem;">
-          <button class="funnel__cta-btn" @click="openModal()">
-            AGENDA UNA REUNIÓN
-          </button>
+        <div class="funnel__cta-wrap" style="margin-top: 3rem">
+          <button class="funnel__cta-btn" @click="openModal()">AGENDA UNA REUNIÓN</button>
         </div>
       </div>
     </section>
@@ -138,65 +136,160 @@ onMounted(() => {
     <!-- PROBLEMA -->
     <section class="funnel__problem" aria-labelledby="problem-heading">
       <div class="funnel__container">
-        <h2 id="problem-heading" class="funnel__problem-title">
-          ¿TE IDENTIFICAS CON ESTO?
-        </h2>
+        <h2 id="problem-heading" class="funnel__problem-title">¿TE IDENTIFICAS CON ESTO?</h2>
         <p class="funnel__problem-subtitle">
           Lo que muchas parejas olvidan hasta que es demasiado tarde
         </p>
         <div class="funnel__problem-grid">
           <div class="funnel__problem-item">
             <strong>VIDEOS SIN ALMA</strong>
-            <p>Un videógrafo que solo graba lo que sucede, sin buscar las emociones que hacen única tu historia.</p>
+            <p>
+              Un videógrafo que solo graba lo que sucede, sin buscar las emociones que hacen única
+              tu historia.
+            </p>
           </div>
           <div class="funnel__problem-item">
             <strong>LA ESPERA INTERMINABLE</strong>
-            <p>Esperar demasiado puede hacer que ese día tan especial se sienta cada vez más lejano.</p>
+            <p>
+              Esperar demasiado puede hacer que ese día tan especial se sienta cada vez más lejano.
+            </p>
           </div>
           <div class="funnel__problem-item">
             <strong>CADA EMOCIÓN MERECE SER VISTA</strong>
-            <p>Las emociones más bonitas suceden al mismo tiempo y merecen ser recordadas juntas.</p>
+            <p>
+              Las emociones más bonitas suceden al mismo tiempo y merecen ser recordadas juntas.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- METODOLOGÍA -->
-    <section class="funnel__method" aria-labelledby="method-heading" style="background: #f3f2ee; padding: 5rem 0;">
+    <section
+      class="funnel__method"
+      aria-labelledby="method-heading"
+      style="background: #f3f2ee; padding: 5rem 0"
+    >
       <div class="funnel__container">
-        <h2 id="method-heading" class="funnel__section-title" style="text-align: left; text-transform: uppercase; font-weight: 400; font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 2.5rem; letter-spacing: 0.15em; color: #333;">
+        <h2
+          id="method-heading"
+          class="funnel__section-title"
+          style="
+            text-align: left;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.15em;
+            color: #333;
+          "
+        >
           ASÍ HACEMOS QUE TU HISTORIA<br />DURE PARA SIEMPRE
         </h2>
-        <div class="funnel__method-grid" style="gap: 1.5rem;">
-          <div v-for="(m, i) in methodology" :key="i" style="background: #231f20; border-radius: 20px; padding: 2.5rem 2rem; display: flex; flex-direction: column;">
-            <h3 class="funnel__method-title" style="color: white; letter-spacing: 0.15em; font-weight: 400; font-size: 1.1rem; margin-bottom: 1.25rem; white-space: pre-line; line-height: 1.4;">{{ m.title }}</h3>
-            <p class="funnel__method-body" style="color: #e5e5e5; font-size: 1.1rem; line-height: 1.5;">{{ m.body }}</p>
+        <div class="funnel__method-grid" style="gap: 1.5rem">
+          <div
+            v-for="(m, i) in methodology"
+            :key="i"
+            style="
+              background: #231f20;
+              border-radius: 20px;
+              padding: 2.5rem 2rem;
+              display: flex;
+              flex-direction: column;
+            "
+          >
+            <h3
+              class="funnel__method-title"
+              style="
+                color: white;
+                letter-spacing: 0.15em;
+                font-weight: 400;
+                font-size: 1.1rem;
+                margin-bottom: 1.25rem;
+                white-space: pre-line;
+                line-height: 1.4;
+              "
+            >
+              {{ m.title }}
+            </h3>
+            <p
+              class="funnel__method-body"
+              style="color: #e5e5e5; font-size: 1.1rem; line-height: 1.5"
+            >
+              {{ m.body }}
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- TESTIMONIAL -->
-    <section class="funnel__testimonial" aria-labelledby="testimonial-heading" style="background: #f3f2ee; padding: 5rem 0 6rem;">
+    <section
+      class="funnel__testimonial"
+      aria-labelledby="testimonial-heading"
+      style="background: #faf5e8; padding: 5rem 0 6rem"
+    >
       <div class="funnel__container">
-        <h2 id="testimonial-heading" class="funnel__section-title" style="text-align: left; margin-bottom: 2rem; font-weight: 400; font-size: clamp(1.6rem, 3.5vw, 2.2rem); letter-spacing: 0.15em; color: #333; text-transform: uppercase;">
+        <h2
+          id="testimonial-heading"
+          class="funnel__section-title"
+          style="
+            text-align: left;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            letter-spacing: 0.15em;
+            color: #333;
+            text-transform: uppercase;
+          "
+        >
           LO QUE DICEN NUESTRAS PAREJAS
         </h2>
-        <p style="font-size: 1.35rem; line-height: 1.6; color: #333; max-width: 850px; margin: 0;">
-          "Antes de conocer a Carlos y al equipo de One Love, tenía miedo de que nuestro video fuera uno más, algo que veríamos una vez y olvidaríamos. Pero cada vez que lo vemos volvemos a emocionarnos y a recordar exactamente cómo se sintió ese día. Fue mucho más que un video... fue nuestra historia de amor."
+        <p
+          style="
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0;
+            font-weight: 300 !important;
+          "
+        >
+          "Antes de conocer a Carlos y al equipo de One Love, tenía miedo de que nuestro video fuera
+          uno más, algo que veríamos una vez y olvidaríamos. Pero cada vez que lo vemos volvemos a
+          emocionarnos y a recordar exactamente cómo se sintió ese día. Fue mucho más que un
+          video... fue nuestra historia de amor."
         </p>
       </div>
     </section>
 
     <!-- INTENCION Y EMOCION (DARK BANNER) -->
-    <section style="background: #231f20; color: white; padding: 5rem 1.5rem; text-align: center;">
+    <section style="background: #231f20; color: white; padding: 5rem 1.5rem; text-align: center">
       <div class="funnel__container">
-        <h2 style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 400; margin-bottom: 2.5rem; letter-spacing: 0.1em; text-transform: none;">
+        <h2
+          style="
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.1em;
+            text-transform: none;
+          "
+        >
           -Una historia contada con intención y emoción
         </h2>
-        <p style="font-size: 1.35rem; max-width: 850px; margin: 0 auto; line-height: 1.6; color: #e5e5e5;">
-          Nos involucramos desde el inicio para conocerlos, entender su esencia<br />y crear un video que refleje quiénes son.<br />
-          Cada detalle se captura con intención para crear una película que los<br />haga volver a sentir ese día una y otra vez.
+        <p
+          style="
+            font-size: 1.35rem;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #e5e5e5;
+          "
+        >
+          Nos involucramos desde el inicio para conocerlos, entender su esencia<br />y crear un
+          video que refleje quiénes son.<br />
+          Cada detalle se captura con intención para crear una película que los<br />haga volver a
+          sentir ese día una y otra vez.
         </p>
       </div>
     </section>
@@ -224,15 +317,54 @@ onMounted(() => {
     </section> -->
 
     <!-- CTA FINAL -->
-    <section class="funnel__cta-final" aria-labelledby="cta-final-heading" style="padding: 7rem 0; background: white;">
-      <div class="funnel__container" style="text-align: center;">
-        <h2 id="cta-final-heading" class="funnel__cta-final-title" style="font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 400; letter-spacing: 0.15em; margin-bottom: 1.5rem; text-transform: uppercase;">
+    <section
+      class="funnel__cta-final"
+      aria-labelledby="cta-final-heading"
+      style="padding: 7rem 0; background: white"
+    >
+      <div class="funnel__container" style="text-align: center">
+        <h2
+          id="cta-final-heading"
+          class="funnel__cta-final-title"
+          style="
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+          "
+        >
           ¿LISTO PARA INICIAR?
         </h2>
-        <p class="funnel__cta-final-sub" style="font-size: 1.35rem; max-width: 800px; margin: 0 auto 3rem; line-height: 1.6; color: #333;">
-          Agenda una reunión con nosotros y conversemos sobre cómo convertir<br />el día más importante de sus vidas en un recuerdo que los emocione<br />para siempre.
+        <p
+          class="funnel__cta-final-sub"
+          style="
+            font-size: 1.35rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            color: #333;
+          "
+        >
+          Agenda una reunión con nosotros y conversemos sobre cómo convertir<br />el día más
+          importante de sus vidas en un recuerdo que los emocione<br />para siempre.
         </p>
-        <button class="funnel__cta-btn" @click="openModal()" style="background: #231f20; color: #fff; padding: 1.25rem 3.5rem; border-radius: 50px; font-weight: 700; letter-spacing: 0.15em; border: none; font-size: 1.05rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+        <button
+          class="funnel__cta-btn"
+          @click="openModal()"
+          style="
+            background: #231f20;
+            color: #fff;
+            padding: 1.25rem 3.5rem;
+            border-radius: 50px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            border: none;
+            font-size: 1.05rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+          "
+        >
           AGENDA UNA REUNIÓN
         </button>
       </div>
@@ -308,7 +440,7 @@ onMounted(() => {
   flex-wrap: wrap;
   font-family: fonts.$font-interface;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.03em;
   border-bottom: 2px solid colors.$AB-URGENT-LIGHT;
   box-shadow: 0 2px 12px rgba(colors.$AB-URGENT, 0.35);
@@ -345,7 +477,7 @@ onMounted(() => {
   padding: 0.45rem 1rem;
   font-family: fonts.$font-accent;
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
@@ -383,7 +515,6 @@ onMounted(() => {
 }
 
 @keyframes cta-bounce {
-
   0%,
   100% {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
@@ -456,13 +587,13 @@ onMounted(() => {
   color: colors.$AB-FOREST;
 
   strong {
-    font-weight: 800;
+    font-weight: 400;
   }
 
   span {
     font-size: 0.74rem;
     color: rgba(colors.$AB-FOREST, 0.55);
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 
@@ -474,7 +605,7 @@ onMounted(() => {
 
   strong {
     color: colors.$AB-EARTH;
-    font-weight: 700;
+    font-weight: 400;
   }
 }
 
@@ -546,7 +677,6 @@ onMounted(() => {
 }
 
 @keyframes bolt-flash {
-
   0%,
   100% {
     opacity: 1;
@@ -561,7 +691,7 @@ onMounted(() => {
 
 .funnel__urgency-text {
   strong {
-    font-weight: 900;
+    font-weight: 400;
     color: colors.$BAKANO-PINK;
     letter-spacing: 0.04em;
   }
@@ -611,7 +741,7 @@ onMounted(() => {
 
   strong {
     font-size: 1.6rem;
-    font-weight: 900;
+    font-weight: 400;
     line-height: 1;
     font-variant-numeric: tabular-nums;
     color: #ffffff;
@@ -624,13 +754,13 @@ onMounted(() => {
   small {
     font-size: 0.72rem;
     opacity: 0.85;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
   }
 }
 
 .funnel__timer-sep {
-  font-weight: 900;
+  font-weight: 400;
   font-size: 1.4rem;
   opacity: 0.7;
   padding: 0 2px;
@@ -654,7 +784,7 @@ onMounted(() => {
   font-family: fonts.$font-interface;
   font-size: 0.92rem;
   color: rgba(colors.$AB-WHITE, 0.95);
-  font-weight: 600;
+  font-weight: 400;
 
   i {
     color: colors.$AB-URGENT-LIGHT;
@@ -664,7 +794,7 @@ onMounted(() => {
 
   strong {
     color: colors.$AB-URGENT-LIGHT;
-    font-weight: 800;
+    font-weight: 400;
   }
 
   @media (min-width: 768px) {
@@ -774,9 +904,11 @@ onMounted(() => {
 .funnel__vsl-blur-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center,
-      rgba(colors.$OS-NAVY, 0.2) 0%,
-      rgba(colors.$OS-NAVY, 0.6) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(colors.$OS-NAVY, 0.2) 0%,
+    rgba(colors.$OS-NAVY, 0.6) 100%
+  );
   z-index: 1;
 }
 
@@ -824,7 +956,7 @@ onMounted(() => {
 .funnel__vsl-caption {
   color: #ffffff;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   padding: 0 2rem;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
@@ -851,7 +983,7 @@ onMounted(() => {
   padding: 1.1rem 2.5rem;
   font-family: fonts.$font-accent;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: 0.05em;
   cursor: pointer;
   width: 100%;
@@ -896,7 +1028,7 @@ onMounted(() => {
 .funnel__section-label {
   font-family: fonts.$font-interface;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: colors.$OS-NAVY;
@@ -964,7 +1096,7 @@ onMounted(() => {
 }
 
 .funnel__section-title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   color: colors.$OS-DARK;
   margin: 0.25rem 0 2rem;
@@ -989,7 +1121,7 @@ onMounted(() => {
     display: block;
     color: colors.$OS-DARK;
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 0.5rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1032,7 +1164,7 @@ onMounted(() => {
   position: absolute;
   top: 1rem;
   right: 1.25rem;
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 2.5rem;
   color: rgba(colors.$OS-NAVY, 0.07);
   line-height: 1;
@@ -1056,7 +1188,7 @@ onMounted(() => {
 }
 
 .funnel__method-title {
-  @include fonts.heading-font(700);
+  @include fonts.heading-font(400);
   font-size: 0.97rem;
   color: colors.$OS-DARK;
   margin: 0 0 0.5rem;
@@ -1111,7 +1243,7 @@ onMounted(() => {
     display: block;
     color: colors.$OS-DARK;
     font-size: 0.88rem;
-    font-weight: 700;
+    font-weight: 400;
   }
 
   span {
@@ -1185,7 +1317,7 @@ onMounted(() => {
 .funnel__authority-eyebrow {
   font-family: fonts.$font-interface;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: colors.$OS-BLUE;
@@ -1193,7 +1325,7 @@ onMounted(() => {
 }
 
 .funnel__authority-name {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: 2rem;
   color: colors.$OS-DARK;
   margin: 0 0 0.2rem;
@@ -1214,7 +1346,7 @@ onMounted(() => {
 
   strong {
     color: colors.$OS-DARK;
-    font-weight: 700;
+    font-weight: 400;
   }
 }
 
@@ -1261,7 +1393,7 @@ onMounted(() => {
 }
 
 .funnel__cta-final-title {
-  @include fonts.heading-font(800);
+  @include fonts.heading-font(400);
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   color: #ffffff;
   margin: 0 0 0.75rem;
