@@ -23,7 +23,7 @@ const openModal = () => {
 
 const stats = [
   {
-    number: '+12',
+    number: '+15',
     text: 'Años contando\nhistorias de amor',
   },
   {
@@ -515,6 +515,7 @@ onMounted(() => {
 }
 
 @keyframes cta-bounce {
+
   0%,
   100% {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
@@ -677,6 +678,7 @@ onMounted(() => {
 }
 
 @keyframes bolt-flash {
+
   0%,
   100% {
     opacity: 1;
@@ -904,11 +906,9 @@ onMounted(() => {
 .funnel__vsl-blur-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(colors.$OS-NAVY, 0.2) 0%,
-    rgba(colors.$OS-NAVY, 0.6) 100%
-  );
+  background: radial-gradient(circle at center,
+      rgba(colors.$OS-NAVY, 0.2) 0%,
+      rgba(colors.$OS-NAVY, 0.6) 100%);
   z-index: 1;
 }
 
