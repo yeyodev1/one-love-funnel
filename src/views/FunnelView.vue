@@ -46,7 +46,7 @@ const methodology = [
     body: 'Guardamos las emociones y los recuerdos que harán eterna su historia.',
   },
   {
-    title: 'R E V I V I E N D O\nS U\nH I S T O R I A',
+    title: 'R E V I V I E N-\nD O\nS U\nH I S T O R I A',
     body: 'Damos vida a su historia para que, años después, puedan volver a emocionarse como la primera vez.',
   },
 ]
