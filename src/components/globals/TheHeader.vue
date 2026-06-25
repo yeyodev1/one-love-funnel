@@ -53,11 +53,6 @@ const scrollToSection = async (sectionId: string) => {
   closeMenu()
 }
 
-const openWhatsApp = () => {
-  window.open('https://wa.me/593984934039', '_blank', 'noopener,noreferrer')
-  closeMenu()
-}
-
 // ── Menú móvil ────────────────────────────────────────────────────────────────
 const toggleMenu = async () => {
   isMenuOpen.value = !isMenuOpen.value

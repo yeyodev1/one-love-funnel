@@ -38,11 +38,6 @@ const nextSteps = [
     body: 'Te enviamos la confirmación con todos los detalles de tu Cita Virtual.',
   },
   {
-    icon: 'fa-brands fa-whatsapp',
-    title: 'Te contactamos por WhatsApp',
-    body: 'One Love te escribirá para confirmar la cita y conocer un poco más sobre tu boda.',
-  },
-  {
     icon: 'fa-solid fa-leaf',
     title: 'Prepara tu inspiración',
     body: 'Ten a mano información relevante sobre tu boda, visión, fecha y otros detalles.',

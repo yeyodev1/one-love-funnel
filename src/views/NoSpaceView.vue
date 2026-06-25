@@ -71,18 +71,6 @@ onMounted(() => {
               <p>Te notificaremos cuando se libere un espacio en la agenda de One Love.</p>
             </div>
           </li>
-          <li>
-            <div class="nospace__step-icon" aria-hidden="true">
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <div>
-              <strong>Proyecto urgente</strong>
-              <p>
-                Si tu proyecto necesita atención inmediata, contáctanos por WhatsApp y evaluaremos
-                tu caso.
-              </p>
-            </div>
-          </li>
         </ul>
       </div>
 
